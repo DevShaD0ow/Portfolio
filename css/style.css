@@ -1,0 +1,154 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(10px);
+    transform: scale(1.1);
+}
+
+
+.ppAcc {
+    width: 200px;
+    height: auto;
+    border-radius: 100%;
+    border: 2px solid #ffffff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease; 
+    max-width: 200px;
+}
+
+.ppAcc:hover {
+    transform: scale(1.1);  
+    transition: transform 0.3s ease; 
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.textAcc {
+    font-size: 4rem;
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+body {
+    user-select: none;
+    margin: 0;
+    overflow: hidden;
+    cursor: none;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/*
+    Button
+*/
+.button-85 {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    filter: blur(1px);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+  }
+  
+  .button-85:hover {
+    filter: blur(0px);
+    transform: scale(1.5); 
+    transition: transform 0.3s ease;
+  }
+  
+  .button-85:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #8a2be2,  
+      #9932cc,  
+      #ba55d3,  
+      #ff1493,  
+      #00bfff, 
+      #8a2be2,  
+      #4b0082,  
+      #dda0dd  
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowing-button-85 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222; 
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
