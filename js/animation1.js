@@ -17,3 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
         text.style.transform="translateX(0)";
     },660)
 });
+
+document.querySelector(".button-85").addEventListener("click", function () {
+    document.querySelector("#presentation").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+

@@ -9,7 +9,7 @@ const cursor = {
   y: innerHeight / 2,
   targetX: innerWidth / 2,
   targetY: innerHeight / 2,
-  smoothness: 0.1, 
+  smoothness: 0.1,
   trail: []
 };
 
@@ -17,7 +17,7 @@ const circleSize = 6;
 function drawCursorCircle() {
   context.beginPath();
   context.arc(cursor.x, cursor.y, circleSize, 0, Math.PI * 2);
-  context.fillStyle = "rgba(255, 255, 255, 0.45)"; 
+  context.fillStyle = "rgba(255, 255, 255, 0.45)";
   context.fill();
 }
 
@@ -31,10 +31,10 @@ function drawCursorTrail() {
 
   context.beginPath();
   for (let i = 0; i < cursor.trail.length - 1; i++) {
-    const opacity = 1 - (i / cursor.trail.length); 
+    const opacity = 1 - i / cursor.trail.length;
     context.moveTo(cursor.trail[i].x, cursor.trail[i].y);
     context.lineTo(cursor.trail[i + 1].x, cursor.trail[i + 1].y);
-    context.strokeStyle = `rgba(255, 255, 255, ${opacity})`; 
+    context.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
     context.lineWidth = 4;
     context.stroke();
   }
@@ -57,4 +57,4 @@ function anim() {
   drawCursorCircle();
 }
 
-anim(); 
+anim();
