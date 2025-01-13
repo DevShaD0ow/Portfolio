@@ -1,8 +1,11 @@
-*{
+* {
   user-select: none;
+  cursor: none;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Style pour le header */
 header {
   position: fixed;
   top: 0;
@@ -37,6 +40,7 @@ header {
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
   max-width: 200px;
+
 }
 
 .ppAcc:hover {
@@ -49,6 +53,10 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow-x: visible;
+  overflow-y: visible;  
+  transition: opacity 1s ease, transform 1s ease;
+
 }
 
 .textAcc {
@@ -63,7 +71,7 @@ header {
 body {
   user-select: none;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;  /* Pour éviter le scroll horizontal */
 }
 
 canvas {
@@ -76,8 +84,7 @@ canvas {
   z-index: 1;
 }
 
-/* Style pour le bouton */
-.button-85 {
+.boutonDecouvrir {
   padding: 0.6em 2em;
   border: none;
   outline: none;
@@ -92,26 +99,28 @@ canvas {
   filter: blur(1px);
   transform: scale(1);
   transition: transform 0.3s ease;
+  overflow-y: visible;
+  overflow-x: visible;
 }
 
-.button-85:hover {
+.boutonDecouvrir:hover {
   filter: blur(0px);
   transform: scale(1.5);
   transition: transform 0.3s ease;
 }
 
-.button-85:before {
+.boutonDecouvrir:before {
   content: "";
   background: linear-gradient(
-      45deg,
-      #8a2be2,
-      #9932cc,
-      #ba55d3,
-      #ff1493,
-      #00bfff,
-      #8a2be2,
-      #4b0082,
-      #dda0dd
+    45deg,
+    #8a2be2,
+    #9932cc,
+    #ba55d3,
+    #ff1493,
+    #00bfff,
+    #8a2be2,
+    #4b0082,
+    #dda0dd
   );
   position: absolute;
   top: -2px;
@@ -128,17 +137,17 @@ canvas {
 
 @keyframes glowing-button-85 {
   0% {
-      background-position: 0 0;
+    background-position: 0 0;
   }
   50% {
-      background-position: 400% 0;
+    background-position: 400% 0;
   }
   100% {
-      background-position: 0 0;
+    background-position: 0 0;
   }
 }
 
-.button-85:after {
+.boutonDecouvrir:after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -151,15 +160,40 @@ canvas {
 }
 
 .midPresent {
-  position: relative; /* Pour permettre une superposition si nécessaire */
-  z-index: 2;         /* Priorité supérieure à la vidéo */
-  padding: 50px 20px; /* Ajout d’espace autour du contenu */
-  background-color: rgba(0, 0, 0, 0.9); /* Fond semi-transparent */
-  color: white;       /* Texte en blanc pour contraster avec l’arrière-plan */
-  text-align: center; /* Centrer le texte */
-  min-height: 100vh;  /* Prend toute la hauteur de l’écran */
-  display: flex;      /* Centrage vertical et horizontal */
+  padding: 0% 10%; 
+  flex-flow: column;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;       
+  text-align: center; 
+  min-height: 100vh;  
+  display: flex;      
   align-items: center;
   justify-content: center;
-  margin-top: 100vh;  /* Positionne la section en dessous de la vidéo */
+  position: relative; 
+  z-index: 1;         
+  margin-top: 100vh;  
+  transition: margin-top 1s ease;
+  opacity: 0;
 }
+
+img.imgCross {
+  display: flex;
+  width: 30px;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  max-width: 200px;
+
+}
+
+.imgSkp {
+  width: 50px;
+  height: auto;
+  border-radius: 100%;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  max-width: 200px;
+}
+
