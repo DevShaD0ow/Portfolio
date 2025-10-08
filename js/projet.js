@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const tagColors = {
     "Unreal": "#824cff",
     "Unity": "#00ffcc",
-    "React": "#61dafb",
     "JavaScript": "#f7df1e",
-    "C++": "#00599c",
-    "C#": "#68217a",
+    "C++": "#4da6ff",
+    "C#": "#ff50a2ff",
     "CSS": "#2965f1"
   };
 
