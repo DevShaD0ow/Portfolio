@@ -1,6 +1,10 @@
 /* ======================== */
 /* BODY & GLOBAL            */
 /* ======================== */
+
+*{
+  user-select: none;
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -17,7 +21,10 @@ body, html {
 body::-webkit-scrollbar {
   display: none;
 }
-
+a{
+  text-decoration: none;
+  color: inherit;
+}
 /* ======================== */
 /* VUE 1 - PREMIÈRE VUE      */
 /* ======================== */
@@ -232,19 +239,18 @@ body::-webkit-scrollbar {
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 16px;
-  z-index: 1;
+  z-index: 4;
 }
 
 .project-card:hover video {
   opacity: 1;
-  z-index: 2;
+  z-index: 4;
 }
 
 .project-card:hover .project-preview {
   opacity: 0;
-  z-index: 1;
+  z-index: 3;
 }
-
 
 .card-content {
   padding: 1rem;

@@ -2,31 +2,36 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mon Portfolio</title>
+  <title>Portfolio - Alexis Tirant</title>
+  <!-- CSS global -->
   <link rel="stylesheet" href="./css/style.css">
+
+  <!-- CSS par vue -->
+  <link rel="stylesheet" href="./css/vue1.css">
+  <link rel="stylesheet" href="./css/vue2.css">
+  <link rel="stylesheet" href="./css/vue3.css">
   <link rel="stylesheet" href="./css/cardSwap.css">
 </head>
+
 <body>
-  <!-- Première vue -->
+  <!-- VUE 1 -->
   <section id="firstView">
     <div class="content">
       <img class="ppAcc" src="./assets/photo.jpg" alt="Photo de profil">
       <h1 class="portfolioTitle">Alexis Tirant</h1>
       <p class="portfolioSub">Bienvenue dans mon univers.</p>
-
       <div id="card-container"></div>
     </div>
   </section>
-  
-  <!-- Section 2 : Présentation / À propos de moi -->
+
+  <!-- VUE 2 -->
   <section id="aboutMe">
     <div class="about-scroll">
       <div class="about-container">
         <h2>À propos de moi</h2>
         <p class="about-desc">
           Je m'appelle Alexis Tirant, développeur passionné par la création de jeux vidéo et d'applications web.
-          J'aime explorer de nouvelles technologies, résoudre des problèmes complexes et créer des expériences interactives
-          qui captivent les utilisateurs. Mon objectif est de combiner créativité et efficacité pour des projets innovants.
+          J'aime explorer de nouvelles technologies, résoudre des problèmes complexes et créer des expériences interactives.
         </p>
 
         <div class="skills">
@@ -68,53 +73,51 @@
     </div>
   </section>
 
-  <!-- Section 3 : Projets -->
+  <!-- VUE 3 -->
   <section id="projects-view">
-  <h2 class="section-title">Mes Projets</h2>
-  <div class="projects-container">
-    <div class="project-card" data-tags="Unreal, C++" data-video="./assets/AIS.mp4">
-      <img src="./assets/previewAIS.png" alt="Preview Projet 1" class="project-preview">
-      <video muted loop playsinline></video>
-      <div class="card-content">
-        <h3>Alone In Space - VR</h3>
-        <div class="tags">
-          <span class="tag" style="border-color:#00ffcc;color:#00ffcc;">Unity</span>
-          <span class="tag" style="border-color:#68217a;color:#68217a;">C#</span>
+    <h2 class="section-title">Mes Projets</h2>
+    <div class="projects-container">
+
+      <div class="project-card" data-tags="Unity, C#" data-video="./assets/AIS.mp4" data-link="https://github.com/Fan-tome14/AloneInSpace">
+        <img src="./assets/previewAIS.png" alt="Preview Projet 1" class="project-preview">
+        <video muted loop playsinline></video>
+        <div class="card-content">
+          <h3>Alone In Space - VR</h3>
+          <p>Jeu d'exploration spatiale en VR développé sous Unreal Engine.</p>
+          <div class="tags"></div>
         </div>
       </div>
-    </div>
 
-    <div class="project-card" data-tags="React, JavaScript, CSS" data-video="./assets/project2.mp4">
-      <img src="./assets/previewSB1.png" alt="Preview Projet 2" class="project-preview">
-      <video muted loop playsinline></video>
-      <div class="card-content">
-        <h3>SuperBonus</h3>
-        <div class="tags">
-          <span class="tag" style="border-color:#824cff;color:#824cff;">Unreal</span>
-          <span class="tag" style="border-color:#00599c;color:#00599c;">C++</span>
+      <div class="project-card" data-tags="Unreal, C++" data-video="./assets/Brick.mp4" data-link="https://github.com/DevShaD0ow/SuperBonus">
+        <img src="./assets/previewSB1.png" alt="Preview Projet 2" class="project-preview">
+        <video muted loop playsinline></video>
+        <div class="card-content">
+          <h3>Brick Buster</h3>
+          <p>Application web interactive avec React.</p>
+          <div class="tags"></div>
         </div>
       </div>
-    </div>
 
-    <div class="project-card" data-tags="Unity, C#" data-video="./assets/project3.mp4">
-      <img src="./assets/project3.jpg" alt="Preview Projet 3" class="project-preview">
-      <video muted loop playsinline></video>
-      <div class="card-content">
-        <h3>Jeu Vidéo C</h3>
-        <div class="tags"></div>
+      <div class="project-card" data-tags="Unreal, C++" data-video="./assets/SP.mp4" data-link="https://github.com/DevShaD0ow/SpaceShooter">
+        <img src="./assets/previewSP1.png" alt="Preview Projet 3" class="project-preview">
+        <video muted loop playsinline></video>
+        <div class="card-content">
+          <h3>Space Shooter</h3>
+          <p>Jeux Space Shooter</p>
+          <div class="tags"></div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
+    </div>
+  </section>
 
   <div id="madeBy">Made By Alexis Tirant™</div>
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/InertiaPlugin.min.js"></script>
-  <script src="./js/animation1.js" defer></script>
-  <script src="./js/cardSwap.js"></script> <!-- La classe CardSwap -->
-  <script src="./js/aboutAnimation.js"></script> <!-- Animation vue 2 -->
 
-  
+  <!-- JS -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="./js/animation1.js" defer></script>
+  <script src="./js/aboutAnimation.js" defer></script>
+  <script src="./js/cardSwap.js"></script>
+  <script src="./js/projet.js" defer></script>
 </body>
 </html>

@@ -1,27 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".project-card");
+  console.log("Nombre de cartes trouvées :", cards.length);
 
-  cards.forEach(card => {
-    const video = card.querySelector("video");
-    const src = card.dataset.video;
-
-    if (src) {
-      video.src = src;
-      video.load();
-    }
-
-    card.addEventListener("mouseenter", async () => {
-      try { await video.play(); } 
-      catch(err) { console.warn("Lecture vidéo impossible", err); }
-    });
-
-    card.addEventListener("mouseleave", () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-  });
-
-  // Tags automatiques
+  // Couleurs des tags
   const tagColors = {
     "Unreal": "#824cff",
     "Unity": "#00ffcc",
@@ -32,16 +13,58 @@ document.addEventListener("DOMContentLoaded", () => {
     "CSS": "#2965f1"
   };
 
-  document.querySelectorAll(".project-card").forEach(card => {
-    const tagsContainer = card.querySelector(".tags");
-    const tags = card.dataset.tags.split(",").map(t => t.trim());
-    tags.forEach(tag => {
-      const span = document.createElement("span");
-      span.className = "tag";
-      span.textContent = tag;
-      span.style.borderColor = tagColors[tag] || "#fff";
-      span.style.color = tagColors[tag] || "#fff";
-      tagsContainer.appendChild(span);
+  cards.forEach(card => {
+    console.log("Carte trouvée :", card);
+
+    // --- Vidéo ---
+    const video = card.querySelector("video");
+    const src = card.dataset.video;
+    console.log("Vidéo src :", src);
+
+    if(src){
+      video.src = src;
+      video.load();
+    }
+
+      card.addEventListener("mouseenter", async () => {
+      // Si c'est la carte AIS
+      if (card.dataset.video.includes("AIS.mp4")) {
+        video.playbackRate = 2.0; // 🎬 vitesse x2
+      } else {
+        video.playbackRate = 1.0; // normal pour les autres
+      }
+
+      try { await video.play(); } 
+      catch(err) { console.warn("Lecture vidéo impossible", err); }
     });
+
+
+    card.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+
+    // --- Tags ---
+    const tagsContainer = card.querySelector(".tags");
+    if(card.dataset.tags){
+      const tags = card.dataset.tags.split(",").map(t => t.trim());
+      console.log("Tags pour la carte :", tags);
+      tags.forEach(tag => {
+        const span = document.createElement("span");
+        span.className = "tag";
+        span.textContent = tag;
+        span.style.borderColor = tagColors[tag] || "#fff";
+        span.style.color = tagColors[tag] || "#fff";
+        tagsContainer.appendChild(span);
+      });
+    }
+
+    // --- Clic pour ouvrir le lien ---
+    if(card.dataset.link){
+      card.style.cursor = "pointer";
+      card.addEventListener("click", () => {
+        window.open(card.dataset.link, "_blank");
+      });
+    }
   });
 });

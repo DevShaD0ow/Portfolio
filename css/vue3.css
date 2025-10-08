@@ -1,0 +1,84 @@
+#projects-view {
+  width: 100%;
+  min-height: 100vh;
+  background: #111;
+  padding: 4rem 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #b400ff;
+  margin-bottom: 3rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-card {
+  position: relative;
+  width: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #1b1b1b;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px #b400ff, 0 0 30px #6a00ff55;
+}
+
+.project-preview {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.project-card video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 180px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* bloque tout clic sur la vidéo */
+  user-select: none; /* empêche la sélection */
+  -webkit-user-drag: none; /* empêche le glisser */
+}
+
+.project-card:hover video {
+  opacity: 1;
+}
+
+.card-content {
+  padding: 1rem;
+  color: white;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0 0 0.5rem 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  border: 1px dashed;
+  font-size: 0.8rem;
+  font-weight: 500;
+}

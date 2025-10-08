@@ -1,0 +1,52 @@
+#aboutMe {
+  width: 100%;
+  min-height: 100vh;
+  background: #111;
+  padding: 4rem 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  max-width: 1000px;
+}
+
+.about-container h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.about-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 4rem;
+}
+
+.skill-bar {
+  margin-bottom: 1rem;
+}
+
+.skill-bar span {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.bar {
+  background: #333;
+  border-radius: 8px;
+  height: 12px;
+}
+
+.fill {
+  background: linear-gradient(90deg, #b400ff, #6a00ff);
+  height: 100%;
+  width: 0%;
+  border-radius: 8px;
+  transition: width 1s ease;
+}

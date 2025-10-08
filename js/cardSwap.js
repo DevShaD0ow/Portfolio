@@ -7,7 +7,7 @@ class CardSwap {
       height: 300,
       cardDistance: 60,
       verticalDistance: 50,
-      delay: 7000,
+      delay: 4000,
       skewAmount: 3,
     }, options);
     this.refs = [];
