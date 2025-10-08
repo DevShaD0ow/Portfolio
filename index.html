@@ -2,36 +2,119 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/style.css" rel="stylesheet">
-  <title>Portfolio ShaDow</title>
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/CardSwap.css">
 </head>
 <body>
-  <canvas id="cw"></canvas>
-  <header id="header">
-      <video id="background-video" autoplay loop muted>
-          <source src="images/358f8eb4c268a1e298a36f68a1cff8be_n9WTbkdQ.mp4" type="video/mp4">
-      </video>
-      <section class="top" id="top">
-          <img class="ppAcc" src="images/eminence6.jpg" alt="Photo de profil">
-          <h1 class="textAcc">ShaDow</h1>
-          <button class="boutonDecouvrir" role="button">Découvrir</button>
-      </section>
-  </header>
+  <!-- Première vue -->
+  <section id="firstView">
+    <div class="content">
+      <img class="ppAcc" src="assets/photo.jpg" alt="Photo de profil">
+      <h1 class="portfolioTitle">Alexis Tirant</h1>
+      <p class="portfolioSub">Bienvenue dans mon univers.</p>
 
-  <section class="midPresent" id="presentation">
-    <div>
-        <img class="imgCross" src="images/cross.png" alt="bouton fermer">
+      <div id="card-container"></div>
     </div>
-      <H1>Je m'appelle Alexis, j'ai 19 ans.</H1>
-      <p>Je suis actuellement en 2eme année de BUT informatique a l'université Paris-Saclay. 
-        Je suis passionné par l'informatique et le développement. 
-        J'aime apprendre de nouvelles choses et relever des défis. 
-        Je suis curieux et j'aime découvrir de nouvelles technologies.</p>
-        <img class="imgSkp" src="images/chevron.png" alt="bouton suivant">
+  </section>
+  
+  <!-- Section 2 : Présentation / À propos de moi -->
+  <section id="aboutMe">
+    <div class="about-scroll">
+      <div class="about-container">
+        <h2>À propos de moi</h2>
+        <p class="about-desc">
+          Je m'appelle Alexis Tirant, développeur passionné par la création de jeux vidéo et d'applications web.
+          J'aime explorer de nouvelles technologies, résoudre des problèmes complexes et créer des expériences interactives
+          qui captivent les utilisateurs. Mon objectif est de combiner créativité et efficacité pour des projets innovants.
+        </p>
+
+        <div class="skills">
+          <div class="skill-bar">
+            <span>JavaScript</span>
+            <div class="bar"><div class="fill" data-fill="60%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <span>HTML / CSS</span>
+            <div class="bar"><div class="fill" data-fill="80%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <span>Unity</span>
+            <div class="bar"><div class="fill" data-fill="80%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <span>Unreal Engine</span>
+            <div class="bar"><div class="fill" data-fill="75%"></div></div>
+          </div>
+
+          <div class="skill-bar">
+            <span>C#</span>
+            <div class="bar"><div class="fill" data-fill="80%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <span>C++</span>
+            <div class="bar"><div class="fill" data-fill="75%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <span>SQL</span>
+            <div class="bar"><div class="fill" data-fill="70%"></div></div>
+          </div>
+          <div class="skill-bar">
+            <span>Git / Perforce</span>
+            <div class="bar"><div class="fill" data-fill="65%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <script src="js/souris.js"></script> <!-- Animation du curseur -->
-  <script src="js/animation1.js" defer></script> <!-- Animations de texte et images -->
+  <!-- Section 3 : Projets -->
+  <section id="projects-view">
+  <h2 class="section-title">Mes Projets</h2>
+  <div class="projects-container">
+    <div class="project-card" data-tags="Unreal, C++" data-video="./assets/AIS.mp4">
+      <img src="./assets/previewAIS.png" alt="Preview Projet 1" class="project-preview">
+      <video muted loop playsinline></video>
+      <div class="card-content">
+        <h3>Alone In Space - VR</h3>
+        <div class="tags">
+          <span class="tag" style="border-color:#00ffcc;color:#00ffcc;">Unity</span>
+          <span class="tag" style="border-color:#68217a;color:#68217a;">C#</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-tags="React, JavaScript, CSS" data-video="./assets/project2.mp4">
+      <img src="./assets/previewSB1.png" alt="Preview Projet 2" class="project-preview">
+      <video muted loop playsinline></video>
+      <div class="card-content">
+        <h3>SuperBonus</h3>
+        <div class="tags">
+          <span class="tag" style="border-color:#824cff;color:#824cff;">Unreal</span>
+          <span class="tag" style="border-color:#00599c;color:#00599c;">C++</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-tags="Unity, C#" data-video="./assets/project3.mp4">
+      <img src="./assets/project3.jpg" alt="Preview Projet 3" class="project-preview">
+      <video muted loop playsinline></video>
+      <div class="card-content">
+        <h3>Jeu Vidéo C</h3>
+        <div class="tags"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div id="madeBy">Made By Alexis Tirant™</div>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/InertiaPlugin.min.js"></script>
+  <script src="js/animation1.js" defer></script>
+  <script src="./js/cardSwap.js"></script> <!-- La classe CardSwap -->
+  <script src="./js/aboutAnimation.js"></script> <!-- Animation vue 2 -->
+
+  
 </body>
 </html>

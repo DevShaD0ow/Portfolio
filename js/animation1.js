@@ -1,67 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const image = document.querySelector(".ppAcc");
-    const text = document.querySelector(".textAcc");
-    const bouton = document.querySelector(".boutonDecouvrir");
-    setTimeout(() => {
-        image.style.opacity = "1";
-    }, 400);
+  const image = document.querySelector(".ppAcc");         // ton image de profil
+  const text = document.querySelector(".portfolioTitle"); // ton titre "Mon Portfolio"
+  const text2 = document.querySelector(".portfolioSub");  // sous-titre éventuel
 
-    setTimeout(() => {
-        text.style.opacity = "1";
-    }, 600);
+  // Animation apparition image
+  setTimeout(() => {
+    if (image) image.style.opacity = "1";
+    if (image) image.style.transform = "translateY(0)";
+  }, 400);
 
-    setTimeout(() => {
-        bouton.style.opacity = "1";
-    }, 600);
+  // Animation apparition texte principal
+  setTimeout(() => {
+    if (text) text.style.opacity = "1";
+    if (text) text.style.transform = "translateX(0)";
+  }, 600);
 
-    setTimeout(() => {
-        text.style.transform = "translateX(0)";
-    }, 660);
+  // Animation du sous-titre
+  setTimeout(() => {
+    if (text2) text2.style.opacity = "1";
+    if (text2) text2.style.transform = "translateX(0)";
+  }, 800);
 });
 
-document.querySelector(".boutonDecouvrir").addEventListener("click", function () {
-    const topElement = document.querySelector(".top");
-    topElement.style.opacity = "0";  
-    topElement.style.pointerEvents = "none";
 
-    const presentation = document.querySelector(".midPresent");
-    presentation.style.marginTop = "0"; 
-    presentation.style.transition = "margin-top 1s ease-in-out";
-    
-    setTimeout(() => {
-        presentation.style.opacity = "1";  
-    }, 600);
-    
+window.addEventListener('load', () => {
+  const aboutContainer = document.querySelector('.about-container');
+  const aboutDesc = document.querySelector('.about-desc');
+  const skillFills = document.querySelectorAll('.skill-bar .fill');
 
-    
-    
-});
+  // Timeline GSAP
+  const tl = gsap.timeline();
 
-// Quand l'utilisateur clique sur la croix
-document.querySelector(".imgCross").addEventListener("click", function () {
-    const topElement = document.querySelector(".top");
-    
-    topElement.style.opacity = "1";  
-    topElement.style.pointerEvents = "auto";  
+  // 1️⃣ Déplacer et réduire le texte de description
+  tl.to(aboutContainer, {
+    duration: 1,
+    x: 0,                  // reste à gauche
+    y: -50,                // remonte un peu
+    scale: 0.8,            // réduit légèrement
+    ease: "power2.out"
+  });
 
-    const presentation = document.querySelector(".midPresent");
-    presentation.style.marginTop = "100vh";  
-    presentation.style.transition = "margin-top 1s ease";
-    
-
-
-    setTimeout(() => {
-        presentation.style.opacity = "0";
-    }, 800);
-
-    const text = document.querySelector(".textAcc");
-    const image = document.querySelector(".ppAcc");
-    text.style.transform = "translateX(-100px)";
-    text.style.opacity = "0";
-    image.style.opacity = "0";
-        setTimeout(() => {
-        text.style.opacity = "1";
-        text.style.transform = "translateX(0)"; 
-        image.style.opacity = "1";  
-    }, 200);  
+  // 2️⃣ Remplir les jauges progressivement
+  tl.to(skillFills, {
+    duration: 1.2,
+    width: (i, el) => el.style.width, // prend la valeur déjà définie en HTML (ex: 90%)
+    ease: "power2.out",
+    stagger: 0.2
+  }, "-=0.5"); // démarre légèrement avant la fin du mouvement du texte
 });
