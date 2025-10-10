@@ -12,6 +12,7 @@
   font-size: clamp(2rem, 5vw, 3rem);
   color: #b400ff;
   margin-bottom: 3rem;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .projects-container {
@@ -82,3 +83,4 @@
   font-size: 0.8rem;
   font-weight: 500;
 }
+

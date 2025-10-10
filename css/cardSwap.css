@@ -73,4 +73,16 @@
   height: 100%;
   object-fit: cover;
   border-radius: 0 0 12px 12px;
+    pointer-events: none; /* empêche d’interagir */
+    user-select: none; /* empêche la sélection */
+    -webkit-user-drag: none; /* empêche le glisser */
+}
+#card-container {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  #card-container {
+    display: none;
+  }
 }

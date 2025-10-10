@@ -20,7 +20,7 @@
   border-radius: 50%;
   border: 4px solid #fff;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
 }
 
 .ppAcc:hover {
@@ -34,4 +34,144 @@
 .portfolioSub {
   font-size: clamp(1rem, 2vw, 1.2em);
   color: #bbb;
+}
+
+/* Boutton reseaux */
+
+.wrapper {
+  display: flex;
+  justify-content: center;   /* centré horizontalement */
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  margin-top: 0px;          /* rapproche du texte */
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #111;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border: 1px solid #8c52ff;
+  box-shadow: 0 0 10px rgba(140, 82, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wrapper .icon a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 13px;
+  background: #8c52ff;
+  color: #fff;
+  padding: 4px 6px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(140, 82, 255, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.wrapper .tooltip::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background: #8c52ff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -40px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.wrapper .icon:hover {
+  background: #8c52ff;
+  color: #fff;
+  box-shadow: 0 0 20px #8c52ff;
+  transform: translateY(-3px);
+}
+
+/* Styles initiaux : boutons cachés et décalés */
+.wrapper li.icon {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Classe pour déclencher l'apparition */
+.wrapper li.icon.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#bgAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* seulement côté photo/texte */
+  height: 100%;
+  pointer-events: none;
+  z-index: 0; /* derrière le contenu */
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 50%, #8c52ff33, transparent 70%);
+}
+
+/* Particules violettes */
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #b400ff;
+  opacity: 0.3; /* au lieu de 0.7 */
+  filter: blur(3px); /* moins intense qu’un flou fort */
+}
+/* Vue 1 : responsive */
+@media (max-width: 767px) {
+  #firstView {
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement */
+    padding-left: 0;         /* supprime le padding de gauche */
+  }
+
+  #firstView .content {
+    margin-left: 0;          /* supprime le margin de gauche */
+    text-align: center;      /* centre texte et image */
+    align-items: center;     /* centre image et texte */
+    gap: 1rem;               /* réduit l'espacement si nécessaire */
+  }
+
+  .ppAcc {
+    width: 180px;
+    height: 180px;           /* réduit un peu la taille de l'image */
+  }
+
+  .portfolioTitle {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .portfolioSub {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+  }
 }

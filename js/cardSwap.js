@@ -122,7 +122,8 @@ window.CardSwap = CardSwap;
 // Initialisation séparée
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
-  new CardSwap(document.getElementById('card-container'), [
+  const cardContainer = document.getElementById('card-container');
+  const cardsData = [
     { 
       title: "&lt;/&gt; Développement de jeux Vidéo", 
       text: "Unreal Engine, Unity",
@@ -130,11 +131,34 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { 
       title: "&lt;/&gt; Développement d'application", 
-      text: "React, JavaScript, CSS..." 
-    },
+      text: `
+        Développement d’applications <strong>desktop</strong> et <strong>mobiles</strong> :<br><br>
+        - <strong>JavaScript</strong> et <strong>Electron</strong> pour des apps multiplateformes.<br>
+        - <strong>C#</strong> et <strong>WPF</strong> pour des outils professionnels.<br>
+        - <strong>Java / Android Studio</strong> pour les projets mobiles.<br><br>
+        Passionné par l’ergonomie, la performance et la fiabilité des applications.
+      `},
     { 
-      title: "🖧 Réseau", 
-      text: "Travaillons ensemble !" 
+      title: "🖧 Réseau & Systèmes", 
+      text: `
+        Mise en place d’infrastructures réseau sécurisées :<br><br>
+        - Configuration de VLAN, DHCP, DNS, et <strong>802.1X</strong>.<br>
+        - Administration de serveurs <strong>Windows</strong> et <strong>Linux</strong>.<br>
+        - Surveillance et diagnostic réseau via outils professionnels.<br><br>
+        Objectif : garantir des connexions stables, rapides et sûres.
+      `
     }
-  ]);
+  ];
+
+  function initCardSwap() {
+    if (window.innerWidth >= 768) {   // seuil
+      new CardSwap(cardContainer, cardsData);
+      cardContainer.style.display = 'block';
+    } else {
+      cardContainer.style.display = 'none';  // cache container
+    }
+  }
+
+  initCardSwap();
+  window.addEventListener('resize', initCardSwap); // recalcul si resize
 });

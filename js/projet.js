@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "JavaScript": "#f7df1e",
     "C++": "#4da6ff",
     "C#": "#ff50a2ff",
-    "CSS": "#2965f1"
+    "IA": "#ff6f61",
+    "Reseau": "#ffb400",
+    "VR": "#1aff6eff",
   };
 
   cards.forEach(card => {

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap');
 /* ======================== */
 /* BODY & GLOBAL            */
 /* ======================== */
@@ -8,7 +9,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #000;
   color: white;
   scroll-behavior: smooth;
@@ -25,6 +26,89 @@ a{
   text-decoration: none;
   color: inherit;
 }
+h2{
+  font-family: 'Orbitron', sans-serif;
+}
+/* Conteneur global pour cubes fixes */
+#globalBgSquares {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0; /* derrière tout le contenu */
+}
+
+/* Carrés violets subtils */
+.bg-square {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: rgba(140, 82, 255, 0.02);
+  transform: rotate(45deg);
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(140, 82, 255, 0.2), 0 0 60px rgba(140, 82, 255, 0.1);
+  will-change: transform, opacity;
+}
+
+/* ======================================= */
+/* VUE 0 - VUE tout le temps présente      */
+/* ======================================= */
+#topName {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffffcc;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(-10px);
+  z-index: 9999;
+  user-select: none;
+  letter-spacing: 1px;
+}
+
+#topName.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ==== Bouton CV Fixe Violet Néon ==== */
+#cvButton {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff80;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #b400ff80; /* Violet doux */
+  transition: 0.2s ease;
+  user-select: none;
+  z-index: 9999;
+}
+
+#cvButton:hover,
+#cvButton:focus {
+  color: #fff;
+  background: #b400ff;
+  border: 1px solid #b400ff;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 20px #fff;
+  box-shadow: 0 0 5px #b400ff,
+              0 0 20px #b400ff,
+              0 0 50px #b400ff;
+}
+
 /* ======================== */
 /* VUE 1 - PREMIÈRE VUE      */
 /* ======================== */
@@ -42,16 +126,18 @@ a{
 #firstView .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: center;   /* centre verticalement dans le conteneur */
+  align-items: center;       /* centre horizontalement l'image et le texte */
   z-index: 2;
   margin-left: 10vw;
-  gap: 1.5rem;
+  gap: 1rem;                 /* espace ajusté entre image et texte */
+  text-align: center;        /* centre le texte sous l'image */
 }
 
 #firstView .content h1 {
   font-size: clamp(2rem, 5vw, 3em);
   margin-bottom: 0;
+  
 }
 
 #firstView .content p {
@@ -66,6 +152,7 @@ a{
   border: 4px solid #fff;
   object-fit: cover;
   opacity: 0;
+  margin-bottom: 0rem;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
 }
@@ -77,6 +164,7 @@ a{
 
 .portfolioTitle, .portfolioSub {
   opacity: 0;
+  margin: 0;
   transform: translateX(-100px);
   transition: opacity 1s ease, transform 1s ease;
 }
@@ -168,6 +256,8 @@ a{
   opacity: 0;
   transform: translateY(50px);
 }
+
+
 
 /* ======================== */
 /* VUE 3 - PROJETS CSS */
