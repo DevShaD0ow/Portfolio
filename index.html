@@ -180,7 +180,7 @@ async function sendMessage() {
   const message = document.getElementById("message").value;
 
   try {
-    const response = await fetch("/api/sendDiscord", {
+    const response = await fetch("discord-3ynpby432-devshad0ows-projects.vercel.app", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message })
