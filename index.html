@@ -162,38 +162,6 @@
       </div>
     </div>
   </section>
-  <!-- VUE 4 - Contact / Discord -->
-<section id="contact-view">
-  <div class="contact-container">
-    <h2>Contacte-moi</h2>
-    <form onsubmit="event.preventDefault(); sendMessage();">
-      <textarea id="message" placeholder="Écris ton message..." required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-  </div>
-</section>
-
-
-
-<script>
-async function sendMessage() {
-  const message = document.getElementById("message").value;
-
-  try {
-    const response = await fetch("https://discord-3ynpby432-devshad0ows-projects.vercel.app", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message })
-    });
-
-    const data = await response.json();
-    alert(data.success ? "Message envoyé !" : "Erreur : " + data.error);
-    if (data.success) document.getElementById("message").value = "";
-  } catch (err) {
-    alert("Erreur réseau : " + err.message);
-  }
-}
-</script>
 
   <div id="madeBy">Made By DevShaD0ow™</div>
 
