@@ -1,19 +1,37 @@
 #aboutMe {
-  width: 100%;
-  min-height: 100vh;
   background: #111;
-  padding: 4rem 6rem;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4rem 6rem;
+  box-sizing: border-box;
+}
+
+.about-scroll {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .about-container {
   max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .about-container h2 {
   font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.about-container .about-desc {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.8;
+  margin-bottom: 3rem;
 }
 
 .about-desc {
@@ -34,19 +52,29 @@
 
 .skill-bar span {
   display: block;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.bar {
+.skill-bar .bar {
   background: #333;
   border-radius: 8px;
   height: 12px;
+  width: 100%;
+  overflow: hidden;
 }
 
-.fill {
+.skill-bar .bar .fill {
   background: linear-gradient(90deg, #b400ff, #6a00ff);
   height: 100%;
   width: 0%;
-  border-radius: 8px;
   transition: width 1s ease;
+  border-radius: 8px;
+}
+
+#aboutMe h2,
+#aboutMe .about-desc,
+#aboutMe .skill-bar {
+  opacity: 0;
+  transform: translateY(50px);
 }

@@ -1,11 +1,12 @@
 #projects-view {
   width: 100%;
   min-height: 100vh;
-  background: #111;
   padding: 4rem 5vw;
+  background: #111;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .section-title {
@@ -20,6 +21,7 @@
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  width: 100%;
 }
 
 .project-card {
@@ -27,41 +29,68 @@
   width: 320px;
   border-radius: 16px;
   overflow: hidden;
-  background: #1b1b1b;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 #b400ff;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 15px #b400ff, 0 0 30px #6a00ff55;
+  box-shadow: 
+    0 0 15px #b400ff, 
+    0 0 30px #6a00ff55, 
+    0 0 50px #6a00ff33 inset;
 }
 
 .project-preview {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  position: relative;
   border-radius: 16px;
 }
 
 .project-card video {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 180px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
   object-fit: cover;
+  pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
+  border-radius: 16px;
+  z-index: 4;
   pointer-events: none; /* bloque tout clic sur la vidéo */
   user-select: none; /* empêche la sélection */
   -webkit-user-drag: none; /* empêche le glisser */
 }
 
+.project-card:hover .project-preview {
+  opacity: 0;
+  z-index: 3;
+}
+
 .project-card:hover video {
   opacity: 1;
+  z-index: 4;
 }
 
 .card-content {
   padding: 1rem;
   color: white;
+  position: relative;
+  z-index: 3;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
 }
 
 .card-content p {
@@ -82,5 +111,6 @@
   border: 1px dashed;
   font-size: 0.8rem;
   font-weight: 500;
+  opacity: 0.9;
 }
 

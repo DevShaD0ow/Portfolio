@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "IA": "#ff6f61",
     "Reseau": "#ffb400",
     "VR": "#1aff6eff",
+    "Jeux": "#ff5733",
   };
 
   cards.forEach(card => {
