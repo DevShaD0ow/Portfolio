@@ -174,16 +174,16 @@
   }
 
   .ppAcc {
-    width: 180px !important;
-    height: 180px !important;
+    width: 500px !important;
+    height: 500px !important;
   }
 
   .portfolioTitle {
-    font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+    font-size: clamp(5rem, 5vw, 2.5rem) !important;
   }
 
   .portfolioSub {
-    font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
+    font-size: clamp(2rem, 2vw, 1.1rem) !important;
   }
 
   #bgAnimation {
@@ -193,5 +193,10 @@
 
   #card-container {
     display: none !important;
+  }
+  .wrapper .icon{
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
   }
 }
