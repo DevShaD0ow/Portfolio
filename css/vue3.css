@@ -114,3 +114,27 @@
   opacity: 0.9;
 }
 
+@media (max-width: 1250px) {
+
+  .project-card {
+    width: 500px !important;
+  }
+  .project-preview{
+    height: 300px;
+  }
+  .section-title {
+    font-size: clamp(6rem, 5vw, 3rem);
+  }
+  .card-content h3 {
+    font-size: 2rem;
+  }
+  .card-content p {
+    font-size: 1.8rem;
+  }
+  .tag {
+    font-size: 1.5rem;  
+  }
+  .projects-container {
+    gap: 4rem;
+  }
+}
