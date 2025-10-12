@@ -117,10 +117,10 @@
 @media (max-width: 1250px) {
 
   .project-card {
-    width: 500px !important;
+    width: 700px !important;
   }
   .project-preview{
-    height: 300px;
+    height: 400px;
   }
   .section-title {
     font-size: clamp(6rem, 5vw, 3rem);
