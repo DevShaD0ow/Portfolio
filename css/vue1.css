@@ -147,30 +147,51 @@
   filter: blur(3px); /* moins intense qu’un flou fort */
 }
 /* Vue 1 : responsive */
-@media (max-width: 767px) {
+@media (max-width: 1250px) {
+  /* VUE 1 */
   #firstView {
-    justify-content: center; /* centre horizontalement */
-    align-items: center;     /* centre verticalement */
-    padding-left: 0;         /* supprime le padding de gauche */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
   }
 
   #firstView .content {
-    margin-left: 0;          /* supprime le margin de gauche */
-    text-align: center;      /* centre texte et image */
-    align-items: center;     /* centre image et texte */
-    gap: 1rem;               /* réduit l'espacement si nécessaire */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    gap: 1rem !important;
+    text-align: center !important;
+    z-index: 2 !important;
   }
 
   .ppAcc {
-    width: 180px;
-    height: 180px;           /* réduit un peu la taille de l'image */
+    width: 180px !important;
+    height: 180px !important;
   }
 
   .portfolioTitle {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
   }
 
   .portfolioSub {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
+  }
+
+  #bgAnimation {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  #card-container {
+    display: none !important;
   }
 }

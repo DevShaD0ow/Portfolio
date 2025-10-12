@@ -119,7 +119,7 @@ class CardSwap {
 window.CardSwap = CardSwap;
 
 // ==========================
-// Initialisation séparée
+// Initialisation conditionnelle
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
   const cardContainer = document.getElementById('card-container');
@@ -150,15 +150,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
+  let cardSwapInstance = null;
+
   function initCardSwap() {
-    if (window.innerWidth >= 768) {   // seuil
-      new CardSwap(cardContainer, cardsData);
+    // Seuil : 1250px = écran "ordinateur", en dessous = tablette / mobile
+    if (window.innerWidth >= 1250) {
       cardContainer.style.display = 'block';
+
+      // Initialise uniquement si pas déjà créé
+      if (!cardSwapInstance) {
+        cardSwapInstance = new CardSwap(cardContainer, cardsData);
+      }
     } else {
-      cardContainer.style.display = 'none';  // cache container
+      // Cache sur mobile / tablette
+      cardContainer.style.display = 'none';
+
+      // Supprime le contenu si besoin
+      if (cardSwapInstance) {
+        clearInterval(cardSwapInstance.interval);
+        cardContainer.innerHTML = '';
+        cardSwapInstance = null;
+      }
     }
   }
 
   initCardSwap();
-  window.addEventListener('resize', initCardSwap); // recalcul si resize
+  window.addEventListener('resize', initCardSwap);
 });
