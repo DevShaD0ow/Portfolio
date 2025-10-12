@@ -82,12 +82,15 @@
 /* Responsive */
 @media (max-width: 1250px) {
 
+  #aboutMe {
+    padding: 1rem 1vw !important;
+  }
   .about-container h2 {
     font-size: clamp(7rem, 4vw, 3rem) !important;
   }
 
   .about-container .about-desc {
-    font-size: clamp(2.5rem, 2vw, 1.3rem) !important;
+    font-size: clamp(3rem, 2vw, 1.3rem) !important;
   }
 
   .skills {
@@ -95,7 +98,7 @@
   }
 
   .skill-bar span {
-    font-size: 2.5rem !important; 
+    font-size: 3rem !important; 
   }
 
   .skill-bar .bar {

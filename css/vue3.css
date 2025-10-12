@@ -119,6 +119,9 @@
   .project-card {
     width: 700px !important;
   }
+  .project-card video {
+    height: 400px ;
+  }
   .project-preview{
     height: 400px;
   }
