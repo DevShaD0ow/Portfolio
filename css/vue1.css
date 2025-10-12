@@ -199,4 +199,7 @@
   height: 90px;
   font-size: 40px;
   }
+  .wrapper{
+    gap: 30px;
+  }
 }
