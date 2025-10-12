@@ -1,7 +1,6 @@
 #firstView {
   height: 100vh;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   padding-left: 5vw;
 }
@@ -9,7 +8,6 @@
 #firstView .content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 1.5rem;
   margin-left: 10vw;
 }
