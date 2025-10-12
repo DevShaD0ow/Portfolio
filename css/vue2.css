@@ -78,3 +78,23 @@
   opacity: 0;
   transform: translateY(50px);
 }
+
+/* Responsive */
+@media (max-width: 1250px) {
+
+  .about-container h2 {
+    font-size: clamp(5rem, 4vw, 3rem) !important;
+  }
+
+  .about-container .about-desc {
+    font-size: clamp(2rem, 2vw, 1.3rem) !important;
+  }
+
+  .skills {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .skill-bar span {
+    font-size: 2rem !important; 
+  }
+}
