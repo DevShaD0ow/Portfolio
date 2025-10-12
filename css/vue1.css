@@ -43,6 +43,7 @@
   gap: 15px;
   list-style: none;
   margin-top: 0px;          /* rapproche du texte */
+  padding-left: 0;
   font-family: "Poppins", sans-serif;
 }
 

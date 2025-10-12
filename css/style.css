@@ -76,7 +76,7 @@ h2{
   transform: translateY(0);
 }
 /* ==== Bouton CV Fixe Violet Néon ==== */
-#cvButton {
+.Button {
   position: fixed;
   top: 20px;
   right: 30px;
@@ -96,8 +96,8 @@ h2{
   z-index: 9999;
 }
 
-#cvButton:hover,
-#cvButton:focus {
+.Button:hover,
+.Button:focus {
   color: #fff;
   background: #b400ff;
   border: 1px solid #b400ff;
@@ -107,6 +107,30 @@ h2{
   box-shadow: 0 0 5px #b400ff,
               0 0 20px #b400ff,
               0 0 50px #b400ff;
+}
+
+#scrollTopButton {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  padding: 10px 15px;
+  font-size: 20px;
+  color: #ffffff80;
+  opacity: 0;
+  background: transparent;
+  top: auto;
+  border: 1px solid #b400ff80;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: transparent;
+  transition: 0.2s ease;
+  user-select: none;
+  z-index: 9999;
+}
+
+#scrollTopButton.visible {
+  opacity: 1;
+  transform: translateX(-10);
 }
 
 /* ======================== */

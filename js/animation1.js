@@ -50,13 +50,16 @@ window.addEventListener('load', () => {
 });
 document.addEventListener("scroll", () => {
   const topName = document.getElementById("topName");
+  const topbutton = document.getElementById("scrollTopButton");
   const firstView = document.getElementById("firstView");
   const firstViewHeight = firstView.offsetHeight;
 
   if (window.scrollY > firstViewHeight - 100) {
     topName.classList.add("visible");
+    topbutton.classList.add("visible");
   } else {
     topName.classList.remove("visible");
+    topbutton.classList.remove("visible");
   }
 });
 
@@ -108,3 +111,15 @@ function generateFixedSquares(containerSelector, numberOfSquares = 5) {
 
 // Génération globale
 generateFixedSquares('#globalBgSquares', 25);
+
+
+//smooth scroll top
+document.getElementById("scrollTopButton").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  // Animation douce jusqu'en haut
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
