@@ -18,6 +18,9 @@ body, html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+body{
+    overflow-x: hidden;
+}
 
 body::-webkit-scrollbar {
   display: none;
