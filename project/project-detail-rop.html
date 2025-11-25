@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relic of the Past - Détails du Projet</title>
+    <link rel="icon" type="image/png" href="../assets/LogoSite.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+
+<body>
+    <!-- Back Button -->
+    <a href="../index.html" class="back-button">Retour au portfolio</a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-label">Jeu d'Énigmes Asymétriques</div>
+            <h1 class="hero-title">RELIC OF THE PAST</h1>
+            <p class="hero-subtitle">Un jeu d'énigmes innovant où le joueur alterne en temps réel entre un humain et un
+                robot pour résoudre des puzzles coopératifs en solo</p>
+        </div>
+        <div class="scroll-indicator">Découvrir</div>
+    </section>
+
+    <!-- Objectifs Section -->
+    <section class="objectifs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Notre Mission</div>
+                <h2 class="section-title">Objectifs du Projet</h2>
+            </div>
+
+            <div class="objectif-content fade-in">
+                <div class="objectif-text">
+                    <h3>Gameplay Asymétrique Unique</h3>
+                    <p>Le concept central du jeu repose sur le contrôle de deux personnages aux capacités
+                        complémentaires. L'humain peut interagir avec l'environnement, résoudre des énigmes logiques et
+                        peut accéder à des zones restreintes,
+                        tandis que le robot possède des capacités physiques.
+                    </p>
+                    <p>Le système de changement de personnage est instantané, permettant une fluidité dans le gameplay
+                        et encourageant le joueur à penser avec les deux personnages simultanément pour progresser.</p>
+                </div>
+                <div class="objectif-media">
+                    <video src="../assets/videos/relic-of-the-past/VideoROP.mp4" autoplay loop muted
+                        playsinline></video>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-1">
+                <div class="objectif-text">
+                    <h3>Énigmes Coopératives Solo</h3>
+                    <p>Chaque puzzle nécessite l'utilisation coordonnée des deux personnages. Les énigmes sont conçues
+                        pour exploiter les forces de chaque personnage tout en minimisant leurs faiblesses respectives.
+                    </p>
+                    <p>La difficulté augmente progressivement, introduisant de nouveaux mécanismes et combinaisons de
+                        compétences pour maintenir l'engagement du joueur tout au long de l'aventure.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">🧩</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informations Techniques -->
+    <section class="info-technique">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Spécifications</div>
+                <h2 class="section-title">Informations Techniques</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Type de Projet</div>
+                    <div class="tech-value">Jeu d'Énigmes</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Moteur de Jeu</div>
+                    <div class="tech-value">Unreal Engine 5</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Genre</div>
+                    <div class="tech-value">Puzzle / Aventure</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Plateformes</div>
+                    <div class="tech-value">PC</div>
+                </div>
+            </div>
+
+            <div class="tech-grid" style="margin-top: 2rem;">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Langages & Technologies</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">AI Behavior Trees</span>
+                        <span class="tech-tag">Unreal Motion Graphics</span>
+                    </div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Systèmes de Jeu</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Character Switching</span>
+                        <span class="tech-tag">Puzzle System</span>
+                        <span class="tech-tag">Companion AI</span>
+                        <span class="tech-tag">Save System</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Méthodologies -->
+    <section class="methodologies">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Processus</div>
+                <h2 class="section-title">Méthodologies & Techniques</h2>
+            </div>
+            <div class="method-grid">
+                <div class="method-item fade-in">
+                    <div class="method-content">
+                        <h3 class="method-title">Système de Changement de Personnage</h3>
+                        <p class="method-description">Implémentation d'un système de possession de personnage fluide
+                            permettant le changement instantané. Utilisation du système de GameMode d'Unreal pour gérer
+                            les transitions et maintenir l'état du jeu.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Architecture:</strong>
+                                <span>Single Controller, Multiple Pawns</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Transition:</strong>
+                                <span>Changement instantané avec caméra smooth</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">🔄</div>
+                    </div>
+                </div>
+
+                <div class="method-item fade-in fade-in-delay-1">
+                    <div class="method-content">
+                        <h3 class="method-title">Intelligence Artificielle Contextuelle</h3>
+                        <p class="method-description">Développement d'un système d'IA utilisant Behavior Trees pour
+                            créer un comportement de compagnon intelligent qui assiste
+                            naturellement le joueur.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Système:</strong>
+                                <span>Behavior Trees</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Adaptatif:</strong>
+                                <span>Ajustement dynamique au joueur</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">🧠</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Médias -->
+    <section class="galerie">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Aperçu Visuel</div>
+                <h2 class="section-title">Galerie Médias</h2>
+            </div>
+            <div class="media-grid">
+                <div class="media-item fade-in">
+                    <div class="media-placeholder">🖼️</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Environnement</div>
+                        <div class="media-description">Temple mystérieux à explorer</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-1">
+                    <video src="../assets/videos/relic-of-the-past/VideoROP.mp4" loop muted playsinline></video>
+                    <div class="media-overlay">
+                        <div class="media-title">Gameplay</div>
+                        <div class="media-description">Résolution de puzzles asymétriques</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-2">
+                    <div class="media-placeholder">⚙️</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Mécaniques</div>
+                        <div class="media-description">Système de coopération</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Relic of the Past - Projet de Jeu par Alexis Tirant</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        // Parallax hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+                heroContent.style.opacity = 1 - (scrolled / 700);
+            }
+        });
+
+        // Lecture vidéo au survol
+        document.querySelectorAll('.media-item video').forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    </script>
+</body>
+
+</html>

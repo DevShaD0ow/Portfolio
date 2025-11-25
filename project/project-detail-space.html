@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter - Détails du Projet</title>
+    <link rel="icon" type="image/png" href="../assets/LogoSite.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+
+<body>
+    <a href="../index.html" class="back-button">Retour au portfolio</a>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-label">Arcade Spatial Classique</div>
+            <h1 class="hero-title">SPACE SHOOTER</h1>
+            <p class="hero-subtitle">Jeu de tir spatial développé sous Unreal Engine où le joueur doit détruire des
+                vagues d'astéroïdes et survivre le plus longtemps possible</p>
+        </div>
+        <div class="scroll-indicator">Découvrir</div>
+    </section>
+
+    <section class="objectifs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Notre Mission</div>
+                <h2 class="section-title">Objectifs du Projet</h2>
+            </div>
+
+            <div class="objectif-content fade-in">
+                <div class="objectif-text">
+                    <h3>Gameplay Arcade Intense</h3>
+                    <p>Recréation d'un gameplay arcade classique avec des contrôles réactifs et une difficulté
+                        progressive. Le joueur contrôle un vaisseau spatial et doit détruire des astéroïdes tout en
+                        évitant les collisions.</p>
+                    <p>Le système de score encourage la prise de risque avec des multiplicateurs pour les chaînes de
+                        destruction et les manœuvres audacieuses.</p>
+                </div>
+                <div class="objectif-media">
+                    <video src="../assets/videos/space-shooter/SP.mp4" autoplay loop muted playsinline></video>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-1">
+                <div class="objectif-text">
+                    <h3>Système de Particules Avancé</h3>
+                    <p>Utilisation du système Niagara d'Unreal Engine pour créer des effets visuels spectaculaires lors
+                        des explosions d'astéroïdes et des tirs du vaisseau.</p>
+                    <p>Les particules réagissent dynamiquement à l'environnement et créent une expérience visuelle
+                        immersive qui renforce le sentiment de puissance du joueur.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">✨</div>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-2">
+                <div class="objectif-text">
+                    <h3>Physique Spatiale Réaliste</h3>
+                    <p>Simulation d'une physique spatiale simplifiée mais convaincante avec inertie et momentum. Les
+                        astéroïdes se fragmentent de manière réaliste et leurs débris conservent une partie de la
+                        vélocité initiale.</p>
+                    <p>Le vaisseau du joueur possède une physique arcade améliorée qui offre un contrôle précis tout en
+                        maintenant une sensation de mouvement spatial authentique.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">🌌</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-technique">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Spécifications</div>
+                <h2 class="section-title">Informations Techniques</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Type de Projet</div>
+                    <div class="tech-value">Arcade Shooter</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Moteur de Jeu</div>
+                    <div class="tech-value">Unreal Engine 5</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Genre</div>
+                    <div class="tech-value">Arcade / Action</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Plateformes</div>
+                    <div class="tech-value">PC</div>
+                </div>
+            </div>
+
+            <div class="tech-grid" style="margin-top: 2rem;">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Langages & Technologies</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">Niagara VFX</span>
+                        <span class="tech-tag">Physics System</span>
+                    </div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Systèmes</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Score System</span>
+                        <span class="tech-tag">Wave Spawning</span>
+                        <span class="tech-tag">Particle Effects</span>
+                        <span class="tech-tag">Power-ups</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="methodologies">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Processus</div>
+                <h2 class="section-title">Méthodologies & Techniques</h2>
+            </div>
+            <div class="method-grid">
+                <div class="method-item fade-in">
+                    <div class="method-content">
+                        <h3 class="method-title">Génération Procédurale d'Astéroïdes</h3>
+                        <p class="method-description">Système de spawn dynamique qui génère des astéroïdes avec des
+                            tailles, formes et trajectoires variées. L'algorithme ajuste la difficulté en fonction du
+                            score du joueur.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Variation:</strong>
+                                <span>3 tailles, trajectoires aléatoires</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Difficulté:</strong>
+                                <span>Scalable avec le score</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">🪐</div>
+                    </div>
+                </div>
+
+                <div class="method-item fade-in fade-in-delay-1">
+                    <div class="method-content">
+                        <h3 class="method-title">Effets Visuels avec Niagara</h3>
+                        <p class="method-description">Création d'effets de particules optimisés qui maintiennent un
+                            framerate élevé même avec plusieurs explosions simultanées. Utilisation de GPU particles
+                            pour la performance.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Particles:</strong>
+                                <span>GPU-accelerated</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Performance:</strong>
+                                <span>60+ FPS constant</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">💥</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="galerie">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Aperçu Visuel</div>
+                <h2 class="section-title">Galerie Médias</h2>
+            </div>
+            <div class="media-grid">
+                <div class="media-item fade-in">
+                    <div class="media-placeholder">🚀</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Vaisseau</div>
+                        <div class="media-description">Design spatial</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-1">
+                    <video src="../assets/videos/space-shooter/SP.mp4" loop muted playsinline></video>
+                    <div class="media-overlay">
+                        <div class="media-title">Action</div>
+                        <div class="media-description">Destruction d'astéroïdes</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-2">
+                    <div class="media-placeholder">⭐</div>
+                    <div class="media-overlay">
+                        <div class="media-title">VFX</div>
+                        <div class="media-description">Effets Niagara</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Space Shooter - Arcade Game par Alexis Tirant</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+                heroContent.style.opacity = 1 - (scrolled / 700);
+            }
+        });
+
+        document.querySelectorAll('.media-item video').forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -3,10 +3,12 @@
 /* BODY & GLOBAL            */
 /* ======================== */
 
-*{
+* {
   user-select: none;
 }
-body, html {
+
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
@@ -18,20 +20,24 @@ body, html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-body{
-    overflow-x: hidden;
+
+body {
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
-a{
+
+a {
   text-decoration: none;
   color: inherit;
 }
-h2{
+
+h2 {
   font-family: 'Orbitron', sans-serif;
 }
+
 /* Conteneur global pour cubes fixes */
 #globalBgSquares {
   position: fixed;
@@ -41,7 +47,8 @@ h2{
   height: 100%;
   pointer-events: none;
   overflow: visible;
-  z-index: 0; /* derrière tout le contenu */
+  z-index: 0;
+  /* derrière tout le contenu */
 }
 
 /* Carrés violets subtils */
@@ -78,6 +85,7 @@ h2{
   opacity: 1;
   transform: translateY(0);
 }
+
 /* ==== Bouton CV Fixe Violet Néon ==== */
 .Button {
   position: fixed;
@@ -93,7 +101,8 @@ h2{
   background: transparent;
   cursor: pointer;
   box-shadow: transparent;
-  border: 1px solid #b400ff80; /* Violet doux */
+  border: 1px solid #b400ff80;
+  /* Violet doux */
   transition: 0.2s ease;
   user-select: none;
   z-index: 9999;
@@ -105,11 +114,11 @@ h2{
   background: #b400ff;
   border: 1px solid #b400ff;
   text-shadow: 0 0 5px #fff,
-               0 0 10px #fff,
-               0 0 20px #fff;
+    0 0 10px #fff,
+    0 0 20px #fff;
   box-shadow: 0 0 5px #b400ff,
-              0 0 20px #b400ff,
-              0 0 50px #b400ff;
+    0 0 20px #b400ff,
+    0 0 50px #b400ff;
 }
 
 #scrollTopButton {
@@ -151,7 +160,124 @@ h2{
   text-align: right;
 }
 
+/* ======================== */
+/* ANIMATIONS GLOBALES      */
+/* ======================== */
 
+/* Animation fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation slideInLeft */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation slideInRight */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation pulse */
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Animation bounce */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation glow */
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(180, 0, 255, 0.5), 0 0 10px rgba(180, 0, 255, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(180, 0, 255, 0.8), 0 0 40px rgba(180, 0, 255, 0.5);
+  }
+}
+
+/* Classes utilitaires pour animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Amélioration des transitions globales */
+section {
+  transition: all 0.3s ease;
+}
+
+a,
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effet de survol amélioré pour tous les liens */
+a:not(.Button):hover {
+  transform: translateY(-2px);
+}
+
+/* Smooth scrolling amélioré */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Animation des sections au chargement */
+section {
+  animation: fadeInUp 1s ease-out;
+}
 
 /* Responsive */
 @media (max-width: 1250px) {
@@ -160,12 +286,14 @@ h2{
     max-width: 90%;
     height: auto;
   }
-#scrollTopButton{
-  bottom:70px !important;
-  font-size: 50px !important;
-  padding: 20px 30px !important;
-}
-   .Button{
+
+  #scrollTopButton {
+    bottom: 70px !important;
+    font-size: 50px !important;
+    padding: 20px 30px !important;
+  }
+
+  .Button {
     font-size: 40px;
     top: 30px;
     padding: 20px 30px;
@@ -175,8 +303,8 @@ h2{
     font-size: 2rem;
     top: 50px;
   }
+
   #madeBy {
     font-size: 1.5rem !important;
   }
 }
-

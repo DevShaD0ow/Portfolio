@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Person Shooter - Détails du Projet</title>
+    <link rel="icon" type="image/png" href="../assets/LogoSite.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+
+<body>
+    <a href="../index.html" class="back-button">Retour au portfolio</a>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-label">Projet IA Tactique</div>
+            <h1 class="hero-title">THIRD PERSON SHOOTER</h1>
+            <p class="hero-subtitle">Jeu de tir à la troisième personne avec IA avancée utilisant Behavior Trees et
+                Environment Query System pour des combats tactiques immersifs</p>
+        </div>
+        <div class="scroll-indicator">Découvrir</div>
+    </section>
+
+    <section class="objectifs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Notre Mission</div>
+                <h2 class="section-title">Objectifs du Projet</h2>
+            </div>
+
+            <div class="objectif-content fade-in">
+                <div class="objectif-text">
+                    <h3>Intelligence Artificielle Tactique</h3>
+                    <p>Développement d'ennemis intelligents capables de coopérer, de prendre des couvertures
+                        stratégiques et d'adapter leurs tactiques en fonction de la situation du combat. L'IA utilise le
+                        système EQS pour analyser l'environnement.</p>
+                    <p>Les ennemis peuvent flanquer le joueur, appeler des renforts et coordonner leurs attaques pour
+                        créer des situations de combat challengeantes et réalistes.</p>
+                </div>
+                <div class="objectif-media">
+                    <video src="../assets/videos/third-person-shooter/VideoTS.mp4" autoplay loop muted
+                        playsinline></video>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-1">
+                <div class="objectif-text">
+                    <h3>Behavior Trees Avancés</h3>
+                    <p>Utilisation extensive des Behavior Trees d'Unreal Engine pour gérer les décisions des IA. Chaque
+                        ennemi possède un arbre de comportement complexe avec des tâches, services et decorators
+                        personnalisés.</p>
+                    <p>Les arbres de comportement incluent des états pour la patrouille, la recherche, le combat, le
+                        repli tactique et la coordination d'équipe.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">🎯</div>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-2">
+                <div class="objectif-text">
+                    <h3>Environment Query System</h3>
+                    <p>L'EQS permet aux IA d'interroger dynamiquement leur environnement pour trouver les meilleures
+                        positions tactiques, que ce soit pour attaquer, se mettre à couvert ou se repositionner.</p>
+                    <p>Le système évalue des centaines de points potentiels en temps réel selon des critères comme la
+                        visibilité, la distance, la sécurité et l'angle d'attaque.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">🗺️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-technique">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Spécifications</div>
+                <h2 class="section-title">Informations Techniques</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Type de Projet</div>
+                    <div class="tech-value">TPS / IA</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Moteur de Jeu</div>
+                    <div class="tech-value">Unreal Engine 5</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Genre</div>
+                    <div class="tech-value">Action / Shooter</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Plateformes</div>
+                    <div class="tech-value">PC</div>
+                </div>
+            </div>
+
+            <div class="tech-grid" style="margin-top: 2rem;">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Langages & Technologies</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">Behavior Trees</span>
+                        <span class="tech-tag">EQS</span>
+                    </div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Systèmes IA</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Tactical AI</span>
+                        <span class="tech-tag">Cover System</span>
+                        <span class="tech-tag">Team Coordination</span>
+                        <span class="tech-tag">Perception System</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="methodologies">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Processus</div>
+                <h2 class="section-title">Méthodologies & Techniques</h2>
+            </div>
+            <div class="method-grid">
+                <div class="method-item fade-in">
+                    <div class="method-content">
+                        <h3 class="method-title">Perception et Détection</h3>
+                        <p class="method-description">Système de perception multi-sensoriel utilisant la vue et l'ouïe
+                            pour détecter le joueur. Les IA réagissent aux sons des coups de feu et peuvent investiguer
+                            des positions suspectes.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Système:</strong>
+                                <span>AI Perception Component</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Sens:</strong>
+                                <span>Vue, Ouïe, Dégâts</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">👁️</div>
+                    </div>
+                </div>
+
+                <div class="method-item fade-in fade-in-delay-1">
+                    <div class="method-content">
+                        <h3 class="method-title">Système de Couverture Dynamique</h3>
+                        <p class="method-description">Les IA utilisent l'EQS pour identifier et utiliser les couvertures
+                            disponibles dans l'environnement. Elles évaluent constamment si leur position actuelle est
+                            compromise et cherchent de meilleures positions.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Queries:</strong>
+                                <span>FindCover, FindFlanking</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Décisions:</strong>
+                                <span>Temps réel, contextuel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">🛡️</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="galerie">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Aperçu Visuel</div>
+                <h2 class="section-title">Galerie Médias</h2>
+            </div>
+            <div class="media-grid">
+                <div class="media-item fade-in">
+                    <div class="media-placeholder">🎮</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Combat</div>
+                        <div class="media-description">Affrontements tactiques</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-1">
+                    <video src="../assets/videos/third-person-shooter/VideoTS.mp4" loop muted playsinline></video>
+                    <div class="media-overlay">
+                        <div class="media-title">IA en Action</div>
+                        <div class="media-description">Comportements tactiques</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-2">
+                    <div class="media-placeholder">⚡</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Comportements</div>
+                        <div class="media-description">Behavior Trees</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Third Person Shooter - Projet IA par Alexis Tirant</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+                heroContent.style.opacity = 1 - (scrolled / 700);
+            }
+        });
+
+        document.querySelectorAll('.media-item video').forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    </script>
+</body>
+
+</html>

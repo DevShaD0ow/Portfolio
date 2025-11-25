@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PacMan - Détails du Projet</title>
+    <link rel="icon" type="image/png" href="../assets/LogoSite.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+
+<body>
+    <a href="../index.html" class="back-button">Retour au portfolio</a>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-label">Classique Arcade Revisité</div>
+            <h1 class="hero-title">PACMAN</h1>
+            <p class="hero-subtitle">Recréation fidèle du classique Namco dans le cadre d'un TP en développement de jeux
+                vidéo avec IA des fantômes et systèmes de jeu authentiques</p>
+        </div>
+        <div class="scroll-indicator">Découvrir</div>
+    </section>
+
+    <section class="objectifs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Notre Mission</div>
+                <h2 class="section-title">Objectifs du Projet</h2>
+            </div>
+
+            <div class="objectif-content fade-in">
+                <div class="objectif-text">
+                    <h3>Fidélité au Jeu Original</h3>
+                    <h3>Intelligence Artificielle des Fantômes</h3>
+                    <p>Implémentation des 4 fantômes (Blinky, Pinky, Inky, Clyde) chacun avec son comportement unique
+                        comme dans le je jeu original. Chaque fantôme a sa propre stratégie de poursuite et
+                        personnalité.</p>
+                    <p>Le système utilise des Behavior Trees pour gérer les états de chasse, fuite, scatter et effrayé,
+                        avec des transitions fluides entre ces états selon les événements du jeu.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">👻</div>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-2">
+                <div class="objectif-text">
+                    <h3>Système de Grille et Pathfinding</h3>
+                    <p>Développement d'un système de navigation basé sur une grille qui permet aux fantômes de naviguer
+                        efficacement dans le labyrinthe. Le pathfinding utilise l'algorithme A* adapté aux contraintes
+                        du jeu.</p>
+                    <p>Le système gère les collisions, les intersections et les décisions de direction en respectant les
+                        règles du jeu original - les fantômes ne peuvent pas faire demi-tour sauf dans des cas
+                        spécifiques.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">🗺️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-technique">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Spécifications</div>
+                <h2 class="section-title">Informations Techniques</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Type de Projet</div>
+                    <div class="tech-value">Arcade Classic</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Moteur de Jeu</div>
+                    <div class="tech-value">Unreal Engine 5</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Genre</div>
+                    <div class="tech-value">Arcade / Maze</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Plateformes</div>
+                    <div class="tech-value">PC</div>
+                </div>
+            </div>
+
+            <div class="tech-grid" style="margin-top: 2rem;">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Langales & Technologies</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">AI Behavior Trees</span>
+                        <span class="tech-tag">Grid System</span>
+                    </div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Systèmes IA</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">A* Pathfinding</span>
+                        <span class="tech-tag">State Machine</span>
+                        <span class="tech-tag">Ghost Behaviors</span>
+                        <span class="tech-tag">Grid Navigation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="methodologies">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Processus</div>
+                <h2 class="section-title">Méthodologies & Techniques</h2>
+            </div>
+            <div class="method-grid">
+                <div class="method-item fade-in">
+                    <div class="method-content">
+                        <h3 class="method-title">Comportements Individuels des Fantômes</h3>
+                        <p class="method-description">Chaque fantôme possède une personnalité unique : Blinky pourchasse
+                            directement, Pinky anticipe, Inky utilise une stratégie ambush et Clyde alterne entre
+                            poursuite et fuite selon la distance.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>IA:</strong>
+                                <span>4 comportements uniques</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>États:</strong>
+                                <span>Chase, Scatter, Frightened</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">🎮</div>
+                    </div>
+                </div>
+
+                <div class="method-item fade-in fade-in-delay-1">
+                    <div class="method-content">
+                        <h3 class="method-title">Navigation sur Grille</h3>
+                        <p class="method-description">Système de grille discret qui divise le labyrinthe en cases.
+                            Chaque entité se déplace de case en case avec interpolation visuelle pour un mouvement
+                            fluide.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Grille:</strong>
+                                <span>28x31 cases standards</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Pathfinding:</strong>
+                                <span>A* optimisé</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">📍</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="galerie">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Aperçu Visuel</div>
+                <h2 class="section-title">Galerie Médias</h2>
+            </div>
+            <div class="media-grid">
+                <div class="media-item fade-in">
+                    <div class="media-placeholder">🕹️</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Labyrinthe</div>
+                        <div class="media-description">Fidèle à l'original</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-1">
+                    <video src="../assets/videos/pacman/VideoV4.mp4" loop muted playsinline></video>
+                    <div class="media-overlay">
+                        <div class="media-title">Gameplay</div>
+                        <div class="media-description">IA des fantômes</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-2">
+                    <div class="media-placeholder">⭐</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Power-ups</div>
+                        <div class="media-description">Mécaniques classiques</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PacMan - Projet Académique par Alexis Tirant</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+                heroContent.style.opacity = 1 - (scrolled / 700);
+            }
+        });
+
+        document.querySelectorAll('.media-item video').forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    </script>
+</body>
+
+</html>

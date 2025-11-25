@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replication de Tâches - Détails du Projet</title>
+    <link rel="icon" type="image/png" href="../assets/LogoSite.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+
+<body>
+    <a href="../index.html" class="back-button">Retour au portfolio</a>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-label">Système Multijoueur Avancé</div>
+            <h1 class="hero-title">REPLICATION DE TÂCHES</h1>
+            <p class="hero-subtitle">Projet technique de système de réplication multijoueur avec gestion des tâches
+                synchronisées et transfert de données entre niveaux</p>
+        </div>
+        <div class="scroll-indicator">Découvrir</div>
+    </section>
+
+    <section class="objectifs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Notre Mission</div>
+                <h2 class="section-title">Objectifs du Projet</h2>
+            </div>
+
+            <div class="objectif-content fade-in">
+                <div class="objectif-text">
+                    <h3>Réplication Serveur-Client</h3>
+                    <p>Implémentation d'un système robuste de réplication utilisant l'architecture client-serveur
+                        d'Unreal Engine. Le serveur fait autorité et synchronise l'état avec tous les clients connectés.
+                    </p>
+                    <p>Le système gère automatiquement la réplication des propriétés critiques, les appels RPC (Remote
+                        Procedure Calls) et la résolution des conflits de synchronisation.</p>
+                </div>
+                <div class="objectif-media">
+                    <video src="../assets/videos/replication/amongUs.mp4" autoplay loop muted playsinline></video>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-1">
+                <div class="objectif-text">
+                    <h3>Système de Tâches Partagées</h3>
+                    <p>Développement d'un système où plusieurs joueurs peuvent interagir avec les mêmes tâches. Le
+                        système suit la progression de chaque tâche et synchronise les états entre tous les clients en
+                        temps réel.</p>
+                    <p>Les tâches incluent des mini-jeux interactifs dont l'état doit rester cohérent même avec
+                        plusieurs joueurs qui tentent de les compléter simultanément.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">✅</div>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-2">
+                <div class="objectif-text">
+                    <h3>Transfert de Données Entre Niveaux</h3>
+                    <p>Implémentation d'un système de persistence qui permet de sauvegarder l'état du jeu lors du
+                        changement de niveau et de le restaurer correctement pour tous les joueurs connectés.</p>
+                    <p>Le Game Instance est utilisé pour stocker les données persistantes et synchroniser l'état entre
+                        les serveurs lors des transitions de niveaux seamless ou par chargement traditionnel.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">💾</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-technique">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Spécifications</div>
+                <h2 class="section-title">Informations Techniques</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Type de Projet</div>
+                    <div class="tech-value">Système Réseau</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Moteur de Jeu</div>
+                    <div class="tech-value">Unreal Engine 5</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Architecture</div>
+                    <div class="tech-value">Client-Serveur</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Plateformes</div>
+                    <div class="tech-value">PC (Multijoueur)</div>
+                </div>
+            </div>
+
+            <div class="tech-grid" style="margin-top: 2rem;">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Langages & Technologies</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">Replication</span>
+                        <span class="tech-tag">RPC</span>
+                    </div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Systèmes Réseau</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Actor Replication</span>
+                        <span class="tech-tag">Property Replication</span>
+                        <span class="tech-tag">Game State</span>
+                        <span class="tech-tag">Save System</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="methodologies">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Processus</div>
+                <h2 class="section-title">Méthodologies & Techniques</h2>
+            </div>
+            <div class="method-grid">
+                <div class="method-item fade-in">
+                    <div class="method-content">
+                        <h3 class="method-title">Architecture de Réplication</h3>
+                        <p class="method-description">Utilisation des variables répliquées (UPROPERTY Replicated) et des
+                            fonctions RPC (Server, Client, Multicast) pour synchroniser les données et les événements
+                            entre le serveur et les clients.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Mode:</strong>
+                                <span>Server Authoritative</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Optimisation:</strong>
+                                <span>Relevancy & Dormancy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">🔄</div>
+                    </div>
+                </div>
+
+                <div class="method-item fade-in fade-in-delay-1">
+                    <div class="method-content">
+                        <h3 class="method-title">Gestion des États de Jeu</h3>
+                        <p class="method-description">Utilisation du GameState et PlayerState pour stocker et répliquer
+                            les données de jeu. Ce pattern permet une séparation claire entre la logique serveur et la
+                            présentation client.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Persistence:</strong>
+                                <span>Game Instance + Save Game</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Sync:</strong>
+                                <span>OnRep Notifications</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">🎯</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="galerie">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Aperçu Visuel</div>
+                <h2 class="section-title">Galerie Médias</h2>
+            </div>
+            <div class="media-grid">
+                <div class="media-item fade-in">
+                    <div class="media-placeholder">🌐</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Réseau</div>
+                        <div class="media-description">Architecture client-serveur</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-1">
+                    <video src="../assets/videos/replication/amongUs.mp4" loop muted playsinline></video>
+                    <div class="media-overlay">
+                        <div class="media-title">Gameplay Multi</div>
+                        <div class="media-description">Tâches synchronisées</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-2">
+                    <div class="media-placeholder">📡</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Réplication</div>
+                        <div class="media-description">Système RPC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Replication de Tâches - Projet Réseau par Alexis Tirant</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+                heroContent.style.opacity = 1 - (scrolled / 700);
+            }
+        });
+
+        document.querySelectorAll('.media-item video').forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    </script>
+</body>
+
+</html>

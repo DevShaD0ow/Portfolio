@@ -12,18 +12,17 @@
 #firstView .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* centre verticalement dans le conteneur */
-  align-items: center;       /* centre horizontalement l'image et le texte */
+  justify-content: center;
+  align-items: center;
   z-index: 2;
   margin-left: 10vw;
-  gap: 1rem;                 /* espace ajusté entre image et texte */
-  text-align: center;        /* centre le texte sous l'image */
+  gap: 1rem;
+  text-align: center;
 }
 
 #firstView .content h1 {
   font-size: clamp(2rem, 5vw, 3em);
   margin-bottom: 0;
-  
 }
 
 #firstView .content p {
@@ -41,11 +40,27 @@
   margin-bottom: 0rem;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
+  box-shadow: 0 0 20px rgba(180, 0, 255, 0.4);
+  animation: profileGlow 3s ease-in-out infinite;
+}
+
+@keyframes profileGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(180, 0, 255, 0.4), 0 0 40px rgba(180, 0, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(180, 0, 255, 0.6), 0 0 60px rgba(180, 0, 255, 0.4);
+  }
 }
 
 .ppAcc:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-play-state: paused;
+  box-shadow: 0 0 40px rgba(180, 0, 255, 0.8), 0 0 80px rgba(180, 0, 255, 0.5);
 }
 
 .portfolioTitle {
@@ -64,21 +79,22 @@
   font-size: clamp(1rem, 2vw, 1.2em);
   color: #bbb;
 }
-.portfolioTitle.visible, .portfolioSub.visible {
+
+.portfolioTitle.visible,
+.portfolioSub.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-
-/* Boutton reseaux */
+/* Bouton reseaux */
 
 .wrapper {
   display: flex;
-  justify-content: center;   /* centré horizontalement */
+  justify-content: center;
   align-items: center;
   gap: 15px;
   list-style: none;
-  margin-top: 0px;          /* rapproche du texte */
+  margin-top: 0px;
   padding-left: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -145,7 +161,7 @@
   background: #8c52ff;
   color: #fff;
   box-shadow: 0 0 20px #8c52ff;
-  transform: translateY(-3px);
+  transform: translateY(-5px) scale(1.1);
 }
 
 /* Styles initiaux : boutons cachés et décalés */
@@ -165,10 +181,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%; /* seulement côté photo/texte */
+  width: 50%;
   height: 100%;
   pointer-events: none;
-  z-index: 0; /* derrière le contenu */
+  z-index: 0;
   overflow: hidden;
   background: radial-gradient(circle at 30% 50%, #8c52ff33, transparent 70%);
 }
@@ -179,11 +195,13 @@
   width: 8px;
   height: 8px;
   background: #b400ff;
-  opacity: 0.3; /* au lieu de 0.7 */
-  filter: blur(3px); /* moins intense qu’un flou fort */
+  opacity: 0.3;
+  filter: blur(3px);
 }
+
 /* Vue 1 : responsive */
 @media (max-width: 1250px) {
+
   /* VUE 1 */
   #firstView {
     display: flex !important;
@@ -230,12 +248,14 @@
   #card-container {
     display: none !important;
   }
-  .wrapper .icon{
-  width: 90px;
-  height: 90px;
-  font-size: 40px;
+
+  .wrapper .icon {
+    width: 90px;
+    height: 90px;
+    font-size: 40px;
   }
-  .wrapper{
+
+  .wrapper {
     gap: 30px;
   }
 }

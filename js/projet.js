@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "Reseau": "#ffb400",
     "VR": "#1aff6eff",
     "Jeux": "#ff5733",
+    "AirConsole": "#33f80bff",
+    "HTML": "#ff6f61",
+    "CSS": "#ffb400"
   };
 
   cards.forEach(card => {
@@ -23,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const src = card.dataset.video;
     console.log("Vidéo src :", src);
 
-    if(src){
+    if (src) {
       video.src = src;
       video.load();
     }
 
-      card.addEventListener("mouseenter", async () => {
+    card.addEventListener("mouseenter", async () => {
       // Si c'est la carte AIS
       if (card.dataset.video.includes("AIS.mp4")) {
         video.playbackRate = 2.0; // 🎬 vitesse x2
@@ -36,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         video.playbackRate = 1.0; // normal pour les autres
       }
 
-      try { await video.play(); } 
-      catch(err) { console.warn("Lecture vidéo impossible", err); }
+      try { await video.play(); }
+      catch (err) { console.warn("Lecture vidéo impossible", err); }
     });
 
 
@@ -48,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Tags ---
     const tagsContainer = card.querySelector(".tags");
-    if(card.dataset.tags){
+    if (card.dataset.tags) {
       const tags = card.dataset.tags.split(",").map(t => t.trim());
       console.log("Tags pour la carte :", tags);
       tags.forEach(tag => {
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- Clic pour ouvrir le lien ---
-    if(card.dataset.link){
+    if (card.dataset.link) {
       card.style.cursor = "pointer";
       card.addEventListener("click", () => {
         window.open(card.dataset.link, "_blank");

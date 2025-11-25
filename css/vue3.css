@@ -32,16 +32,19 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
   box-shadow: 0 0 0 #b400ff;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 
-    0 0 15px #b400ff, 
-    0 0 30px #6a00ff55, 
-    0 0 50px #6a00ff33 inset;
+  transform: translateY(-12px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+  box-shadow:
+    0 0 20px #b400ff,
+    0 0 40px #6a00ff88,
+    0 0 60px #6a00ff44 inset,
+    0 15px 40px rgba(180, 0, 255, 0.3);
 }
 
 .project-preview {
@@ -63,12 +66,11 @@
   object-fit: cover;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   border-radius: 16px;
   z-index: 4;
-  pointer-events: none; /* bloque tout clic sur la vidéo */
-  user-select: none; /* empêche la sélection */
-  -webkit-user-drag: none; /* empêche le glisser */
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .project-card:hover .project-preview {
@@ -79,6 +81,7 @@
 .project-card:hover video {
   opacity: 1;
   z-index: 4;
+  transform: scale(1.05);
 }
 
 .card-content {
@@ -118,29 +121,36 @@
 
   .project-card {
     width: 700px !important;
-    box-shadow: 
-    0 0 15px #b400ff, 
-    0 0 30px #6a00ff55, 
-    0 0 50px #6a00ff33 inset;
+    box-shadow:
+      0 0 15px #b400ff,
+      0 0 30px #6a00ff55,
+      0 0 50px #6a00ff33 inset;
   }
+
   .project-card video {
-    height: 400px ;
-  }
-  .project-preview{
     height: 400px;
   }
+
+  .project-preview {
+    height: 400px;
+  }
+
   .section-title {
     font-size: clamp(6rem, 5vw, 3rem);
   }
+
   .card-content h3 {
     font-size: 2rem;
   }
+
   .card-content p {
     font-size: 1.8rem;
   }
+
   .tag {
-    font-size: 1.5rem;  
+    font-size: 1.5rem;
   }
+
   .projects-container {
     gap: 4rem;
   }

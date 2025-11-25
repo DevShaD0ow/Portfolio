@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./css/vue2.css">
   <link rel="stylesheet" href="./css/vue3.css">
   <link rel="stylesheet" href="./css/vue4.css">
+  <link rel="stylesheet" href="./css/vue5.css">
   <link rel="stylesheet" href="./css/cardSwap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -127,13 +128,95 @@
     </div>
   </section>
 
-  <!-- VUE 3 -->
+  <!-- VUE 3 - ÉTUDES -->
+  <section id="education">
+    <div class="education-container">
+      <h2>Mon Parcours</h2>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <!-- Événement 1: BUT Info IUT Orsay -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3><i class="fas fa-graduation-cap"></i> BUT Informatique</h3>
+            <div class="institution">IUT d'Orsay - Université Paris-Saclay</div>
+            <div class="period">Septembre 2023 - Présent</div>
+            <div class="description">
+              Formation en informatique avec spécialisation en développement et réseaux.
+              Apprentissage des fondamentaux du développement logiciel, de la programmation orientée objet,
+              et des technologies web modernes.
+            </div>
+            <span class="timeline-badge">Formation initiale</span>
+          </div>
+          <div class="timeline-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+        </div>
+
+        <!-- Événement 2: Échange UQAC -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3><i class="fas fa-plane-departure"></i> Échange International</h3>
+            <div class="institution">UQAC - Université du Québec à Chicoutimi</div>
+            <div class="period">Janvier 2025</div>
+            <div class="description">
+              Semestre d'échange académique au Québec pour découvrir de nouvelles méthodes d'enseignement
+              et approfondir mes compétences en développement de jeux vidéo dans un contexte international.
+            </div>
+            <span class="timeline-badge">Échange</span>
+          </div>
+          <div class="timeline-icon">
+            <i class="fas fa-plane-departure"></i>
+          </div>
+        </div>
+
+        <!-- Événement 3: Stage DGA -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3><i class="fas fa-network-wired"></i> Stage en Réseaux</h3>
+            <div class="institution">DGA EP - Direction Générale de l'Armement, Saclay</div>
+            <div class="period">Mai 2025</div>
+            <div class="description">
+              Stage technique spécialisé en administration et sécurité des réseaux informatiques.
+              Mise en pratique des compétences en infrastructures réseau et cybersécurité dans un environnement
+              professionnel exigeant.
+            </div>
+            <span class="timeline-badge">Stage</span>
+          </div>
+          <div class="timeline-icon">
+            <i class="fas fa-network-wired"></i>
+          </div>
+        </div>
+
+        <!-- Événement 4: Bidiplomation UQAC -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3><i class="fas fa-gamepad"></i> Bidiplomation en Développement de Jeux</h3>
+            <div class="institution">UQAC - Université du Québec à Chicoutimi</div>
+            <div class="period">Août 2025 - Futur</div>
+            <div class="description">
+              Programme de double diplôme en Baccalauréat en Développement de Jeux Vidéo.
+              Formation approfondie en game design, moteurs de jeu (Unity, Unreal), programmation gameplay,
+              et production de jeux vidéo professionnels.
+            </div>
+            <span class="timeline-badge">Double Diplôme</span>
+          </div>
+          <div class="timeline-icon">
+            <i class="fas fa-gamepad"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VUE 4 - PROJETS -->
   <section id="projects-view">
     <h2 class="section-title" tag="pr">Mes Projets</h2>
     <div class="projects-container">
 
-      <div class="project-card" data-tags="Unity, C#, VR" data-video="./assets/AIS.mp4"
-        data-link="https://github.com/Fan-tome14/AloneInSpace">
+      <div class="project-card" data-tags="Unity, C#, VR" data-video="./assets/videos/alone-in-space/AIS.mp4"
+        data-link="project/project-detail-ais.html">
         <img src="./assets/previewAIS.png" alt="Preview Projet Alone In Space" class="project-preview">
         <video muted loop playsinline></video>
         <div class="card-content">
@@ -142,8 +225,8 @@
           <div class="tags"></div>
         </div>
       </div>
-      <div class="project-card" data-tags="Unreal, C++, IA" data-video="./assets/VideoROP.mp4"
-        data-link="https://github.com/DevShaD0ow/Enigmes">
+      <div class="project-card" data-tags="Unreal, C++, IA" data-video="./assets/videos/relic-of-the-past/VideoROP.mp4"
+        data-link="project/project-detail-rop.html">
         <img src="./assets/previewROP.png" alt="Preview Projet enigmes" class="project-preview">
         <video muted loop playsinline></video>
         <div class="card-content">
@@ -153,8 +236,8 @@
           <div class="tags"></div>
         </div>
       </div>
-      <div class="project-card" data-tags="Unreal, C++,IA" data-video="./assets/VideoTS.mp4"
-        data-link="https://github.com/DevShaD0ow/ShooterAI">
+      <div class="project-card" data-tags="Unreal, C++,IA" data-video="./assets/videos/third-person-shooter/VideoTS.mp4"
+        data-link="project/project-detail-ts.html">
         <img src="./assets/previewTS.png" alt="Preview Projet Tower defense" class="project-preview">
         <video muted loop playsinline></video>
         <div class="card-content">
@@ -165,8 +248,8 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++, IA" data-video="./assets/Brick.mp4"
-        data-link="https://github.com/DevShaD0ow/SuperBonus">
+      <div class="project-card" data-tags="Unreal, C++, IA" data-video="./assets/videos/brick-buster/Brick.mp4"
+        data-link="project/project-detail-brick.html">
         <img src="./assets/previewSB1.png" alt="Preview Projet brick buster" class="project-preview">
         <video muted loop playsinline></video>
         <div class="card-content">
@@ -176,8 +259,20 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++, Jeux" data-video="./assets/SP.mp4"
-        data-link="https://github.com/DevShaD0ow/SpaceShooter">
+      <div class="project-card" data-tags="AirConsole, HTML , CSS, JavaScript"
+        data-video="./assets/videos/bull-run-party/invest.mp4" data-link="project/project-detail-bullrun.html">
+        <img src="./assets/previewInvest.png" alt="Preview Projet Space shooter" class="project-preview">
+        <video muted loop playsinline></video>
+        <div class="card-content">
+          <h3>Bull Run Party</h3>
+          <p>Party game développé pour AirConsole, où des traders s'arrachent des lingots d'or dans un marché totalement
+            instable et chaotique.</p>
+          <div class="tags"></div>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="Unreal, C++, Jeux" data-video="./assets/videos/space-shooter/SP.mp4"
+        data-link="project/project-detail-space.html">
         <img src="./assets/previewSP1.png" alt="Preview Projet Space shooter" class="project-preview">
         <video muted loop playsinline></video>
         <div class="card-content">
@@ -186,8 +281,9 @@
           <div class="tags"></div>
         </div>
       </div>
-      <div class="project-card" data-tags="Unreal, C++, Reseau" data-video="./assets/amongUs.mp4"
-        data-link="https://github.com/DevShaD0ow/AmongUs">
+
+      <div class="project-card" data-tags="Unreal, C++, Reseau" data-video="./assets/videos/replication/amongUs.mp4"
+        data-link="project/project-detail-replication.html">
         <img src="./assets/previewAmongUs.png" alt="Preview Projet replication" class="project-preview">
         <video muted loop playsinline></video>
         <div class="card-content">
@@ -197,8 +293,8 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++, IA" data-video="./assets/VideoV4.mp4"
-        data-link="https://github.com/Fan-tome14/PacMan">
+      <div class="project-card" data-tags="Unreal, C++, IA" data-video="./assets/videos/pacman/VideoV4.mp4"
+        data-link="project/project-detail-pacman.html">
         <img src="./assets/previewPac.png" alt="Preview Projet pacman" class="project-preview">
         <video muted loop playsinline></video>
         <div class="card-content">
@@ -207,8 +303,8 @@
           <div class="tags"></div>
         </div>
       </div>
-      <div class="project-card" data-tags="Unreal, C++,Jeux" data-video="./assets/VideoTD.mp4"
-        data-link="https://github.com/Fan-tome14/TowerDefense">
+      <div class="project-card" data-tags="Unreal, C++,Jeux" data-video="./assets/videos/tower-defense/VideoTD.mp4"
+        data-link="project/project-detail-td.html">
         <img src="./assets/previewTD.png" alt="Preview Projet Tower defense" class="project-preview">
         <video muted loop playsinline></video>
         <div class="card-content">
@@ -232,6 +328,7 @@
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="./js/animation1.js" defer></script>
   <script src="./js/aboutAnimation.js" defer></script>
+  <script src="./js/educationAnimation.js" defer></script>
   <script src="./js/cardSwap.js"></script>
   <script src="./js/projet.js" defer></script>
 </body>

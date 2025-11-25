@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Defense - Détails du Projet</title>
+    <link rel="icon" type="image/png" href="../assets/LogoSite.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+
+<body>
+    <a href="../index.html" class="back-button">Retour au portfolio</a>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-label">Stratégie Défensive</div>
+            <h1 class="hero-title">TOWER DEFENSE</h1>
+            <p class="hero-subtitle">Jeu de stratégie développé sous Unreal Engine où le joueur doit stopper des vagues
+                d'ennemis en plaçant stratégiquement des tourelles défensives</p>
+        </div>
+        <div class="scroll-indicator">Découvrir</div>
+    </section>
+
+    <section class="objectifs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Notre Mission</div>
+                <h2 class="section-title">Objectifs du Projet</h2>
+            </div>
+
+            <div class="objectif-content fade-in">
+                <div class="objectif-text">
+                    <h3>Système de Placement de Tourelles</h3>
+                    <p>Développement d'un système intuitif permettant au joueur de placer, améliorer et vendre des
+                        tourelles sur une grille prédéfinie. Le système valide automatiquement les emplacements et gère
+                        les ressources du joueur.</p>
+                    <p>Chaque type de tourelle possède des caractéristiques uniques (portée, dégâts, cadence de tir) et
+                        peut être amélioré pour devenir plus efficace contre les vagues d'ennemis croissantes.</p>
+                </div>
+                <div class="objectif-media">
+                    <video src="../assets/videos/tower-defense/VideoTD.mp4" autoplay loop muted playsinline></video>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-1">
+                <div class="objectif-text">
+                    <h3>IA Ennemie et Pathfinding</h3>
+                    <p>Les ennemis suivent un chemin prédéfini depuis leur point d'apparition jusqu'à la base du joueur.
+                        Le système de navigation utilise le NavMesh d'Unreal pour un pathfinding fluide et performant.
+                    </p>
+                    <p>Différents types d'ennemis avec des vitesses, résistances et comportements variés créent de la
+                        diversité tactique. Certains sont rapides mais fragiles, d'autres lents mais résistants.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">🚶</div>
+                </div>
+            </div>
+
+            <div class="objectif-content fade-in fade-in-delay-2">
+                <div class="objectif-text">
+                    <h3>Système de Vagues Progressives</h3>
+                    <p>Gestion d'un système de vagues qui augmente progressivement en difficulté avec plus d'ennemis,
+                        des types plus résistants et des combinaisons tactiques challengeantes.</p>
+                    <p>Entre les vagues, le joueur dispose de temps de préparation pour optimiser ses défenses,
+                        améliorer ses tourelles et planifier sa stratégie pour la vague suivante.</p>
+                </div>
+                <div class="objectif-media">
+                    <div class="media-placeholder">📈</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-technique">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Spécifications</div>
+                <h2 class="section-title">Informations Techniques</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Type de Projet</div>
+                    <div class="tech-value">Tower Defense</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Moteur de Jeu</div>
+                    <div class="tech-value">Unreal Engine 5</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Genre</div>
+                    <div class="tech-value">Stratégie / Défense</div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Plateformes</div>
+                    <div class="tech-value">PC</div>
+                </div>
+            </div>
+
+            <div class="tech-grid" style="margin-top: 2rem;">
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Langages & Technologies</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">NavMesh</span>
+                        <span class="tech-tag">Grid System</span>
+                    </div>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-label">Systèmes de Jeu</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Tower Placement</span>
+                        <span class="tech-tag">Wave System</span>
+                        <span class="tech-tag">Resource Management</span>
+                        <span class="tech-tag">Targeting System</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="methodologies">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Processus</div>
+                <h2 class="section-title">Méthodologies & Techniques</h2>
+            </div>
+            <div class="method-grid">
+                <div class="method-item fade-in">
+                    <div class="method-content">
+                        <h3 class="method-title">Système de Ciblage des Tourelles</h3>
+                        <p class="method-description">Les tourelles détectent automatiquement les ennemis dans leur
+                            portée et sélectionnent leur cible selon différentes stratégies (premier, dernier, plus
+                            fort, plus proche).</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Détection:</strong>
+                                <span>Sphere Overlap dynamique</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Priorités:</strong>
+                                <span>4 modes de ciblage</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">🎯</div>
+                    </div>
+                </div>
+
+                <div class="method-item fade-in fade-in-delay-1">
+                    <div class="method-content">
+                        <h3 class="method-title">Équilibrage et Progressions</h3>
+                        <p class="method-description">Système d'équilibrage économique où le joueur gagne des ressources
+                            en éliminant des ennemis et doit gérer son budget entre construction et amélioration de
+                            tourelles.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Économie:</strong>
+                                <span>Ressources risk/reward</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Difficulté:</strong>
+                                <span>Scaling exponentiel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <div class="media-placeholder">💰</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="galerie">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Aperçu Visuel</div>
+                <h2 class="section-title">Galerie Médias</h2>
+            </div>
+            <div class="media-grid">
+                <div class="media-item fade-in">
+                    <div class="media-placeholder">🗺️</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Carte</div>
+                        <div class="media-description">Terrain tactique</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-1">
+                    <video src="../assets/videos/tower-defense/VideoTD.mp4" loop muted playsinline></video>
+                    <div class="media-overlay">
+                        <div class="media-title">Combat</div>
+                        <div class="media-description">Tourelles vs ennemis</div>
+                    </div>
+                </div>
+                <div class="media-item fade-in fade-in-delay-2">
+                    <div class="media-placeholder">⚡</div>
+                    <div class="media-overlay">
+                        <div class="media-title">Tourelles</div>
+                        <div class="media-description">Variété et upgrades</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tower Defense - Jeu de Stratégie par Alexis Tirant</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+                heroContent.style.opacity = 1 - (scrolled / 700);
+            }
+        });
+
+        document.querySelectorAll('.media-item video').forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    </script>
+</body>
+
+</html>
