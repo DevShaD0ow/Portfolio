@@ -80,11 +80,12 @@
 }
 
 /* Responsive */
-@media (max-width: 1250px) {
+@media (max-width: 950px) {
 
   #aboutMe {
     padding: 1rem 1vw !important;
   }
+
   .about-container h2 {
     font-size: clamp(7rem, 4vw, 3rem) !important;
   }
@@ -98,7 +99,7 @@
   }
 
   .skill-bar span {
-    font-size: 3rem !important; 
+    font-size: 3rem !important;
   }
 
   .skill-bar .bar {

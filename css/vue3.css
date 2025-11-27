@@ -1,5 +1,5 @@
 /* ======================== */
-/* VUE 5 - SECTION ÉTUDES   */
+/* SECTION ÉTUDES           */
 /* ======================== */
 
 #education {
@@ -230,9 +230,9 @@
 }
 
 /* Responsive MOBILE*/
-@media (max-width: 1250px) {
+@media (max-width: 950px) {
     #education {
-        padding: 4rem 1rem;
+        padding: 4rem 2rem;
         min-height: auto;
     }
 
@@ -246,11 +246,11 @@
     }
 
     .timeline::before {
-        left: 30px;
+        left: 50px;
     }
 
     .timeline-line {
-        left: 30px;
+        left: 50px;
     }
 
     .timeline-item {
@@ -258,13 +258,14 @@
         align-items: flex-start;
         padding-left: 0;
         margin-bottom: 3rem;
-        margin-left: 80px;
+        margin-left: 100px;
+        margin-right: 2rem;
         gap: 0;
     }
 
     .timeline-content {
-        width: calc(100% - 80px);
-        padding: 1.5rem;
+        width: 100%;
+        padding: 2rem;
     }
 
     .timeline-content h3 {
@@ -290,9 +291,10 @@
     }
 
     .timeline-icon {
-        left: 30px;
+        left: -90px;
         width: 80px;
         height: 80px;
+        transform: translateX(0);
     }
 
     .timeline-icon i {
@@ -300,6 +302,6 @@
     }
 
     .timeline-item:hover .timeline-icon {
-        transform: translateX(0) scale(1.1) rotate(360deg);
+        transform: scale(1.1) rotate(360deg);
     }
 }
