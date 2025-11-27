@@ -338,7 +338,7 @@ section {
 }
 
 /* Responsive */
-@media (max-width: 950px) {
+@media (max-width: 1250px) {
   .project-card {
     width: 100%;
     max-width: 90%;

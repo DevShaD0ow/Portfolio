@@ -117,7 +117,7 @@
   opacity: 0.9;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
 
   .project-card {
     width: 700px !important;

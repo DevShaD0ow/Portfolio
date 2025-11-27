@@ -149,7 +149,7 @@
 }
 
 /* Responsive Mobile */
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
     #contact {
         min-height: auto;
         padding: 4rem 2rem;
