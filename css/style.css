@@ -368,7 +368,7 @@ section {
 }
 
 /* Responsive */
-@media (max-width: 950px) {
+@media (max-width: 1250px) {
   .project-card {
     width: 100%;
     max-width: 90%;
@@ -401,11 +401,11 @@ section {
     right: 20px;
     left: 20px;
     min-width: unset;
-    font-size: 35px;
-    padding: 30px 40px;
+    font-size: 40px;
+    padding: 45px 60px;
   }
 
   .toast-notification i {
-    font-size: 45px;
+    font-size: 65px;
   }
 }
