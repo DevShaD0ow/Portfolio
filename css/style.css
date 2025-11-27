@@ -279,6 +279,36 @@ section {
   animation: fadeInUp 1s ease-out;
 }
 
+/* Responsive */
+@media (max-width: 1250px) {
+  .project-card {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+  }
+
+  #scrollTopButton {
+    bottom: 70px !important;
+    font-size: 50px !important;
+    padding: 20px 30px !important;
+  }
+
+  .Button {
+    font-size: 40px;
+    top: 30px;
+    padding: 20px 30px;
+  }
+
+  #topName {
+    font-size: 2rem;
+    top: 50px;
+  }
+
+  #madeBy {
+    font-size: 1.5rem !important;
+  }
+}
+
 /* ======================== */
 /* TOAST NOTIFICATIONS      */
 /* ======================== */
@@ -338,7 +368,7 @@ section {
 }
 
 /* Responsive */
-@media (max-width: 1250px) {
+@media (max-width: 950px) {
   .project-card {
     width: 100%;
     max-width: 90%;
