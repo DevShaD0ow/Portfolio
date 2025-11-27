@@ -80,7 +80,7 @@
 }
 
 /* Responsive */
-@media (max-width: 950px) {
+@media (max-width: 1200px) {
 
   #aboutMe {
     padding: 1rem 1vw !important;

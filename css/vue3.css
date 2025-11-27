@@ -230,7 +230,7 @@
 }
 
 /* Responsive MOBILE*/
-@media (max-width: 950px) {
+@media (max-width: 1200px) {
     #education {
         padding: 4rem 2rem;
         min-height: auto;
