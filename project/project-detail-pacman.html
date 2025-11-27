@@ -22,6 +22,13 @@
             <h1 class="hero-title">PACMAN</h1>
             <p class="hero-subtitle">Recréation fidèle du classique Namco dans le cadre d'un TP en développement de jeux
                 vidéo avec IA des fantômes et systèmes de jeu authentiques</p>
+            <a href="https://github.com/Fan-tome14/PacMan" target="_blank" class="github-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                Voir sur GitHub
+            </a>
         </div>
         <div class="scroll-indicator">Découvrir</div>
     </section>
@@ -44,22 +51,22 @@
                         avec des transitions fluides entre ces états selon les événements du jeu.</p>
                 </div>
                 <div class="objectif-media">
-                    <div class="media-placeholder">👻</div>
+                    <video src="../assets/showCase/pacman/VideoV4.mp4" autoplay loop muted playsinline></video>
                 </div>
             </div>
 
             <div class="objectif-content fade-in fade-in-delay-2">
                 <div class="objectif-text">
-                    <h3>Système de Grille et Pathfinding</h3>
-                    <p>Développement d'un système de navigation basé sur une grille qui permet aux fantômes de naviguer
-                        efficacement dans le labyrinthe. Le pathfinding utilise l'algorithme A* adapté aux contraintes
-                        du jeu.</p>
-                    <p>Le système gère les collisions, les intersections et les décisions de direction en respectant les
-                        règles du jeu original - les fantômes ne peuvent pas faire demi-tour sauf dans des cas
-                        spécifiques.</p>
+                    <h3>Système de nav mesh et Pathfinding</h3>
+                    <p>Développement d'un système de navigation basé sur un nav mesh qui permet aux fantômes de
+                        naviguer
+                        efficacement dans le labyrinthe.</p>
+                    <p>Le système gère les collisions, les intersections et les décisions de direction en respectant
+                        les
+                        règles du jeu original.</p>
                 </div>
                 <div class="objectif-media">
-                    <div class="media-placeholder">🗺️</div>
+                    <img href="../assets/showCase/pacman/nav.png">
                 </div>
             </div>
         </div>
@@ -138,29 +145,7 @@
                         </div>
                     </div>
                     <div class="method-media">
-                        <div class="media-placeholder">🎮</div>
-                    </div>
-                </div>
-
-                <div class="method-item fade-in fade-in-delay-1">
-                    <div class="method-content">
-                        <h3 class="method-title">Navigation sur Grille</h3>
-                        <p class="method-description">Système de grille discret qui divise le labyrinthe en cases.
-                            Chaque entité se déplace de case en case avec interpolation visuelle pour un mouvement
-                            fluide.</p>
-                        <div class="method-details">
-                            <div class="method-detail-item">
-                                <strong>Grille:</strong>
-                                <span>28x31 cases standards</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Pathfinding:</strong>
-                                <span>A* optimisé</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="method-media">
-                        <div class="media-placeholder">📍</div>
+                        <img src="../assets/showCase/pacman/tree.png">
                     </div>
                 </div>
             </div>
@@ -175,24 +160,17 @@
             </div>
             <div class="media-grid">
                 <div class="media-item fade-in">
-                    <div class="media-placeholder">🕹️</div>
+                    <img src="../assets/showCase/pacman/map.png">
                     <div class="media-overlay">
                         <div class="media-title">Labyrinthe</div>
                         <div class="media-description">Fidèle à l'original</div>
                     </div>
                 </div>
                 <div class="media-item fade-in fade-in-delay-1">
-                    <video src="../assets/videos/pacman/VideoV4.mp4" loop muted playsinline></video>
+                    <video src="../assets/showCase/pacman/VideoV4.mp4" loop muted playsinline></video>
                     <div class="media-overlay">
                         <div class="media-title">Gameplay</div>
                         <div class="media-description">IA des fantômes</div>
-                    </div>
-                </div>
-                <div class="media-item fade-in fade-in-delay-2">
-                    <div class="media-placeholder">⭐</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Power-ups</div>
-                        <div class="media-description">Mécaniques classiques</div>
                     </div>
                 </div>
             </div>
@@ -204,49 +182,8 @@
             <p>&copy; 2024 PacMan - Projet Académique par Alexis Tirant</p>
         </div>
     </footer>
+    <script src="../js/scroll.js"></script>
 
-    <script>
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-            observer.observe(el);
-        });
-
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroContent = document.querySelector('.hero-content');
-
-            if (heroContent && scrolled < window.innerHeight) {
-                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-                heroContent.style.opacity = 1 - (scrolled / 700);
-            }
-        });
-
-        document.querySelectorAll('.media-item video').forEach(video => {
-            video.addEventListener('mouseenter', () => {
-                video.play();
-            });
-            video.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
-        });
-    </script>
 </body>
 
 </html>

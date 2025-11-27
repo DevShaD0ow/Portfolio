@@ -21,7 +21,14 @@
             <div class="hero-label">Simulation Physique Avancée</div>
             <h1 class="hero-title">BRICK BUSTER</h1>
             <p class="hero-subtitle">Simulation IA où une grue contrôlée par un système intelligent lâche des briques
-                sur un ouvrier qui doit les éviter</p>
+                sur un ouvrier qui doit les attraper</p>
+            <a href="https://github.com/DevShaD0ow/SuperBonus" target="_blank" class="github-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                Voir sur GitHub
+            </a>
         </div>
         <div class="scroll-indicator">Découvrir</div>
     </section>
@@ -33,44 +40,15 @@
                 <h2 class="section-title">Objectifs du Projet</h2>
             </div>
 
-            <div class="objectif-content fade-in">
-                <div class="objectif-text">
-                    <h3>Simulation Physique Réaliste</h3>
-                    <p>Utilisation du moteur physique d'Unreal Engine pour simuler de manière réaliste la chute des
-                        briques, leur impact au sol et leurs interactions avec l'environnement et les personnages.</p>
-                    <p>Chaque brique possède des propriétés physiques réalistes (masse, friction, restitution) pour
-                        créer des situations imprévisibles et challengeantes.</p>
-                </div>
-                <div class="objectif-media">
-                    <video src="../assets/videos/brick-buster/Brick.mp4" autoplay loop muted playsinline></video>
-                </div>
-            </div>
-
             <div class="objectif-content fade-in fade-in-delay-1">
                 <div class="objectif-text">
-                    <h3>IA Prédictive de la Grue</h3>
-                    <p>L'IA de la grue calcule les trajectoires optimales pour larguer les briques de manière à
-                        anticiper les mouvements du joueur. Elle ajuste sa stratégie en fonction du comportement
+                    <h3>IA Prédictive de l'ouvrier</h3>
+                    <p>L'IA de l'ouvrier calcule les trajectoires optimales pour attraper les briques de manière à
+                        anticiper les mouvements de la grue. Elle ajuste sa stratégie en fonction du comportement
                         observé.</p>
-                    <p>Le système utilise des algorithmes de prédiction de trajectoire pour déterminer où lâcher la
-                        brique pour qu'elle ait le plus de chances de toucher l'ouvrier.</p>
                 </div>
                 <div class="objectif-media">
-                    <div class="media-placeholder">🏗️</div>
-                </div>
-            </div>
-
-            <div class="objectif-content fade-in fade-in-delay-2">
-                <div class="objectif-text">
-                    <h3>IA d'Évitement de l'Ouvrier</h3>
-                    <p>L'ouvrier est contrôlé par une IA qui doit détecter les briques qui tombent et calculer la
-                        meilleure trajectoire d'évitement en temps réel, tout en gérant les contraintes de
-                        l'environnement.</p>
-                    <p>Le système d'évitement utilise des techniques de pathfinding dynamique et d'analyse de risque
-                        pour survivre le plus longtemps possible.</p>
-                </div>
-                <div class="objectif-media">
-                    <div class="media-placeholder">🏃</div>
+                    <video src="../assets/showCase/brick-buster/Brick.mp4" autoplay loop muted playsinline></video>
                 </div>
             </div>
         </div>
@@ -107,158 +85,27 @@
                     <div class="tech-tags">
                         <span class="tech-tag">C++</span>
                         <span class="tech-tag">Blueprints</span>
-                        <span class="tech-tag">Chaos Physics</span>
-                        <span class="tech-tag">AI Navigation</span>
                     </div>
                 </div>
                 <div class="tech-item fade-in">
                     <div class="tech-label">Systèmes IA</div>
                     <div class="tech-tags">
                         <span class="tech-tag">Prediction System</span>
-                        <span class="tech-tag">Avoidance AI</span>
                         <span class="tech-tag">Physics Simulation</span>
-                        <span class="tech-tag">Pathfinding</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="methodologies">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Processus</div>
-                <h2 class="section-title">Méthodologies & Techniques</h2>
-            </div>
-            <div class="method-grid">
-                <div class="method-item fade-in">
-                    <div class="method-content">
-                        <h3 class="method-title">Calcul de Trajectoire Balistique</h3>
-                        <p class="method-description">Implémentation de calculs physiques précis pour déterminer où une
-                            brique va atterrir en fonction de sa position de départ, de sa vélocité et de l'influence de
-                            la gravité.</p>
-                        <div class="method-details">
-                            <div class="method-detail-item">
-                                <strong>Physique:</strong>
-                                <span>Équations balistiques temps réel</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Précision:</strong>
-                                <span>Prédiction avec marge d'erreur</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="method-media">
-                        <div class="media-placeholder">📐</div>
-                    </div>
-                </div>
-
-                <div class="method-item fade-in fade-in-delay-1">
-                    <div class="method-content">
-                        <h3 class="method-title">Système d'Évitement Dynamique</h3>
-                        <p class="method-description">L'ouvrier utilise des raycasts et des sphere traces pour détecter
-                            les briques incominges et calcule les zones de danger pour déterminer la meilleure direction
-                            d'évitement.</p>
-                        <div class="method-details">
-                            <div class="method-detail-item">
-                                <strong>Détection:</strong>
-                                <span>Multi-trace système</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Réaction:</strong>
-                                <span>
-                                    < 0.5s temps de réponse</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="method-media">
-                        <div class="media-placeholder">🎯</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="galerie">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Aperçu Visuel</div>
-                <h2 class="section-title">Galerie Médias</h2>
-            </div>
-            <div class="media-grid">
-                <div class="media-item fade-in">
-                    <div class="media-placeholder">🏗️</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Environnement</div>
-                        <div class="media-description">Chantier de construction</div>
-                    </div>
-                </div>
-                <div class="media-item fade-in fade-in-delay-1">
-                    <video src="../assets/videos/brick-buster/Brick.mp4" loop muted playsinline></video>
-                    <div class="media-overlay">
-                        <div class="media-title">Simulation</div>
-                        <div class="media-description">IA en action</div>
-                    </div>
-                </div>
-                <div class="media-item fade-in fade-in-delay-2">
-                    <div class="media-placeholder">🧱</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Physique</div>
-                        <div class="media-description">Chaos Physics Engine</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Brick Buster - Simulation IA par Alexis Tirant</p>
+            <p>&copy; 2025 Brick Buster - Simulation IA par Alexis Tirant</p>
         </div>
     </footer>
+    <script src="../js/scroll.js"></script>
 
-    <script>
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-            observer.observe(el);
-        });
-
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroContent = document.querySelector('.hero-content');
-
-            if (heroContent && scrolled < window.innerHeight) {
-                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-                heroContent.style.opacity = 1 - (scrolled / 700);
-            }
-        });
-
-        document.querySelectorAll('.media-item video').forEach(video => {
-            video.addEventListener('mouseenter', () => {
-                video.play();
-            });
-            video.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
-        });
-    </script>
 </body>
 
 </html>

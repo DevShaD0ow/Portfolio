@@ -2,11 +2,13 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  /* ← Centré horizontalement */
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-left: 5vw;
+  padding: 0;
+  /* ← Retire le padding-left */
 }
 
 #firstView .content {
@@ -15,7 +17,8 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
-  margin-left: 10vw;
+  margin: 0;
+  /* ← Retire le margin-left */
   gap: 1rem;
   text-align: center;
 }

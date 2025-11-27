@@ -279,6 +279,64 @@ section {
   animation: fadeInUp 1s ease-out;
 }
 
+/* ======================== */
+/* TOAST NOTIFICATIONS      */
+/* ======================== */
+.toast-notification {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px;
+  z-index: 10001;
+  animation: toastSlideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  min-width: 300px;
+}
+
+.toast-notification i {
+  font-size: 20px;
+}
+
+.toast-notification.success {
+  border-color: #10b981;
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3), 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.toast-notification.success i {
+  color: #10b981;
+}
+
+.toast-notification.error {
+  border-color: #ef4444;
+  box-shadow: 0 8px 32px rgba(239, 68, 68, 0.3), 0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.toast-notification.error i {
+  color: #ef4444;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* Responsive */
 @media (max-width: 1250px) {
   .project-card {
@@ -306,5 +364,18 @@ section {
 
   #madeBy {
     font-size: 1.5rem !important;
+  }
+
+  .toast-notification {
+    top: 100px;
+    right: 20px;
+    left: 20px;
+    min-width: unset;
+    font-size: 35px;
+    padding: 30px 40px;
+  }
+
+  .toast-notification i {
+    font-size: 45px;
   }
 }

@@ -198,6 +198,7 @@ body::-webkit-scrollbar-thumb:hover {
 @keyframes bounce {
 
     0%,
+
     100% {
         transform: translateX(-50%) translateY(0);
     }
@@ -603,4 +604,46 @@ footer p {
 
 .fade-in-delay-3 {
     animation-delay: 0.3s;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--text-dim);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+}
+
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    margin-top: 1rem;
+}
+
+.github-button:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 30px var(--primary-dim), 0 0 60px var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.github-button svg {
+    transition: transform 0.3s ease;
+}
+
+.github-button:hover svg {
+    transform: rotate(360deg);
 }

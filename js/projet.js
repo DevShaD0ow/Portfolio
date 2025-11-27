@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (card.dataset.link) {
       card.style.cursor = "pointer";
       card.addEventListener("click", () => {
-        window.open(card.dataset.link, "_blank");
+        window.location.href = card.dataset.link;
       });
     }
   });
