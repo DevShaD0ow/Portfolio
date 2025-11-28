@@ -1,59 +1,61 @@
+#aboutMe,
+.about-scroll {
+  box-sizing: border-box;
+  overflow: hidden
+}
+
 #aboutMe {
   background: #111;
   color: #fff;
-  overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 6rem;
-  box-sizing: border-box;
+  padding: 4rem 6rem
 }
 
 .about-scroll {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
+  height: 100%
 }
 
 .about-container {
   max-width: 1000px;
   margin: 0 auto;
-  text-align: left;
+  text-align: left
 }
 
 .about-container h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1rem;
+  margin-bottom: 1rem
 }
 
 .about-container .about-desc {
   font-size: clamp(1rem, 2vw, 1.3rem);
   line-height: 1.8;
-  margin-bottom: 3rem;
+  margin-bottom: 3rem
 }
 
 .about-desc {
   font-size: 1.1rem;
   line-height: 1.8;
-  margin-bottom: 3rem;
+  margin-bottom: 3rem
 }
 
 .skills {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 4rem;
+  gap: 2rem 4rem
 }
 
 .skill-bar {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem
 }
 
 .skill-bar span {
   display: block;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem
 }
 
 .skill-bar .bar {
@@ -61,48 +63,46 @@
   border-radius: 8px;
   height: 12px;
   width: 100%;
-  overflow: hidden;
+  overflow: hidden
 }
 
 .skill-bar .bar .fill {
   background: linear-gradient(90deg, #b400ff, #6a00ff);
   height: 100%;
   width: 0%;
-  transition: width 1s ease;
-  border-radius: 8px;
+  transition: width 1s;
+  border-radius: 8px
 }
 
-#aboutMe h2,
 #aboutMe .about-desc,
-#aboutMe .skill-bar {
+#aboutMe .skill-bar,
+#aboutMe h2 {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(50px)
 }
 
-/* Responsive */
-@media (max-width: 1250px) {
-
+@media (max-width:1250px) {
   #aboutMe {
-    padding: 1rem 1vw !important;
+    padding: 1rem 1vw !important
   }
 
   .about-container h2 {
-    font-size: clamp(7rem, 4vw, 3rem) !important;
+    font-size: clamp(7rem, 4vw, 3rem) !important
   }
 
   .about-container .about-desc {
-    font-size: clamp(3rem, 2vw, 1.3rem) !important;
+    font-size: clamp(3rem, 2vw, 1.3rem) !important
   }
 
   .skills {
-    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: repeat(1, 1fr) !important
   }
 
   .skill-bar span {
-    font-size: 3rem !important;
+    font-size: 3rem !important
   }
 
   .skill-bar .bar {
-    height: 20px;
+    height: 20px
   }
 }

@@ -1,3 +1,22 @@
+.back-button,
+.hero-label,
+.hero-title {
+    font-family: Orbitron, sans-serif
+}
+
+.hero,
+.media-item,
+.method-media,
+.objectif-media {
+    overflow: hidden
+}
+
+.back-button,
+.github-button {
+    text-decoration: none;
+    backdrop-filter: blur(10px)
+}
+
 :root {
     --primary: #b400ff;
     --primary-glow: #8c52ff;
@@ -9,42 +28,41 @@
     --dark-3: rgba(255, 255, 255, 0.05);
     --text: #e0e0e0;
     --text-dim: rgba(224, 224, 224, 0.7);
-    --border: rgba(180, 0, 255, 0.3);
+    --border: rgba(180, 0, 255, 0.3)
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none;
+    user-select: none
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: Inter, sans-serif;
     background: var(--dark);
     color: var(--text);
     overflow-x: hidden;
-    line-height: 1.6;
+    line-height: 1.6
 }
 
 body::-webkit-scrollbar {
-    width: 8px;
+    width: 8px
 }
 
 body::-webkit-scrollbar-track {
-    background: #111;
+    background: #111
 }
 
 body::-webkit-scrollbar-thumb {
     background: var(--primary);
-    border-radius: 4px;
+    border-radius: 4px
 }
 
 body::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-glow);
+    background: var(--primary-glow)
 }
 
-/* Back Button */
 .back-button {
     position: fixed;
     top: 20px;
@@ -54,16 +72,13 @@ body::-webkit-scrollbar-thumb:hover {
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
-    background: transparent;
+    background: 0 0;
     border: 1px solid var(--border);
     border-radius: 8px;
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    font-family: 'Orbitron', sans-serif;
+    color: rgba(255, 255, 255, .5);
     font-size: 14px;
     font-weight: 500;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    transition: .3s
 }
 
 .back-button:hover {
@@ -71,46 +86,42 @@ body::-webkit-scrollbar-thumb:hover {
     color: #fff;
     box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-dim);
     text-shadow: 0 0 5px #fff;
-    transform: translateX(-5px);
+    transform: translateX(-5px)
 }
 
 .back-button::before {
     content: '←';
-    font-size: 18px;
+    font-size: 18px
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: center
+}
+
+.hero-bg,
+.hero-bg::before {
+    position: absolute;
+    top: 0;
+    left: 0
 }
 
 .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 30% 50%, rgba(180, 0, 255, 0.3), transparent 70%);
-    z-index: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(180, 0, 255, .3), transparent 70%);
+    z-index: 0
 }
 
 .hero-bg::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg,
-            rgba(0, 0, 0, 0.3) 0%,
-            rgba(0, 0, 0, 0.7) 60%,
-            rgba(0, 0, 0, 1) 100%);
-    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, .7) 60%, #000 100%);
+    z-index: 1
 }
 
 .hero-content {
@@ -119,62 +130,70 @@ body::-webkit-scrollbar-thumb:hover {
     text-align: center;
     max-width: 1200px;
     padding: 0 2rem;
-    animation: fadeInUp 1s ease-out;
+    animation: 1s ease-out fadeInUp
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(30px)
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0)
     }
 }
 
 .hero-label {
-    font-size: 0.9rem;
-    letter-spacing: 0.3em;
+    font-size: .9rem;
+    letter-spacing: .3em;
     text-transform: uppercase;
     color: var(--primary);
     font-weight: 600;
-    margin-bottom: 1rem;
-    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1rem
 }
 
 .hero-title {
-    font-family: 'Orbitron', sans-serif;
     font-size: clamp(3rem, 10vw, 7rem);
     font-weight: 700;
     line-height: 1;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #b400ff 0%, #8c52ff 50%, #b400ff 100%);
+    background: linear-gradient(135deg, #b400ff 0, #8c52ff 50%, #b400ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: glow 3s ease-in-out infinite;
+    animation: 3s ease-in-out infinite glow
+}
+
+.methodologies,
+.objectifs,
+footer {
+    background: var(--dark)
 }
 
 @keyframes glow {
 
     0%,
     100% {
-        filter: drop-shadow(0 0 10px var(--primary)) brightness(1);
+        filter: drop-shadow(0 0 10px var(--primary)) brightness(1)
     }
 
     50% {
-        filter: drop-shadow(0 0 30px var(--primary)) brightness(1.3);
+        filter: drop-shadow(0 0 30px var(--primary)) brightness(1.3)
     }
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    color: var(--text-dim);
-    max-width: 800px;
-    margin: 0 auto;
-    font-weight: 300;
+    color: var(--text-dim)
+}
+
+.scroll-indicator,
+.section-label {
+    font-size: .85rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-family: Orbitron, sans-serif
 }
 
 .scroll-indicator {
@@ -182,77 +201,68 @@ body::-webkit-scrollbar-thumb:hover {
     bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
-    color: var(--primary);
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    animation: bounce 2s infinite;
+    letter-spacing: .2em;
+    animation: 2s infinite bounce;
     z-index: 3;
-    font-family: 'Orbitron', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: center
+}
+
+.media-item,
+.method-media,
+.objectif-media,
+.tech-item {
+    position: relative
 }
 
 @keyframes bounce {
 
     0%,
-
     100% {
-        transform: translateX(-50%) translateY(0);
+        transform: translateX(-50%) translateY(0)
     }
 
     50% {
-        transform: translateX(-50%) translateY(-10px);
+        transform: translateX(-50%) translateY(-10px)
     }
 }
 
 .scroll-indicator::after {
     content: '▼';
     display: block;
-    margin-top: 0.5rem;
+    margin-top: .5rem;
     font-size: 1.2rem;
-    line-height: 1;
+    line-height: 1
 }
 
-/* Container */
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 2rem
 }
 
 section {
-    padding: 5rem 0;
+    padding: 5rem 0
 }
 
-/* Section Headers */
 .section-header {
-    margin-bottom: 3rem;
+    margin-bottom: 3rem
 }
 
 .section-label {
-    font-size: 0.85rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--primary);
+    letter-spacing: .3em;
     font-weight: 600;
-    margin-bottom: 0.8rem;
-    font-family: 'Orbitron', sans-serif;
+    margin-bottom: .8rem
 }
 
 .section-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: Orbitron, sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--text);
-}
-
-/* Objectifs Section */
-.objectifs {
-    background: var(--dark);
+    color: var(--text)
 }
 
 .objectif-content {
@@ -260,43 +270,49 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 4rem
 }
 
-.objectif-content:nth-child(even) {
-    direction: rtl;
+.method-item:nth-child(2n),
+.objectif-content:nth-child(2n) {
+    direction: rtl
 }
 
-.objectif-content:nth-child(even)>* {
-    direction: ltr;
+.method-item:nth-child(2n)>*,
+.objectif-content:nth-child(2n)>* {
+    direction: ltr
 }
 
+.method-title,
 .objectif-text h3 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: Orbitron, sans-serif;
     font-size: 1.8rem;
     color: var(--primary);
-    margin-bottom: 1rem;
+    margin-bottom: 1rem
 }
 
 .objectif-text p {
     color: var(--text-dim);
     font-size: 1.1rem;
     line-height: 1.8;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem
 }
 
 .objectif-media {
-    position: relative;
     border-radius: 15px;
-    overflow: hidden;
     border: 1px solid var(--border);
     box-shadow: 0 0 30px var(--primary-light);
-    transition: all 0.3s ease;
+    transition: .3s
 }
 
 .objectif-media:hover {
     box-shadow: 0 0 50px var(--primary-dim);
-    transform: scale(1.02);
+    transform: scale(1.02)
+}
+
+.method-media,
+.tech-item:hover {
+    box-shadow: 0 0 30px var(--primary-light)
 }
 
 .objectif-media img,
@@ -304,7 +320,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    display: block
 }
 
 .media-placeholder {
@@ -315,18 +331,18 @@ section {
     justify-content: center;
     background: linear-gradient(135deg, var(--dark-2), var(--dark-3));
     color: var(--text-dim);
-    font-size: 4rem;
+    font-size: 4rem
 }
 
-/* Info Technique */
+.galerie,
 .info-technique {
-    background: #111;
+    background: #111
 }
 
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 2rem
 }
 
 .tech-item {
@@ -334,79 +350,67 @@ section {
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
-    position: relative;
+    transition: .3s
 }
 
 .tech-item:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 30px var(--primary-light);
-    transform: translateY(-3px);
+    transform: translateY(-3px)
 }
 
 .tech-label {
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
+    font-size: .85rem;
+    letter-spacing: .2em;
     text-transform: uppercase;
     color: var(--primary);
-    margin-bottom: 0.8rem;
+    margin-bottom: .8rem;
     font-weight: 600;
-    font-family: 'Orbitron', sans-serif;
+    font-family: Orbitron, sans-serif
 }
 
 .tech-value {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--text);
+    color: var(--text)
+}
+
+.method-detail-item strong,
+.tech-tag {
+    color: var(--primary);
+    font-size: .85rem;
+    font-family: Orbitron, sans-serif
 }
 
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-top: 1rem;
+    gap: .8rem;
+    margin-top: 1rem
+}
+
+.method-grid,
+.method-item {
+    display: grid;
+    gap: 3rem
 }
 
 .tech-tag {
     background: var(--primary-light);
-    color: var(--primary);
-    padding: 0.4rem 1rem;
+    padding: .4rem 1rem;
     border-radius: 20px;
-    font-size: 0.85rem;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
-    font-family: 'Orbitron', sans-serif;
+    transition: .3s
 }
 
 .tech-tag:hover {
-    background: rgba(180, 0, 255, 0.2);
+    background: rgba(180, 0, 255, .2);
     transform: translateY(-2px);
-    box-shadow: 0 0 10px var(--primary-light);
-}
-
-/* Méthodologies */
-.methodologies {
-    background: var(--dark);
-}
-
-.method-grid {
-    display: grid;
-    gap: 3rem;
+    box-shadow: 0 0 10px var(--primary-light)
 }
 
 .method-item {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.method-item:nth-child(even) {
-    direction: rtl;
-}
-
-.method-item:nth-child(even)>* {
-    direction: ltr;
+    align-items: center
 }
 
 .method-content {
@@ -414,101 +418,76 @@ section {
     padding: 2.5rem;
     border-radius: 15px;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    transition: .3s
 }
 
 .method-content:hover {
     border-color: var(--primary);
-    box-shadow: 0 5px 30px var(--primary-light);
-}
-
-.method-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
+    box-shadow: 0 5px 30px var(--primary-light)
 }
 
 .method-description {
     color: var(--text-dim);
     line-height: 1.8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem
 }
 
 .method-details {
     background: var(--primary-light);
     padding: 1.2rem;
     border-radius: 10px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border)
 }
 
 .method-detail-item {
     display: flex;
     align-items: baseline;
-    margin-bottom: 0.7rem;
+    margin-bottom: .7rem;
     color: var(--text-dim);
-    font-size: 0.95rem;
+    font-size: .95rem
 }
 
 .method-detail-item:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0
 }
 
 .method-detail-item strong {
-    color: var(--primary);
-    margin-right: 0.8rem;
-    min-width: 120px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.85rem;
+    margin-right: .8rem;
+    min-width: 120px
 }
 
 .method-media {
-    position: relative;
     border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: 0 0 30px var(--primary-light);
+    border: 1px solid var(--border)
 }
 
+.media-item img,
+.media-item video,
 .method-media img,
 .method-media video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-/* Galerie */
-.galerie {
-    background: #111;
+    object-fit: cover
 }
 
 .media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    gap: 2rem
 }
 
 .media-item {
-    position: relative;
     aspect-ratio: 16/9;
     border-radius: 12px;
-    overflow: hidden;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: .3s;
     background: var(--dark-2);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border)
 }
 
 .media-item:hover {
     transform: scale(1.03);
-    box-shadow: 0 10px 50px var(--primary-dim);
-}
-
-.media-item img,
-.media-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    box-shadow: 0 10px 50px var(--primary-dim)
 }
 
 .media-overlay {
@@ -517,101 +496,100 @@ section {
     left: 0;
     right: 0;
     padding: 1.5rem;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.95), transparent);
+    background: linear-gradient(0deg, rgba(0, 0, 0, .95), transparent);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity .3s
 }
 
 .media-item:hover .media-overlay {
-    opacity: 1;
+    opacity: 1
 }
 
 .media-title {
     font-weight: 600;
-    margin-bottom: 0.3rem;
+    margin-bottom: .3rem;
     color: var(--text);
-    font-family: 'Orbitron', sans-serif;
+    font-family: Orbitron, sans-serif
+}
+
+.hero-subtitle,
+.media-description,
+footer p {
+    color: var(--text-dim)
 }
 
 .media-description {
-    font-size: 0.9rem;
-    color: var(--text-dim);
+    font-size: .9rem
 }
 
-/* Footer */
 footer {
-    background: var(--dark);
     padding: 3rem 0;
     text-align: center;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border)
 }
 
 footer p {
-    color: var(--text-dim);
-    font-size: 0.95rem;
+    font-size: .95rem
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+@media (max-width:1024px) {
 
-    .objectif-content,
-    .method-item {
+    .method-item,
+    .objectif-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2rem
     }
 
-    .objectif-content:nth-child(even),
-    .method-item:nth-child(even) {
-        direction: ltr;
+    .method-item:nth-child(2n),
+    .objectif-content:nth-child(2n) {
+        direction: ltr
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .back-button {
         top: 15px;
         left: 15px;
         padding: 10px 15px;
-        font-size: 12px;
+        font-size: 12px
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.5rem
     }
 
     section {
-        padding: 3rem 0;
+        padding: 3rem 0
     }
 
-    .tech-grid,
-    .media-grid {
-        grid-template-columns: 1fr;
+    .media-grid,
+    .tech-grid {
+        grid-template-columns: 1fr
     }
 }
 
-/* Animations au scroll */
 .fade-in {
     opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: .8s ease-out forwards fadeInUp
 }
 
 .fade-in-delay-1 {
-    animation-delay: 0.1s;
+    animation-delay: .1s
 }
 
 .fade-in-delay-2 {
-    animation-delay: 0.2s;
+    animation-delay: .2s
 }
 
 .fade-in-delay-3 {
-    animation-delay: 0.3s;
+    animation-delay: .3s
 }
 
 .hero-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    color: var(--text-dim);
     max-width: 800px;
     margin: 0 auto 2rem;
-    font-weight: 300;
+    font-weight: 300
 }
 
 .github-button {
@@ -623,13 +601,11 @@ footer p {
     border: 1px solid var(--border);
     border-radius: 10px;
     color: var(--text);
-    text-decoration: none;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.95rem;
+    font-family: Orbitron, sans-serif;
+    font-size: .95rem;
     font-weight: 600;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    margin-top: 1rem;
+    transition: .3s;
+    margin-top: 1rem
 }
 
 .github-button:hover {
@@ -637,13 +613,13 @@ footer p {
     border-color: var(--primary);
     color: #fff;
     box-shadow: 0 0 30px var(--primary-dim), 0 0 60px var(--primary-light);
-    transform: translateY(-2px);
+    transform: translateY(-2px)
 }
 
 .github-button svg {
-    transition: transform 0.3s ease;
+    transition: transform .3s
 }
 
 .github-button:hover svg {
-    transform: rotate(360deg);
+    transform: rotate(360deg)
 }

@@ -1,44 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap');
-/* ======================== */
-/* BODY & GLOBAL            */
-/* ======================== */
+@import url(https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap);
 
 * {
-  user-select: none;
+  user-select: none
 }
 
 body,
 html {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   background: #000;
-  color: white;
+  color: #fff;
   scroll-behavior: smooth;
-
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: none
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden
 }
 
 body::-webkit-scrollbar {
-  display: none;
+  display: none
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: inherit
 }
 
 h2 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: Orbitron, sans-serif
 }
 
-/* Conteneur global pour cubes fixes */
 #globalBgSquares {
   position: fixed;
   top: 0;
@@ -47,25 +42,33 @@ h2 {
   height: 100%;
   pointer-events: none;
   overflow: visible;
-  z-index: 0;
-  /* derrière tout le contenu */
+  z-index: 0
 }
 
-/* Carrés violets subtils */
 .bg-square {
   position: absolute;
   width: 80px;
   height: 80px;
-  background: rgba(140, 82, 255, 0.02);
+  background: rgba(140, 82, 255, .02);
   transform: rotate(45deg);
   border-radius: 8px;
-  box-shadow: 0 0 30px rgba(140, 82, 255, 0.2), 0 0 60px rgba(140, 82, 255, 0.1);
-  will-change: transform, opacity;
+  box-shadow: 0 0 30px rgba(140, 82, 255, .2), 0 0 60px rgba(140, 82, 255, .1);
+  will-change: transform, opacity
 }
 
-/* ======================================= */
-/* VUE 0 - VUE tout le temps présente      */
-/* ======================================= */
+#scrollTopButton,
+.Button {
+  right: 30px;
+  color: #ffffff80;
+  background: 0 0;
+  cursor: pointer;
+  box-shadow: transparent;
+  transition: .2s;
+  user-select: none;
+  z-index: 9999;
+  position: fixed
+}
+
 #topName {
   position: fixed;
   top: 20px;
@@ -74,326 +77,188 @@ h2 {
   font-weight: 600;
   color: #ffffffcc;
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity .5s, transform .5s;
   transform: translateY(-10px);
   z-index: 9999;
   user-select: none;
-  letter-spacing: 1px;
+  letter-spacing: 1px
 }
 
-#topName.visible {
+#topName.visible,
+.animate-on-scroll.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0)
 }
 
-/* ==== Bouton CV Fixe Violet Néon ==== */
 .Button {
-  position: fixed;
   top: 20px;
-  right: 30px;
   padding: 10px 20px;
   text-transform: uppercase;
   border-radius: 8px;
   font-size: 17px;
   font-weight: 500;
-  color: #ffffff80;
   text-shadow: none;
-  background: transparent;
-  cursor: pointer;
-  box-shadow: transparent;
-  border: 1px solid #b400ff80;
-  /* Violet doux */
-  transition: 0.2s ease;
-  user-select: none;
-  z-index: 9999;
+  border: 1px solid #b400ff80
 }
 
-.Button:hover,
-.Button:focus {
+.Button:focus,
+.Button:hover {
   color: #fff;
   background: #b400ff;
   border: 1px solid #b400ff;
-  text-shadow: 0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff;
-  box-shadow: 0 0 5px #b400ff,
-    0 0 20px #b400ff,
-    0 0 50px #b400ff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
+  box-shadow: 0 0 5px #b400ff, 0 0 20px #b400ff, 0 0 50px #b400ff
 }
 
 #scrollTopButton {
-  position: fixed;
   bottom: 40px;
-  right: 30px;
   padding: 10px 15px;
   font-size: 20px;
-  color: #ffffff80;
   opacity: 0;
-  background: transparent;
   top: auto;
   border: 1px solid #b400ff80;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: transparent;
-  transition: 0.2s ease;
-  user-select: none;
-  z-index: 9999;
+  border-radius: 50%
 }
 
 #scrollTopButton.visible {
   opacity: 1;
-  transform: translateX(-10);
+  transform: translateX(-10)
 }
 
-/* ======================== */
-/* MADE BY FIXE EN BAS À DROITE */
-/* ======================== */
 #madeBy {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  font-size: 0.8rem;
+  font-size: .8rem;
   color: #888;
   z-index: 10000;
   pointer-events: none;
-  font-family: 'Poppins', sans-serif;
-  text-align: right;
+  font-family: Poppins, sans-serif;
+  text-align: right
 }
 
-/* ======================== */
-/* ANIMATIONS GLOBALES      */
-/* ======================== */
-
-/* Animation fadeInUp */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px)
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0)
   }
 }
 
-/* Animation slideInLeft */
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-50px)
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0)
   }
 }
 
-/* Animation slideInRight */
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(50px)
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0)
   }
 }
 
-/* Animation pulse */
 @keyframes pulse {
 
   0%,
   100% {
-    transform: scale(1);
+    transform: scale(1)
   }
 
   50% {
-    transform: scale(1.05);
+    transform: scale(1.05)
   }
 }
 
-/* Animation bounce */
 @keyframes bounce {
 
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0)
   }
 
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-10px)
   }
 }
 
-/* Animation glow */
 @keyframes glow {
 
   0%,
   100% {
-    box-shadow: 0 0 5px rgba(180, 0, 255, 0.5), 0 0 10px rgba(180, 0, 255, 0.3);
+    box-shadow: 0 0 5px rgba(180, 0, 255, .5), 0 0 10px rgba(180, 0, 255, .3)
   }
 
   50% {
-    box-shadow: 0 0 20px rgba(180, 0, 255, 0.8), 0 0 40px rgba(180, 0, 255, 0.5);
+    box-shadow: 0 0 20px rgba(180, 0, 255, .8), 0 0 40px rgba(180, 0, 255, .5)
   }
 }
 
-/* Classes utilitaires pour animations */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity .8s, transform .8s
 }
 
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Amélioration des transitions globales */
 section {
-  transition: all 0.3s ease;
+  transition: .3s;
+  animation: 1s ease-out fadeInUp
 }
 
 a,
 button {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: .3s cubic-bezier(.4, 0, .2, 1)
 }
 
-/* Effet de survol amélioré pour tous les liens */
 a:not(.Button):hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px)
 }
 
-/* Smooth scrolling amélioré */
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 80px
 }
 
-/* Animation des sections au chargement */
-section {
-  animation: fadeInUp 1s ease-out;
-}
-
-/* Responsive */
-@media (max-width: 1250px) {
+@media (max-width:1250px) {
   .project-card {
     width: 100%;
     max-width: 90%;
-    height: auto;
+    height: auto
   }
 
   #scrollTopButton {
     bottom: 70px !important;
     font-size: 50px !important;
-    padding: 20px 30px !important;
+    padding: 20px 30px !important
   }
 
   .Button {
     font-size: 40px;
     top: 30px;
-    padding: 20px 30px;
+    padding: 20px 30px
   }
 
   #topName {
     font-size: 2rem;
-    top: 50px;
+    top: 50px
   }
 
   #madeBy {
-    font-size: 1.5rem !important;
-  }
-}
-
-/* ======================== */
-/* TOAST NOTIFICATIONS      */
-/* ======================== */
-.toast-notification {
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  padding: 16px 24px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
-  border: 1px solid;
-  color: white;
-  font-size: 15px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px;
-  z-index: 10001;
-  animation: toastSlideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  min-width: 300px;
-}
-
-.toast-notification i {
-  font-size: 20px;
-}
-
-.toast-notification.success {
-  border-color: #10b981;
-  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3), 0 0 20px rgba(16, 185, 129, 0.2);
-}
-
-.toast-notification.success i {
-  color: #10b981;
-}
-
-.toast-notification.error {
-  border-color: #ef4444;
-  box-shadow: 0 8px 32px rgba(239, 68, 68, 0.3), 0 0 20px rgba(239, 68, 68, 0.2);
-}
-
-.toast-notification.error i {
-  color: #ef4444;
-}
-
-@keyframes toastSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Responsive */
-@media (max-width: 1250px) {
-  .project-card {
-    width: 100%;
-    max-width: 90%;
-    height: auto;
-  }
-
-  #scrollTopButton {
-    bottom: 70px !important;
-    font-size: 50px !important;
-    padding: 20px 30px !important;
-  }
-
-  .Button {
-    font-size: 40px;
-    top: 30px;
-    padding: 20px 30px;
-  }
-
-  #topName {
-    font-size: 2rem;
-    top: 50px;
-  }
-
-  #madeBy {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem !important
   }
 
   .toast-notification {
@@ -402,10 +267,65 @@ section {
     left: 20px;
     min-width: unset;
     font-size: 40px;
-    padding: 45px 60px;
+    padding: 45px 60px
   }
 
   .toast-notification i {
-    font-size: 65px;
+    font-size: 65px
+  }
+}
+
+.toast-notification {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, .9);
+  backdrop-filter: blur(10px);
+  border: 1px solid;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .4), 0 0 20px;
+  z-index: 10001;
+  animation: .4s cubic-bezier(.68, -.55, .265, 1.55) toastSlideIn;
+  min-width: 300px
+}
+
+.toast-notification i {
+  font-size: 20px
+}
+
+.toast-notification.success {
+  border-color: #10b981;
+  box-shadow: 0 8px 32px rgba(16, 185, 129, .3), 0 0 20px rgba(16, 185, 129, .2)
+}
+
+.toast-notification.success i {
+  color: #10b981
+}
+
+.toast-notification.error {
+  border-color: #ef4444;
+  box-shadow: 0 8px 32px rgba(239, 68, 68, .3), 0 0 20px rgba(239, 68, 68, .2)
+}
+
+.toast-notification.error i {
+  color: #ef4444
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0)
   }
 }

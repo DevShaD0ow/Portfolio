@@ -1,9 +1,13 @@
-/* ======================== */
-/* SECTION ÉTUDES           */
-/* ======================== */
+#education::after,
+#education::before {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    content: ''
+}
 
 #education {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 100%);
+    background: linear-gradient(135deg, #0a0a0a 0, #1a0a2e 100%);
     color: #fff;
     position: relative;
     display: flex;
@@ -13,45 +17,36 @@
     min-height: 100vh;
     padding: 3rem 2rem;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: hidden
 }
 
-/* Particules d'arrière-plan */
 #education::before {
-    content: '';
-    position: absolute;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(180, 0, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(180, 0, 255, .1) 0, transparent 70%);
     top: -250px;
     right: -250px;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: float 8s ease-in-out infinite;
+    animation: 8s ease-in-out infinite float
 }
 
 #education::after {
-    content: '';
-    position: absolute;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(106, 0, 255, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(106, 0, 255, .08) 0, transparent 70%);
     bottom: -200px;
     left: -200px;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: float 10s ease-in-out infinite reverse;
+    animation: 10s ease-in-out infinite reverse float
 }
 
 @keyframes float {
 
     0%,
     100% {
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1)
     }
 
     50% {
-        transform: translateY(-30px) scale(1.05);
+        transform: translateY(-30px) scale(1.05)
     }
 }
 
@@ -60,135 +55,127 @@
     width: 100%;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: 1
 }
 
 .education-container h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 1.5rem;
     text-align: center;
-    font-family: 'Orbitron', sans-serif;
+    font-family: Orbitron, sans-serif;
     background: linear-gradient(90deg, #b400ff, #6a00ff, #b400ff);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: shimmer 3s linear infinite;
+    animation: 3s linear infinite shimmer;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px)
 }
 
 @keyframes shimmer {
     0% {
-        background-position: 0% center;
+        background-position: 0 center
     }
 
     100% {
-        background-position: 200% center;
+        background-position: 200% center
     }
 }
 
-/* Timeline - Pas de scroll */
 .timeline {
     position: relative;
-    padding: 0.5rem 0;
+    padding: .5rem 0
 }
 
-/* Ligne verticale de timeline */
+.timeline-line,
+.timeline::before {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    transform: translateX(-50%);
+    z-index: 0;
+    left: 50%
+}
+
 .timeline::before {
     content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
     bottom: 0;
-    width: 2px;
     background: linear-gradient(180deg, transparent, #b400ff, #6a00ff, #b400ff, transparent);
-    transform: translateX(-50%);
-    opacity: 0.5;
-    z-index: 0;
+    opacity: .5
 }
 
-/* Ligne animée */
 .timeline-line {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 2px;
     height: 0%;
     background: linear-gradient(180deg, #b400ff, #6a00ff);
-    transform: translateX(-50%);
-    box-shadow: 0 0 10px rgba(180, 0, 255, 0.6);
-    transition: height 0.8s ease-out;
-    z-index: 0;
+    box-shadow: 0 0 10px rgba(180, 0, 255, .6);
+    transition: height .8s ease-out
 }
 
-/* Timeline Item ULTRA COMPACT */
 .timeline-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.6rem;
+    margin-bottom: .6rem;
     position: relative;
     opacity: 0;
     transform: translateY(30px);
-    gap: 1rem;
+    gap: 1rem
 }
 
 .timeline-item:nth-child(odd) {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse
 }
 
-/* Content ULTRA COMPACT */
 .timeline-content {
     width: 42%;
-    padding: 0.7rem;
-    background: rgba(20, 20, 30, 0.6);
+    padding: .7rem;
+    background: rgba(20, 20, 30, .6);
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    border: 1px solid rgba(180, 0, 255, 0.3);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(180, 0, 255, .3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
     position: relative;
-    transition: all 0.3s ease;
+    transition: .3s
 }
 
 .timeline-content:hover {
     transform: translateY(-4px);
-    border-color: rgba(180, 0, 255, 0.6);
-    box-shadow: 0 8px 24px rgba(180, 0, 255, 0.2);
+    border-color: rgba(180, 0, 255, .6);
+    box-shadow: 0 8px 24px rgba(180, 0, 255, .2)
 }
 
 .timeline-content h3 {
     font-size: 1.1rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: .2rem;
     color: #b400ff;
-    font-family: 'Orbitron', sans-serif;
+    font-family: Orbitron, sans-serif;
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: .3rem
 }
 
 .timeline-content .institution {
-    font-size: 0.85rem;
+    font-size: .85rem;
     color: #ccc;
-    margin-bottom: 0.1rem;
-    font-weight: 600;
+    margin-bottom: .1rem;
+    font-weight: 600
 }
 
 .timeline-content .period {
-    font-size: 0.75rem;
+    font-size: .75rem;
     color: #888;
-    margin-bottom: 0.4rem;
-    font-style: italic;
+    margin-bottom: .4rem;
+    font-style: italic
 }
 
 .timeline-content .description {
-    font-size: 0.8rem;
+    font-size: .8rem;
     line-height: 1.4;
     color: #bbb;
-    margin-top: 0.3rem;
+    margin-top: .3rem
 }
 
-/* Icône au centre */
 .timeline-icon {
     width: 45px;
     height: 45px;
@@ -201,56 +188,51 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
-    box-shadow: 0 0 15px rgba(180, 0, 255, 0.6);
+    box-shadow: 0 0 15px rgba(180, 0, 255, .6);
     border: 3px solid #0a0a0a;
-    transition: all 0.3s ease;
+    transition: .3s
 }
 
 .timeline-icon i {
     font-size: 1.1rem;
-    color: #fff;
+    color: #fff
 }
 
 .timeline-item:hover .timeline-icon {
     transform: translateX(-50%) scale(1.1) rotate(360deg);
-    box-shadow: 0 0 25px rgba(180, 0, 255, 0.8);
+    box-shadow: 0 0 25px rgba(180, 0, 255, .8)
 }
 
-/* Badge plus petit */
 .timeline-badge {
     display: inline-block;
-    padding: 0.15rem 0.5rem;
-    background: rgba(180, 0, 255, 0.2);
-    border: 1px solid rgba(180, 0, 255, 0.4);
+    padding: .15rem .5rem;
+    background: rgba(180, 0, 255, .2);
+    border: 1px solid rgba(180, 0, 255, .4);
     border-radius: 10px;
-    font-size: 0.7rem;
+    font-size: .7rem;
     color: #b400ff;
-    margin-top: 0.2rem;
-    font-weight: 500;
+    margin-top: .2rem;
+    font-weight: 500
 }
 
-/* Responsive MOBILE*/
-@media (max-width: 1250px) {
+@media (max-width:1250px) {
     #education {
         padding: 4rem 2rem;
-        min-height: auto;
+        min-height: auto
     }
 
     .education-container h2 {
         font-size: clamp(4rem, 5vw, 6rem);
-        margin-bottom: 3rem;
+        margin-bottom: 3rem
     }
 
     .timeline {
-        padding: 1rem 0;
+        padding: 1rem 0
     }
 
+    .timeline-line,
     .timeline::before {
-        left: 50px;
-    }
-
-    .timeline-line {
-        left: 50px;
+        left: 50px
     }
 
     .timeline-item {
@@ -260,48 +242,45 @@
         margin-bottom: 3rem;
         margin-left: 100px;
         margin-right: 2rem;
-        gap: 0;
+        gap: 0
     }
 
     .timeline-content {
         width: 100%;
-        padding: 2rem;
+        padding: 2rem
     }
 
-    .timeline-content h3 {
-        font-size: 2.5rem;
+    .timeline-content h3,
+    .timeline-icon i {
+        font-size: 2.5rem
     }
 
     .timeline-content .institution {
-        font-size: 2rem;
+        font-size: 2rem
     }
 
     .timeline-content .period {
-        font-size: 1.8rem;
+        font-size: 1.8rem
     }
 
     .timeline-content .description {
         font-size: 1.8rem;
-        line-height: 1.5;
+        line-height: 1.5
     }
 
     .timeline-badge {
         font-size: 1.6rem;
-        padding: 0.5rem 1.2rem;
+        padding: .5rem 1.2rem
     }
 
     .timeline-icon {
         left: -90px;
         width: 80px;
         height: 80px;
-        transform: translateX(0);
-    }
-
-    .timeline-icon i {
-        font-size: 2.5rem;
+        transform: translateX(0)
     }
 
     .timeline-item:hover .timeline-icon {
-        transform: scale(1.1) rotate(360deg);
+        transform: scale(1.1) rotate(360deg)
     }
 }

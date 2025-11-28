@@ -1,14 +1,35 @@
+#firstView,
+.wrapper {
+  justify-content: center
+}
+
+#firstView .content h1,
+.ppAcc {
+  margin-bottom: 0
+}
+
+#firstView .content h1,
+.portfolioTitle {
+  font-size: clamp(2rem, 5vw, 3em)
+}
+
+#firstView,
+.wrapper .icon {
+  position: relative;
+  display: flex
+}
+
+.ppAcc,
+.wrapper li.icon {
+  transform: translateY(20px)
+}
+
 #firstView {
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  /* ← Centré horizontalement */
   align-items: center;
-  position: relative;
   overflow: hidden;
-  padding: 0;
-  /* ← Retire le padding-left */
+  padding: 0
 }
 
 #firstView .content {
@@ -18,19 +39,13 @@
   align-items: center;
   z-index: 2;
   margin: 0;
-  /* ← Retire le margin-left */
   gap: 1rem;
-  text-align: center;
-}
-
-#firstView .content h1 {
-  font-size: clamp(2rem, 5vw, 3em);
-  margin-bottom: 0;
+  text-align: center
 }
 
 #firstView .content p {
   font-size: clamp(1rem, 2.5vw, 1.2em);
-  margin-top: 0;
+  margin-top: 0
 }
 
 .ppAcc {
@@ -40,83 +55,72 @@
   border: 4px solid #fff;
   object-fit: cover;
   opacity: 0;
-  margin-bottom: 0rem;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
-  box-shadow: 0 0 20px rgba(180, 0, 255, 0.4);
-  animation: profileGlow 3s ease-in-out infinite;
+  transition: opacity 1s, transform 1s;
+  box-shadow: 0 0 20px rgba(180, 0, 255, .4);
+  animation: 3s ease-in-out infinite profileGlow
+}
+
+.portfolioSub,
+.portfolioTitle {
+  opacity: 0;
+  margin: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s, transform 1s
 }
 
 @keyframes profileGlow {
 
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(180, 0, 255, 0.4), 0 0 40px rgba(180, 0, 255, 0.2);
+    box-shadow: 0 0 20px rgba(180, 0, 255, .4), 0 0 40px rgba(180, 0, 255, .2)
   }
 
   50% {
-    box-shadow: 0 0 30px rgba(180, 0, 255, 0.6), 0 0 60px rgba(180, 0, 255, 0.4);
+    box-shadow: 0 0 30px rgba(180, 0, 255, .6), 0 0 60px rgba(180, 0, 255, .4)
   }
 }
 
 .ppAcc:hover {
   transform: scale(1.1) rotate(5deg);
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform .5s cubic-bezier(.175, .885, .32, 1.275);
   animation-play-state: paused;
-  box-shadow: 0 0 40px rgba(180, 0, 255, 0.8), 0 0 80px rgba(180, 0, 255, 0.5);
-}
-
-.portfolioTitle {
-  font-size: clamp(2rem, 5vw, 3em);
-  opacity: 0;
-  margin: 0;
-  transform: translateX(-100px);
-  transition: opacity 1s ease, transform 1s ease;
+  box-shadow: 0 0 40px rgba(180, 0, 255, .8), 0 0 80px rgba(180, 0, 255, .5)
 }
 
 .portfolioSub {
-  opacity: 0;
-  margin: 0;
-  transform: translateX(-100px);
-  transition: opacity 1s ease, transform 1s ease;
   font-size: clamp(1rem, 2vw, 1.2em);
-  color: #bbb;
+  color: #bbb
 }
 
-.portfolioTitle.visible,
-.portfolioSub.visible {
+.portfolioSub.visible,
+.portfolioTitle.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0)
 }
-
-/* Bouton reseaux */
 
 .wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 15px;
   list-style: none;
-  margin-top: 0px;
+  margin-top: 0;
   padding-left: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif
 }
 
 .wrapper .icon {
-  position: relative;
   background: #111;
   border-radius: 50%;
   width: 45px;
   height: 45px;
   font-size: 20px;
-  display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   border: 1px solid #8c52ff;
-  box-shadow: 0 0 10px rgba(140, 82, 255, 0.4);
+  box-shadow: 0 0 10px rgba(140, 82, 255, .4);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: .3s
 }
 
 .wrapper .icon a {
@@ -126,7 +130,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 100%
 }
 
 .wrapper .tooltip {
@@ -137,10 +141,10 @@
   color: #fff;
   padding: 4px 6px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(140, 82, 255, 0.5);
+  box-shadow: 0 0 10px rgba(140, 82, 255, .5);
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: .3s
 }
 
 .wrapper .tooltip::before {
@@ -151,33 +155,30 @@
   background: #8c52ff;
   bottom: -3px;
   left: 50%;
-  transform: translate(-50%) rotate(45deg);
+  transform: translate(-50%) rotate(45deg)
 }
 
 .wrapper .icon:hover .tooltip {
   top: -40px;
   opacity: 1;
-  visibility: visible;
+  visibility: visible
 }
 
 .wrapper .icon:hover {
   background: #8c52ff;
   color: #fff;
   box-shadow: 0 0 20px #8c52ff;
-  transform: translateY(-5px) scale(1.1);
+  transform: translateY(-5px) scale(1.1)
 }
 
-/* Styles initiaux : boutons cachés et décalés */
 .wrapper li.icon {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity .6s, transform .6s
 }
 
-/* Classe pour déclencher l'apparition */
 .wrapper li.icon.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0)
 }
 
 #bgAnimation {
@@ -189,76 +190,75 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  background: radial-gradient(circle at 30% 50%, #8c52ff33, transparent 70%);
+  background: radial-gradient(circle at 30% 50%, #8c52ff33, transparent 70%)
 }
 
-/* Particules violettes */
 .particle {
   position: absolute;
   width: 8px;
   height: 8px;
   background: #b400ff;
-  opacity: 0.3;
-  filter: blur(3px);
+  opacity: .3;
+  filter: blur(3px)
 }
 
-/* Vue 1 : responsive */
-@media (max-width: 1250px) {
+@media (max-width:1250px) {
 
-  /* VUE 1 */
-  #firstView {
+  #firstView,
+  #firstView .content {
     display: flex !important;
+    margin: 0 !important
+  }
+
+  #firstView {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     height: 100vh !important;
     width: 100% !important;
     padding: 0 !important;
-    margin: 0 !important;
     overflow: hidden !important;
-    position: relative !important;
+    position: relative !important
   }
 
   #firstView .content {
-    display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    margin: 0 !important;
     gap: 1rem !important;
     text-align: center !important;
-    z-index: 2 !important;
+    z-index: 2 !important
   }
 
   .ppAcc {
     width: 600px !important;
-    height: 600px !important;
+    height: 600px !important
   }
 
   .portfolioTitle {
-    font-size: clamp(7rem, 5vw, 2.5rem) !important;
+    font-size: clamp(7rem, 5vw, 2.5rem) !important
   }
 
   .portfolioSub {
-    font-size: clamp(3rem, 2vw, 1.1rem) !important;
+    font-size: clamp(3rem, 2vw, 1.1rem) !important
   }
 
   #bgAnimation {
     width: 100% !important;
-    height: 100% !important;
+    height: 100% !important
   }
 
   #card-container {
-    display: none !important;
+    display: none !important
   }
 
   .wrapper .icon {
     width: 90px;
     height: 90px;
-    font-size: 40px;
+    font-size: 40px
   }
 
   .wrapper {
-    gap: 30px;
+    gap: 30px
   }
 }
