@@ -6,14 +6,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 .section-title {
   font-size: clamp(2rem, 5vw, 3rem);
   color: #b400ff;
   margin-bottom: 3rem;
-  font-family: Orbitron, sans-serif
+  font-family: 'Orbitron', sans-serif;
 }
 
 .projects-container {
@@ -21,7 +21,7 @@
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  width: 100%
+  width: 100%;
 }
 
 .project-card {
@@ -32,115 +32,126 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
   box-shadow: 0 0 0 #b400ff;
   transform-style: preserve-3d;
-  perspective: 1000px
-}
-
-.project-card video,
-.project-preview {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 16px
+  perspective: 1000px;
 }
 
 .project-card:hover {
   transform: translateY(-12px) rotateX(2deg) rotateY(-2deg) scale(1.02);
-  box-shadow: 0 0 20px #b400ff, 0 0 40px #6a00ff88, 0 0 60px #6a00ff44 inset, 0 15px 40px rgba(180, 0, 255, .3)
+  box-shadow:
+    0 0 20px #b400ff,
+    0 0 40px #6a00ff88,
+    0 0 60px #6a00ff44 inset,
+    0 15px 40px rgba(180, 0, 255, 0.3);
 }
 
 .project-preview {
-  transition: opacity .3s;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
   z-index: 2;
-  position: relative
+  position: relative;
+  border-radius: 16px;
 }
 
 .project-card video {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
   pointer-events: none;
   opacity: 0;
-  transition: opacity .3s, transform .3s;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 16px;
   z-index: 4;
   user-select: none;
-  -webkit-user-drag: none
+  -webkit-user-drag: none;
 }
 
 .project-card:hover .project-preview {
   opacity: 0;
-  z-index: 3
+  z-index: 3;
 }
 
 .project-card:hover video {
   opacity: 1;
   z-index: 4;
-  transform: scale(1.05)
+  transform: scale(1.05);
 }
 
 .card-content {
   padding: 1rem;
-  color: #fff;
+  color: white;
   position: relative;
-  z-index: 3
+  z-index: 3;
 }
 
 .card-content h3 {
-  margin: 0 0 .5rem;
-  font-size: 1.2rem
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
 }
 
 .card-content p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #aaa;
-  margin: 0 0 .5rem
+  margin: 0 0 0.5rem 0;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem
+  gap: 0.5rem;
 }
 
 .tag {
-  padding: .2rem .6rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 12px;
   border: 1px dashed;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  opacity: .9
+  opacity: 0.9;
 }
 
-@media (max-width:1250px) {
+@media (max-width: 1250px) {
+
   .project-card {
     width: 700px !important;
-    box-shadow: 0 0 15px #b400ff, 0 0 30px #6a00ff55, 0 0 50px #6a00ff33 inset
+    box-shadow:
+      0 0 15px #b400ff,
+      0 0 30px #6a00ff55,
+      0 0 50px #6a00ff33 inset;
   }
 
-  .project-card video,
+  .project-card video {
+    height: 400px;
+  }
+
   .project-preview {
-    height: 400px
+    height: 400px;
   }
 
   .section-title {
-    font-size: clamp(6rem, 5vw, 3rem)
+    font-size: clamp(6rem, 5vw, 3rem);
   }
 
   .card-content h3 {
-    font-size: 2rem
+    font-size: 2rem;
   }
 
   .card-content p {
-    font-size: 1.8rem
+    font-size: 1.8rem;
   }
 
   .tag {
-    font-size: 1.5rem
+    font-size: 1.5rem;
   }
 
   .projects-container {
-    gap: 4rem
+    gap: 4rem;
   }
 }
