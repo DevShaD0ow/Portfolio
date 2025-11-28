@@ -2,8 +2,6 @@
 
 Portfolio personnel présentant mes projets en développement de jeux vidéo et mes compétences techniques.
 
-![Portfolio Preview](./assets/images/ui/photo.webp)
-
 ## 🚀 Aperçu
 
 Site web one-page moderne et performant mettant en avant :
