@@ -19,41 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   cards.forEach(card => {
-    console.log("Carte trouvée :", card);
-
-    // --- Vidéo ---
     const video = card.querySelector("video");
     const src = card.dataset.video;
-    console.log("Vidéo src :", src);
+    let videoLoaded = false;
 
-    if (src) {
-      video.src = src;
-      video.load();
-    }
-
-    card.addEventListener("mouseenter", async () => {
-      // Si c'est la carte AIS
-      if (card.dataset.video.includes("AIS.mp4")) {
-        video.playbackRate = 2.0; // 🎬 vitesse x2
-      } else {
-        video.playbackRate = 1.0; // normal pour les autres
-      }
-
-      try { await video.play(); }
-      catch (err) { console.warn("Lecture vidéo impossible", err); }
-    });
-
-
-    card.addEventListener("mouseleave", () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-
-    // --- Tags ---
+    // --- Tags (garder tel quel) ---
     const tagsContainer = card.querySelector(".tags");
     if (card.dataset.tags) {
       const tags = card.dataset.tags.split(",").map(t => t.trim());
-      console.log("Tags pour la carte :", tags);
       tags.forEach(tag => {
         const span = document.createElement("span");
         span.className = "tag";
@@ -63,6 +36,39 @@ document.addEventListener("DOMContentLoaded", () => {
         tagsContainer.appendChild(span);
       });
     }
+
+    // --- LAZY LOADING VIDÉO : charge uniquement au hover ---
+    card.addEventListener("mouseenter", async () => {
+      // Charger la vidéo seulement si pas déjà fait
+      if (!videoLoaded && src) {
+        video.src = src;
+        video.load();
+        videoLoaded = true;
+      }
+
+      // Attendre que la vidéo soit prête avant de la lire
+      if (video.readyState >= 2) {
+        playVideo();
+      } else {
+        video.addEventListener('loadeddata', playVideo, { once: true });
+      }
+
+      function playVideo() {
+        // Vitesse x2 pour AIS
+        if (src.includes("AIS.mp4")) {
+          video.playbackRate = 2.0;
+        } else {
+          video.playbackRate = 1.0;
+        }
+
+        video.play().catch(err => console.warn("Lecture vidéo impossible", err));
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
 
     // --- Clic pour ouvrir le lien ---
     if (card.dataset.link) {
