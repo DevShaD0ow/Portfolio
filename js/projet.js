@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".project-card");
-  console.log("Nombre de cartes trouvées :", cards.length);
 
   // Couleurs des tags
   const tagColors = {
@@ -19,13 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   cards.forEach(card => {
-    console.log("Carte trouvée :", card);
 
     // --- Vidéo ---
     const video = card.querySelector("video");
     const src = card.dataset.video;
-    console.log("Vidéo src :", src);
-
     if (src) {
       video.src = src;
       video.load();
@@ -53,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const tagsContainer = card.querySelector(".tags");
     if (card.dataset.tags) {
       const tags = card.dataset.tags.split(",").map(t => t.trim());
-      console.log("Tags pour la carte :", tags);
       tags.forEach(tag => {
         const span = document.createElement("span");
         span.className = "tag";
