@@ -24,12 +24,12 @@
 }
 
 .about-container h2 {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .about-container .about-desc {
-  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 3rem;
 }
@@ -83,23 +83,29 @@
 @media (max-width: 1250px) {
 
   #aboutMe {
-    padding: 1rem 1vw !important;
+    padding: 4rem 2rem !important;
   }
 
   .about-container h2 {
-    font-size: clamp(7rem, 4vw, 3rem) !important;
+    font-size: 2.5rem !important;
   }
 
   .about-container .about-desc {
-    font-size: clamp(3rem, 2vw, 1.3rem) !important;
+    font-size: 1.3rem !important;
+    line-height: 1.5;
   }
 
   .skills {
     grid-template-columns: repeat(1, 1fr) !important;
+    gap: 2rem;
+  }
+
+  .skill-bar {
+    margin-bottom: 2rem;
   }
 
   .skill-bar span {
-    font-size: 3rem !important;
+    font-size: 1.3rem !important;
   }
 
   .skill-bar .bar {
