@@ -33,7 +33,7 @@ async function sendToDiscord(name, email, message) {
   const badWords = [
     'merde', 'connard', 'putain', 'encule', 'salope',
     'pute', 'con', 'fdp', 'ntm', 'pd', 'batard',
-    'fuck', 'shit', 'bitch', 'ass', 'dick'
+    'fuck', 'shit', 'bitch', 'dick'
   ];
 
   const textToCheck = (name + ' ' + message).toLowerCase();
