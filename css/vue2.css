@@ -78,37 +78,3 @@
   opacity: 0;
   transform: translateY(50px);
 }
-
-/* Responsive */
-@media (max-width: 1250px) {
-
-  #aboutMe {
-    padding: 4rem 2rem !important;
-  }
-
-  .about-container h2 {
-    font-size: 2.5rem !important;
-  }
-
-  .about-container .about-desc {
-    font-size: 1.3rem !important;
-    line-height: 1.5;
-  }
-
-  .skills {
-    grid-template-columns: repeat(1, 1fr) !important;
-    gap: 2rem;
-  }
-
-  .skill-bar {
-    margin-bottom: 2rem;
-  }
-
-  .skill-bar span {
-    font-size: 1.3rem !important;
-  }
-
-  .skill-bar .bar {
-    height: 20px;
-  }
-}
