@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="./css/contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="./js/loader.js"></script>
+  <script src="./js/hamburger.js" defer></script>
 </head>
 
 <body>
@@ -42,19 +43,36 @@
   <div id="topName">Alexis Tirant</div>
 
   <div class="top-nav-container">
+    <!-- Bouton hamburger (visible seulement sur mobile) -->
+    <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
+    <!-- Navigation normale (cachée sur mobile) -->
     <ul class='NavBar'>
       <li><a href="#firstView">Accueil</a></li>
-      <li><a href="#aboutMe">À Propos</a></li>
+      <li><a href="#aboutMeLink">À Propos</a></li>
       <li><a href="#education">Parcours</a></li>
-      <li><a href="#projects-view">Projets</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#projectsLink">Projets</a></li>
+      <li><a href="#contactLink">Contact</a></li>
     </ul>
 
     <a class="Button" href="./assets/CV_Alexis_Tirant.pdf" target="_blank" rel="noopener noreferrer">
       Voir mon CV
     </a>
+  </div>
 
+  <!-- Menu mobile overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <ul class='NavBar'>
+      <li><a href="#firstView">Accueil</a></li>
+      <li><a href="#aboutMeLink">À Propos</a></li>
+      <li><a href="#education">Parcours</a></li>
+      <li><a href="#projectsLink">Projets</a></li>
+      <li><a href="#contactLink">Contact</a></li>
+    </ul>
   </div>
 
   <!-- VUE 1 -->
@@ -93,7 +111,7 @@
   <section id="aboutMe">
     <div class="about-scroll">
       <div class="about-container">
-        <h2>À propos de moi</h2>
+        <h2 id="aboutMeLink">À propos de moi</h2>
         <p class="about-desc">
           Je m'appelle Alexis Tirant, développeur passionné par la création de jeux vidéo et d'applications.
           J'aime explorer de nouvelles technologies, résoudre des problèmes complexes et créer des expériences
@@ -239,9 +257,8 @@
   <!--t-->
   <!-- VUE 4 - PROJETS -->
   <section id="projects-view">
-    <h2 class="section-title" data-tag="pr">Mes Projets</h2>
+    <h2 class="section-title" id="projectsLink" data-tag="pr">Mes Projets</h2>
     <div class="projects-container">
-
       <div class="project-card" id="ais" data-tags="Unity, C#, VR" data-video="./assets/images/projects/ais/AIS.mp4"
         data-link="project/project-detail-ais.html">
         <img src="./assets/images/projects/ais/preview.webp" alt="Preview Projet Alone In Space"
@@ -356,7 +373,7 @@
   <!-- VUE 5 - CONTACT -->
   <section id="contact">
     <div class="contact-container">
-      <h2>Contactez-moi</h2>
+      <h2 id="contactLink">Contactez-moi</h2>
       <p class="contact-intro">
         Une question ? Un projet ? N'hésitez pas à me contacter via ce formulaire.
         Votre message sera envoyé directement sur Discord !
