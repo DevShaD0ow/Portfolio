@@ -24,18 +24,18 @@
 }
 
 .about-container h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   margin-bottom: 1rem;
 }
 
 .about-container .about-desc {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
   line-height: 1.8;
   margin-bottom: 3rem;
 }
 
 .about-desc {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: 1.8;
   margin-bottom: 3rem;
 }
@@ -52,7 +52,7 @@
 
 .skill-bar span {
   display: block;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 

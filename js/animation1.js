@@ -1,53 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const image = document.querySelector(".ppAcc");         // ton image de profil
-  const text = document.querySelector(".portfolioTitle"); // ton titre "Mon Portfolio"
-  const text2 = document.querySelector(".portfolioSub");  // sous-titre éventuel
+window.addEventListener('siteLoaded', () => {
+  const image = document.querySelector(".ppAcc");
+  const text = document.querySelector(".portfolioTitle");
+  const text2 = document.querySelector(".portfolioSub");
 
-  // Animation apparition image
   setTimeout(() => {
     if (image) image.style.opacity = "1";
     if (image) image.style.transform = "translateY(0)";
-  }, 200);
+  }, 100);
 
-  // Animation apparition texte principal
   setTimeout(() => {
     if (text) text.style.opacity = "1";
     if (text) text.style.transform = "translateX(0)";
-  }, 400);
+  }, 250);
 
-  // Animation du sous-titre
   setTimeout(() => {
     if (text2) text2.style.opacity = "1";
     if (text2) text2.style.transform = "translateX(0)";
-  }, 600);
-});
+  }, 400);
 
-
-window.addEventListener('load', () => {
-  const aboutContainer = document.querySelector('.about-container');
-  const aboutDesc = document.querySelector('.about-desc');
-  const skillFills = document.querySelectorAll('.skill-bar .fill');
-
-  // Timeline GSAP
-  const tl = gsap.timeline();
-
-  // 1️⃣ Déplacer et réduire le texte de description
-  tl.to(aboutContainer, {
-    duration: 1,
-    x: 0,                  // reste à gauche
-    y: -50,                // remonte un peu
-    scale: 0.8,            // réduit légèrement
-    ease: "power2.out"
+  const socialIcons = document.querySelectorAll('.wrapper li.icon');
+  socialIcons.forEach((icon, index) => {
+    setTimeout(() => {
+      icon.classList.add('visible');
+    }, 550 + (index * 150));
   });
-
-  // 2️⃣ Remplir les jauges progressivement
-  tl.to(skillFills, {
-    duration: 1.2,
-    width: (i, el) => el.style.width, // prend la valeur déjà définie en HTML (ex: 90%)
-    ease: "power2.out",
-    stagger: 0.2
-  }, "-=0.5"); // démarre légèrement avant la fin du mouvement du texte
 });
+
 document.addEventListener("scroll", () => {
   const topName = document.getElementById("topName");
   const topbutton = document.getElementById("scrollTopButton");
@@ -62,20 +40,6 @@ document.addEventListener("scroll", () => {
     topbutton.classList.remove("visible");
   }
 });
-
-// Sélectionne tous les boutons
-const socialIcons = document.querySelectorAll('.wrapper li.icon');
-
-// Ajoute la classe visible avec un léger décalage pour l'effet cascade
-socialIcons.forEach((icon, index) => {
-  setTimeout(() => {
-    icon.classList.add('visible');
-  }, index * 400); // chaque bouton apparaît 0.2s après le précédent
-});
-
-
-
-// carré
 
 function generateFixedSquares(containerSelector, numberOfSquares = 5) {
   const container = document.querySelector(containerSelector);
@@ -109,15 +73,10 @@ function generateFixedSquares(containerSelector, numberOfSquares = 5) {
   }
 }
 
-// Génération globale
 generateFixedSquares('#globalBgSquares', 25);
 
-
-//smooth scroll top
 document.getElementById("scrollTopButton").addEventListener("click", function (e) {
   e.preventDefault();
-
-  // Animation douce jusqu'en haut
   window.scrollTo({
     top: 0,
     behavior: "smooth"

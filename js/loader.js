@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (mediaLoaded >= totalMedia) {
             setTimeout(() => {
                 loadingScreen.classList.add('loading-hidden');
+
+                // 🎯 RÉDUIT À 200ms au lieu de 600ms
+                setTimeout(() => {
+                    document.body.classList.add('site-loaded');
+                    window.dispatchEvent(new Event('siteLoaded'));
+                }, 200);
+
                 mediaElements.forEach(vid => vid.play().catch(e => console.log("Autoplay bloqué par le navigateur")));
             }, 500);
         }
@@ -39,6 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!loadingScreen.classList.contains('loading-hidden')) {
             console.warn("Chargement long : Force l'ouverture du site.");
             loadingScreen.classList.add('loading-hidden');
+            setTimeout(() => {
+                document.body.classList.add('site-loaded');
+                window.dispatchEvent(new Event('siteLoaded'));
+            }, 200);  // 🎯 RÉDUIT À 200ms
         }
     }, 5000);
 });
