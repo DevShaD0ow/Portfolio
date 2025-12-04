@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap');
+
 /* ======================== */
 /* BODY & GLOBAL            */
 /* ======================== */
@@ -15,7 +16,6 @@ html {
   background: #000;
   color: white;
   scroll-behavior: smooth;
-
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -38,7 +38,175 @@ h2 {
   font-family: 'Orbitron', sans-serif;
 }
 
-/* Conteneur global pour cubes fixes */
+/* ======================== */
+/* CONTENEUR NAVIGATION TOP */
+/* ======================== */
+.top-nav-container {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  z-index: 9998;
+}
+
+/* ======================== */
+/* NAVBAR */
+/* ======================== */
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.NavBar li {
+  padding: 0;
+}
+
+.NavBar a {
+  position: relative;
+  display: block;
+  padding: 4px 0;
+  font-family: 'Orbitron', sans-serif;
+  color: #ecf0f1;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  transition: color 0.5s;
+}
+
+.NavBar a::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #8c52ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+.NavBar a:hover {
+  color: #8c52ff;
+}
+
+.NavBar a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ======================== */
+/* BOUTON CV                */
+/* ======================== */
+.Button {
+  position: relative;
+  padding: 8px 16px;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #ffffff80;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid #b400ff80;
+  transition: 0.2s ease;
+  user-select: none;
+}
+
+.Button:hover,
+.Button:focus {
+  color: #fff;
+  background: #b400ff;
+  border: 1px solid #b400ff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
+  box-shadow: 0 0 5px #b400ff, 0 0 20px #b400ff, 0 0 50px #b400ff;
+}
+
+/* ======================== */
+/* LOADING SCREEN           */
+/* ======================== */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #050505;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+.loader-container {
+  width: 300px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+h2.loader-text {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 5px rgba(180, 0, 255, 1),
+    0 0 15px rgba(180, 0, 255, 0.8),
+    0 0 40px rgba(180, 0, 255, 0.6),
+    0 0 80px rgba(180, 0, 255, 0.4);
+}
+
+p.loader-text {
+  color: #666367;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background-color: #222;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #f200ff, #b400ff);
+  transition: width 0.2s ease-out;
+}
+
+#loading-percentage {
+  color: #555;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.loading-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ======================== */
+/* BACKGROUND SQUARES       */
+/* ======================== */
 #globalBgSquares {
   position: fixed;
   top: 0;
@@ -48,10 +216,8 @@ h2 {
   pointer-events: none;
   overflow: visible;
   z-index: 0;
-  /* derrière tout le contenu */
 }
 
-/* Carrés violets subtils */
 .bg-square {
   position: absolute;
   width: 80px;
@@ -63,9 +229,9 @@ h2 {
   will-change: transform, opacity;
 }
 
-/* ======================================= */
-/* VUE 0 - VUE tout le temps présente      */
-/* ======================================= */
+/* ======================== */
+/* TOP NAME                 */
+/* ======================== */
 #topName {
   position: fixed;
   top: 20px;
@@ -86,41 +252,9 @@ h2 {
   transform: translateY(0);
 }
 
-/* ==== Bouton CV Fixe Violet Néon ==== */
-.Button {
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  border-radius: 8px;
-  font-size: 17px;
-  font-weight: 500;
-  color: #ffffff80;
-  text-shadow: none;
-  background: transparent;
-  cursor: pointer;
-  box-shadow: transparent;
-  border: 1px solid #b400ff80;
-  /* Violet doux */
-  transition: 0.2s ease;
-  user-select: none;
-  z-index: 9998;
-}
-
-.Button:hover,
-.Button:focus {
-  color: #fff;
-  background: #b400ff;
-  border: 1px solid #b400ff;
-  text-shadow: 0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff;
-  box-shadow: 0 0 5px #b400ff,
-    0 0 20px #b400ff,
-    0 0 50px #b400ff;
-}
-
+/* ======================== */
+/* SCROLL TOP BUTTON        */
+/* ======================== */
 #scrollTopButton {
   position: fixed;
   bottom: 40px;
@@ -130,7 +264,6 @@ h2 {
   color: #ffffff80;
   opacity: 0;
   background: transparent;
-  top: auto;
   border: 1px solid #b400ff80;
   border-radius: 50%;
   cursor: pointer;
@@ -142,11 +275,11 @@ h2 {
 
 #scrollTopButton.visible {
   opacity: 1;
-  transform: translateX(-10);
+  transform: translateX(0);
 }
 
 /* ======================== */
-/* MADE BY FIXE EN BAS À DROITE */
+/* MADE BY                  */
 /* ======================== */
 #madeBy {
   position: fixed;
@@ -163,8 +296,6 @@ h2 {
 /* ======================== */
 /* ANIMATIONS GLOBALES      */
 /* ======================== */
-
-/* Animation fadeInUp */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -177,7 +308,6 @@ h2 {
   }
 }
 
-/* Animation slideInLeft */
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -190,7 +320,6 @@ h2 {
   }
 }
 
-/* Animation slideInRight */
 @keyframes slideInRight {
   from {
     opacity: 0;
@@ -203,7 +332,6 @@ h2 {
   }
 }
 
-/* Animation pulse */
 @keyframes pulse {
 
   0%,
@@ -216,7 +344,6 @@ h2 {
   }
 }
 
-/* Animation bounce */
 @keyframes bounce {
 
   0%,
@@ -229,7 +356,6 @@ h2 {
   }
 }
 
-/* Animation glow */
 @keyframes glow {
 
   0%,
@@ -254,72 +380,22 @@ h2 {
   transform: translateY(0);
 }
 
-/* Amélioration des transitions globales */
 section {
   transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out;
 }
 
-a,
+a:not(.Button),
 button {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Effet de survol amélioré pour tous les liens */
 a:not(.Button):hover {
   transform: translateY(-2px);
 }
 
-/* Smooth scrolling amélioré */
 html {
-  scroll-padding-top: 80px;
-}
-
-/* Animation des sections au chargement */
-section {
-  animation: fadeInUp 1s ease-out;
-}
-
-/* Responsive */
-@media (max-width: 1250px) {
-  .project-card {
-    width: 100%;
-    max-width: 90%;
-    height: auto;
-  }
-
-  #scrollTopButton {
-    bottom: 70px !important;
-    font-size: 50px !important;
-    padding: 20px 30px !important;
-  }
-
-  .Button {
-    font-size: 40px;
-    top: 30px;
-    padding: 20px 30px;
-  }
-
-  #topName {
-    font-size: 2rem;
-    top: 50px;
-  }
-
-  #madeBy {
-    font-size: 1.5rem !important;
-  }
-
-  .toast-notification {
-    top: 100px;
-    right: 20px;
-    left: 20px;
-    min-width: unset;
-    font-size: 40px;
-    padding: 45px 60px;
-  }
-
-  .toast-notification i {
-    font-size: 65px;
-  }
+  scroll-padding-top: 100px;
 }
 
 /* ======================== */
@@ -381,81 +457,59 @@ section {
 }
 
 /* ======================== */
-/* LOADING SCREEN           */
+/* RESPONSIVE               */
 /* ======================== */
+@media (max-width: 1250px) {
+  .top-nav-container {
+    top: 30px;
+    right: 20px;
+    gap: 20px;
+  }
 
-/* --- LOADING SCREEN --- */
-#loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #050505;
-  z-index: 10000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transition: opacity 0.5s ease-out, visibility 0.5s;
-}
+  .NavBar {
+    gap: 15px;
+  }
 
-.loader-container {
-  width: 300px;
-  text-align: center;
-  font-family: 'Orbitron', sans-serif;
-}
+  .NavBar a {
+    font-size: 0.9rem;
+  }
 
-h2.loader-text {
-  color: #ffffff;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 2px;
-  text-shadow:
-    0 0 5px rgba(180, 0, 255, 1),
-    /* 1. Contour immédiat très fort */
-    0 0 15px rgba(180, 0, 255, 0.8),
-    /* 2. Le "cœur" du néon */
-    0 0 40px rgba(180, 0, 255, 0.6),
-    /* 3. La diffusion moyenne */
-    0 0 80px rgba(180, 0, 255, 0.4);
-  /* 4. Le halo lointain */
-}
+  .Button {
+    font-size: 40px;
+    padding: 20px 30px;
+  }
 
-p.loader-text {
-  color: #666367;
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-  font-family: 'Inter', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+  #topName {
+    font-size: 2rem;
+    top: 50px;
+  }
 
-.progress-bar-bg {
-  width: 100%;
-  height: 6px;
-  background-color: #222;
-  border-radius: 3px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-}
+  #scrollTopButton {
+    bottom: 70px !important;
+    font-size: 50px !important;
+    padding: 20px 30px !important;
+  }
 
-#progress-bar {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #f200ff, #b400ff);
-  transition: width 0.2s ease-out;
-}
+  #madeBy {
+    font-size: 1.5rem !important;
+  }
 
-#loading-percentage {
-  color: #555;
-  margin-top: 10px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
+  .toast-notification {
+    top: 100px;
+    right: 20px;
+    left: 20px;
+    min-width: unset;
+    font-size: 40px;
+    padding: 45px 60px;
+  }
 
-.loading-hidden {
-  opacity: 0;
-  visibility: hidden;
+  .toast-notification i {
+    font-size: 65px;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+  }
 }

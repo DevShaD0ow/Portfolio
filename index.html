@@ -40,16 +40,22 @@
 
   <!-- Bouton fixe CV -->
   <div id="topName">Alexis Tirant</div>
-  <ul>
-    <li><a href="#">home</a></li>
-    <li><a href="#">archives</a></li>
-    <li><a href="#">tags</a></li>
-    <li><a href="#">categories</a></li>
-    <li><a href="#">about</a></li>
-  </ul>
-  <a class="Button" href="./assets/CV_Alexis_Tirant.pdf" target="_blank" rel="noopener noreferrer">
-    Voir mon CV
-  </a>
+
+  <div class="top-nav-container">
+
+    <ul class='NavBar'>
+      <li><a href="#firstView">Accueil</a></li>
+      <li><a href="#aboutMe">À Propos</a></li>
+      <li><a href="#education">Parcours</a></li>
+      <li><a href="#projects-view">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a class="Button" href="./assets/CV_Alexis_Tirant.pdf" target="_blank" rel="noopener noreferrer">
+      Voir mon CV
+    </a>
+
+  </div>
 
   <!-- VUE 1 -->
   <section id="firstView">
@@ -236,7 +242,7 @@
     <h2 class="section-title" data-tag="pr">Mes Projets</h2>
     <div class="projects-container">
 
-      <div class="project-card" data-tags="Unity, C#, VR" data-video="./assets/images/projects/ais/AIS.mp4"
+      <div class="project-card" id="ais" data-tags="Unity, C#, VR" data-video="./assets/images/projects/ais/AIS.mp4"
         data-link="project/project-detail-ais.html">
         <img src="./assets/images/projects/ais/preview.webp" alt="Preview Projet Alone In Space"
           class="project-preview">
@@ -248,8 +254,8 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++, IA" data-video="./assets/images/projects/ROP/VideoROP.mp4"
-        data-link="project/project-detail-rop.html">
+      <div class="project-card" id="rop" data-tags="Unreal, C++, IA"
+        data-video="./assets/images/projects/ROP/VideoROP.mp4" data-link="project/project-detail-rop.html">
         <img src="./assets/images/projects/ROP/preview.webp" alt="Preview Projet enigmes" class="project-preview">
         <video muted loop playsinline preload="none"></video>
         <div class="card-content">
@@ -260,8 +266,8 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++,IA" data-video="./assets/images/projects/tps/VideoTS.mp4"
-        data-link="project/project-detail-tps.html">
+      <div class="project-card" id="tps" data-tags="Unreal, C++,IA"
+        data-video="./assets/images/projects/tps/VideoTS.mp4" data-link="project/project-detail-tps.html">
         <img src="./assets/images/projects/tps/preview.webp" alt="Preview Projet Tower defense" class="project-preview">
         <video muted loop playsinline preload="none"></video>
         <div class="card-content">
@@ -272,8 +278,8 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++, IA" data-video="./assets/images/projects/superai/Brick.mp4"
-        data-link="project/project-detail-brick.html">
+      <div class="project-card" id="brick" data-tags="Unreal, C++, IA"
+        data-video="./assets/images/projects/superai/Brick.mp4" data-link="project/project-detail-brick.html">
         <img src="./assets/images/projects/superai/preview.webp" alt="Preview Projet brick buster"
           class="project-preview">
         <video muted loop playsinline preload="none"></video>
@@ -284,7 +290,7 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="AirConsole, HTML , CSS, JavaScript"
+      <div class="project-card" id="bullrun" data-tags="AirConsole, HTML , CSS, JavaScript"
         data-video="./assets/images/projects/bullrun/invest.mp4" data-link="project/project-detail-bullrun.html">
         <img src="./assets/images/projects/bullrun/preview.webp" alt="Preview Projet Space shooter"
           class="project-preview">
@@ -297,8 +303,8 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++, Jeux" data-video="./assets/images/projects/spaceshooter/SP.mp4"
-        data-link="project/project-detail-space.html">
+      <div class="project-card" id="space" data-tags="Unreal, C++, Jeux"
+        data-video="./assets/images/projects/spaceshooter/SP.mp4" data-link="project/project-detail-space.html">
         <img src="./assets/images/projects/spaceshooter/preview.webp" alt="Preview Projet Space shooter"
           class="project-preview">
         <video muted loop playsinline preload="none"></video>
@@ -309,7 +315,7 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++, Reseau"
+      <div class="project-card" id="replication" data-tags="Unreal, C++, Reseau"
         data-video="./assets/images/projects/replication/amongUs.mp4"
         data-link="project/project-detail-replication.html">
         <img src="./assets/images/projects/replication/preview.webp" alt="Preview Projet replication"
@@ -322,8 +328,8 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++, IA" data-video="./assets/images/projects/pacman/VideoV4.mp4"
-        data-link="project/project-detail-pacman.html">
+      <div class="project-card" id="pacman" data-tags="Unreal, C++, IA"
+        data-video="./assets/images/projects/pacman/VideoV4.mp4" data-link="project/project-detail-pacman.html">
         <img src="./assets/images/projects/pacman/preview.webp" alt="Preview Projet pacman" class="project-preview">
         <video muted loop playsinline preload="none"></video>
         <div class="card-content">
@@ -333,8 +339,8 @@
         </div>
       </div>
 
-      <div class="project-card" data-tags="Unreal, C++,Jeux" data-video="./assets/images/projects/td/VideoTD.mp4"
-        data-link="project/project-detail-td.html">
+      <div class="project-card" id="td" data-tags="Unreal, C++,Jeux"
+        data-video="./assets/images/projects/td/VideoTD.mp4" data-link="project/project-detail-td.html">
         <img src="./assets/images/projects/td/preview.webp" alt="Preview Projet Tower defense" class="project-preview">
         <video muted loop playsinline preload="none"></video>
         <div class="card-content">
