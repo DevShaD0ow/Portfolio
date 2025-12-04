@@ -9,10 +9,22 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/project-detail.css">
+    <script src="../js/loader.js"></script>
 </head>
 
 <body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <h2 class="loader-text">DevShad0ow</h2>
+            <p class="loader-text">Chargement du portfolio...</p>
+            <div class="progress-bar-bg">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="loading-percentage">0%</p>
+        </div>
+    </div>
     <a href="../index.html" class="back-button">Retour au portfolio</a>
     <!-- Hero Section -->
     <section class="hero">
