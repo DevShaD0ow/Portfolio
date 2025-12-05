@@ -438,3 +438,369 @@ section {
   transition: all 0.3s;
   animation: fadeInUp 1s;
 }
+
+/* ========================================= */
+/* AMÉLIORATIONS VISUELLES MODERNES 2025    */
+/* Portfolio niveau Awwwards                */
+/* ========================================= */
+
+/* === 1. PALETTE DE COULEURS MODERNE === */
+:root {
+  --primary: #b400ff;
+  /* Violet principal */
+  --primary-light: #d46aff;
+  /* Violet clair / hover */
+  --primary-dark: #7a00c8;
+  /* Violet profond */
+
+  --accent-1: #ff3cac;
+  /* Accent rose-violet néon */
+  --accent-2: #8c52ff;
+  /* Accent secondaire (icônes, bordures) */
+  --accent-3: #00eaff;
+  /* Cyan léger pour respirer */
+
+  --neutral-950: #050005;
+  --neutral-900: #0a0a0a;
+  --neutral-800: #111;
+  --neutral-700: #1a1a1a;
+
+  --gradient-1: linear-gradient(135deg, #b400ff 0%, #7a00c8 100%);
+  --gradient-2: linear-gradient(135deg, #ff3cac 0%, #b400ff 100%);
+  --gradient-3: linear-gradient(135deg, #00eaff 0%, #7a00c8 100%);
+  --gradient-hero: radial-gradient(circle at 20% 50%, rgba(180, 0, 255, 0.2), transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(255, 60, 172, 0.2), transparent 60%);
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(20px) saturate(180%);
+}
+
+
+
+/* === 2. HERO SECTION - WOW FACTOR === */
+@media (max-width: 1250px) {
+
+  /* Hero avec gradient animé */
+  #firstView {
+    background:
+      var(--gradient-hero),
+      var(--neutral-950) !important;
+    animation: hero-pulse 8s ease-in-out infinite !important;
+  }
+
+
+
+
+  @keyframes hero-pulse {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Photo avec effet néon */
+  .ppAcc {
+    border: 3px solid transparent !important;
+    background:
+      linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+      linear-gradient(135deg, #667eea, #764ba2, #ec4899) border-box !important;
+    box-shadow:
+      0 0 40px rgba(102, 126, 234, 0.4),
+      0 0 80px rgba(236, 72, 153, 0.2),
+      inset 0 0 20px rgba(102, 126, 234, 0.1) !important;
+    animation: neon-pulse 3s ease-in-out infinite !important;
+  }
+
+  @keyframes neon-pulse {
+
+    0%,
+    100% {
+      box-shadow:
+        0 0 40px rgba(102, 126, 234, 0.4),
+        0 0 80px rgba(236, 72, 153, 0.2);
+    }
+
+    50% {
+      box-shadow:
+        0 0 60px rgba(102, 126, 234, 0.6),
+        0 0 120px rgba(236, 72, 153, 0.4);
+    }
+  }
+
+  /* Titre avec gradient animé */
+  .portfolioTitle {
+    background: linear-gradient(135deg,
+        #667eea 0%,
+        #764ba2 25%,
+        #ec4899 50%,
+        #f97316 75%,
+        #667eea 100%) !important;
+    background-size: 300% 300% !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    animation: gradient-shift 8s ease infinite !important;
+  }
+
+  @keyframes gradient-shift {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Icons sociaux avec couleurs */
+  .wrapper .icon.discord {
+    border-color: #5865F2 !important;
+  }
+
+  .wrapper .icon.discord:active {
+    background: linear-gradient(135deg, #5865F2, #7289da) !important;
+    box-shadow: 0 0 30px rgba(88, 101, 242, 0.5) !important;
+  }
+
+  .wrapper .icon.linkedin {
+    border-color: #0077b5 !important;
+  }
+
+  .wrapper .icon.linkedin:active {
+    background: linear-gradient(135deg, #0077b5, #00a0dc) !important;
+    box-shadow: 0 0 30px rgba(0, 119, 181, 0.5) !important;
+  }
+
+  .wrapper .icon.github {
+    border-color: #6e5494 !important;
+  }
+
+  .wrapper .icon.github:active {
+    background: linear-gradient(135deg, #6e5494, #8b72b8) !important;
+    box-shadow: 0 0 30px rgba(110, 84, 148, 0.5) !important;
+  }
+
+  /* === 3. SECTIONS - PROFONDEUR 3D === */
+
+  /* À propos avec accents */
+  #aboutMe {
+    background:
+      radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+      linear-gradient(180deg, #0a0a0a 0%, #0f0a1a 50%, #0a0a0a 100%) !important;
+  }
+
+  .about-container h2 {
+    background: linear-gradient(135deg, #667eea 0%, #ec4899 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+
+  /* Skill bars avec gradients */
+  .skill-bar .bar .fill {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #ec4899 100%) !important;
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.6) !important;
+  }
+
+  /* === 4. CARTES PROJETS - DEPTH & HOVER === */
+
+  .project-card {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow:
+      0 10px 40px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  /* Effet shimmer au hover */
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+      transform: translateX(100%) rotate(45deg);
+    }
+  }
+
+  .project-card:active {
+    transform: scale(0.98) translateY(2px) !important;
+    box-shadow:
+      0 5px 20px rgba(0, 0, 0, 0.6),
+      0 0 40px rgba(102, 126, 234, 0.2) !important;
+  }
+
+  /* Bordure arc-en-ciel au hover */
+  .project-card:hover {
+    border-color: rgba(102, 126, 234, 0.5) !important;
+  }
+
+  /* Tags avec couleurs */
+  .tag {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s !important;
+  }
+
+  /* === 5. TIMELINE - MODERNISÉE === */
+
+  .timeline-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow:
+      0 0 25px rgba(102, 126, 234, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .timeline-content {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .timeline-content:active {
+    border-color: rgba(102, 126, 234, 0.5) !important;
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.5),
+      0 0 30px rgba(102, 126, 234, 0.3) !important;
+  }
+
+  /* === 6. FORMULAIRE CONTACT - INTERACTIF === */
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    background: rgba(20, 20, 30, 0.9) !important;
+    border-color: rgba(102, 126, 234, 0.5) !important;
+    box-shadow:
+      0 0 20px rgba(102, 126, 234, 0.2),
+      inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  /* Bouton submit avec gradient */
+  .submit-btn {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%) !important;
+    border: 1px solid rgba(102, 126, 234, 0.4) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .submit-btn:hover::before {
+    left: 100%;
+  }
+
+  .submit-btn:active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.5) !important;
+  }
+
+  /* === 7. MICRO-ANIMATIONS === */
+
+  /* Floating animation pour certains éléments */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .skill-bar:nth-child(odd) {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .skill-bar:nth-child(even) {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  /* === 8. SCROLL INDICATOR MODERNE === */
+
+  #reading-progress {
+    background: linear-gradient(90deg, #667eea, #764ba2, #ec4899) !important;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5) !important;
+  }
+
+  /* === 9. NAVIGATION - GLASS EFFECT === */
+
+  .hamburger-menu {
+    background: rgba(10, 10, 15, 0.8) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(102, 126, 234, 0.3) !important;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .hamburger-menu.active {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2)) !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.5) !important;
+  }
+}
+
+/* === 10. PERFORMANCE === */
+@media (max-width: 1250px) {
+
+  /* Hardware acceleration */
+  .project-card,
+  .skill-bar,
+  .timeline-content,
+  .ppAcc {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Smooth scroll */
+  * {
+    scroll-behavior: smooth;
+  }
+}

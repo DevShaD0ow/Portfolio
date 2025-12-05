@@ -83,7 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function vibrateOnTouch(element, duration = 10) {
         element.addEventListener('touchstart', () => {
             if (navigator.vibrate) {
-                navigator.vibrate(duration);
+                try {
+                    navigator.vibrate(duration);
+                } catch (e) {
+                    // Silently ignore vibration errors
+                }
             }
         });
     }
@@ -329,8 +333,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const depthObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const depth = entry.intersectionRatio;
-            entry.target.style.filter = `blur(${(1 - depth) * 2}px)`;
-            entry.target.style.opacity = Math.max(0.3, depth);
+            // entry.target.style.filter = `blur(${(1 - depth) * 2}px)`;
+            // entry.target.style.opacity = Math.max(0.3, depth);
         });
     }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
 
