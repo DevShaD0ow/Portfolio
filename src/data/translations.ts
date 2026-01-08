@@ -1,13 +1,21 @@
+// src/data/translations.ts
+
 export type Lang = "fr" | "en";
 export type Category = "all" | "game" | "web" | "dev";
 
+// =====================================
+// STRUCTURE COMPLÈTE DES TRADUCTIONS
+// =====================================
+
 interface TranslationStructure {
+    // Titres des sections
     titles: {
         parcours: string;
         skills: string;
         projects: string;
     };
 
+    // Filtres des compétences
     filters: {
         all: string;
         game: string;
@@ -15,6 +23,7 @@ interface TranslationStructure {
         dev: string;
     };
 
+    // Timeline (parcours)
     timeline: Array<{
         title: string;
         institution: string;
@@ -22,12 +31,14 @@ interface TranslationStructure {
         description: string;
     }>;
 
+    // Projets (seulement les textes traduits)
     projects: Array<{
         title: string;
         description: string;
         tags: string[];
     }>;
 
+    // Navigation
     nav: {
         home: string;
         journey: string;
@@ -35,10 +46,15 @@ interface TranslationStructure {
         projects: string;
     };
 
+    // Bouton de langue
     languageButton: {
         switchTo: string;
     };
 }
+
+// =====================================
+// DONNÉES NON-TRADUITES (chemins, slugs)
+// =====================================
 
 export interface ProjectMedia {
     slug: string;
@@ -93,6 +109,10 @@ export const projectsMedia: ProjectMedia[] = [
         image: "/Portfolio/assets/images/projects/td/preview.webp",
     },
 ];
+
+// =====================================
+// TRADUCTIONS FRANÇAISES
+// =====================================
 
 const fr: TranslationStructure = {
     titles: {
@@ -195,6 +215,10 @@ const fr: TranslationStructure = {
     },
 };
 
+// =====================================
+// TRADUCTIONS ANGLAISES
+// =====================================
+
 const en: TranslationStructure = {
     titles: {
         parcours: "My Journey",
@@ -295,6 +319,10 @@ const en: TranslationStructure = {
         switchTo: "🇫🇷 Français",
     },
 };
+
+// =====================================
+// EXPORT
+// =====================================
 
 export const translations: Record<Lang, TranslationStructure> = {
     fr,
