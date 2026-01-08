@@ -147,6 +147,7 @@ export default function Home() {
 
         {/* --- SECTION CONTACT --- */}
         <ContactSection />
+
       </div>
     </main>
   );
