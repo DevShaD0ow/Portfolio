@@ -77,7 +77,6 @@ export default function AnimatedTitle() {
     }, []);
 
     return (
-        // CHANGEMENT ICI : bg-transparent au lieu de bg-black
         <div ref={containerRef} className="w-screen h-screen bg-transparent overflow-hidden flex flex-col justify-center items-center relative z-10">
             <svg
                 ref={svgRef}

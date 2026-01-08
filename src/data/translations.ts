@@ -65,48 +65,48 @@ export interface ProjectMedia {
 export const projectsMedia: ProjectMedia[] = [
     {
         slug: "alone-in-space-vr",
-        video: "./assets/images/projects/ais/AIS.webm",
-        image: "./assets/images/projects/ais/preview.webp",
+        video: "/Portfolio/assets/images/projects/ais/AIS.webm",
+        image: "/Portfolio/assets/images/projects/ais/preview.webp",
     },
     {
         slug: "relic-of-the-past",
-        video: "./assets/images/projects/ROP/VideoROP.webm",
-        image: "./assets/images/projects/ROP/preview.webp",
+        video: "/Portfolio/assets/images/projects/ROP/VideoROP.webm",
+        image: "/Portfolio/assets/images/projects/ROP/preview.webp",
     },
     {
         slug: "third-person-shooter",
-        video: "./assets/images/projects/tps/VideoTS.webm",
-        image: "./assets/images/projects/tps/preview.webp",
+        video: "/Portfolio/assets/images/projects/tps/VideoTS.webm",
+        image: "/Portfolio/assets/images/projects/tps/preview.webp",
     },
     {
         slug: "brick-buster",
-        video: "./assets/images/projects/superai/Brick.webm",
-        image: "./assets/images/projects/superai/preview.webp",
+        video: "/Portfolio/assets/images/projects/superai/Brick.webm",
+        image: "/Portfolio/assets/images/projects/superai/preview.webp",
     },
     {
         slug: "bull-run-party",
-        video: "./assets/images/projects/bullrun/invest.webm",
-        image: "./assets/images/projects/bullrun/preview.webp",
+        video: "/Portfolio/assets/images/projects/bullrun/invest.webm",
+        image: "/Portfolio/assets/images/projects/bullrun/preview.webp",
     },
     {
         slug: "space-shooter",
-        video: "./assets/images/projects/spaceshooter/SP.webm",
-        image: "./assets/images/projects/spaceshooter/preview.webp",
+        video: "/Portfolio/assets/images/projects/spaceshooter/SP.webm",
+        image: "/Portfolio/assets/images/projects/spaceshooter/preview.webp",
     },
     {
         slug: "among-us-3d",
-        video: "./assets/images/projects/amongUs/amongUs.webm",
-        image: "./assets/images/projects/amongUs/preview.webp",
+        video: "/Portfolio/assets/images/projects/amongUs/amongUs.webm",
+        image: "/Portfolio/assets/images/projects/amongUs/preview.webp",
     },
     {
         slug: "pacman",
-        video: "./assets/images/projects/pacman/VideoV4.webm",
-        image: "./assets/images/projects/pacman/preview.webp",
+        video: "/Portfolio/assets/images/projects/pacman/VideoV4.webm",
+        image: "/Portfolio/assets/images/projects/pacman/preview.webp",
     },
     {
         slug: "tower-defense",
-        video: "./assets/images/projects/td/VideoTD.webm",
-        image: "./assets/images/projects/td/preview.webp",
+        video: "/Portfolio/assets/images/projects/td/VideoTD.webm",
+        image: "/Portfolio/assets/images/projects/td/preview.webp",
     },
 ];
 
