@@ -28,7 +28,6 @@ export default function Home() {
     window.scrollTo(0, 0);
 
     const ctx = gsap.context(() => {
-      // Animation d'apparition du contenu principal
       gsap.to(contentRef.current, {
         autoAlpha: 1,
         duration: 1,
@@ -48,17 +47,17 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black font-sans text-neutral-200 overflow-x-hidden selection:bg-violet-500/30 selection:text-violet-200">
 
-      {/* 1. SCÈNE 3D (Arrière-plan fixe, z-0) */}
+      {/* 1. SCÈNE 3D */}
       <CodeSymbol3D />
 
       <Nav />
 
-      {/* 2. SECTION TITRE SVG (Premier plan, z-10) */}
+      {/* 2. SECTION TITRE SVG */}
       <section id="accueil" className="relative z-10">
         <AnimatedTitle />
       </section>
 
-      {/* 3. LE CONTENU (z-20) */}
+      {/* 3. LE CONTENU */}
       <div
         ref={contentRef}
         className="relative z-20 px-6 md:px-12 lg:px-24 pb-24 -mt-20 opacity-0 invisible bg-gradient-to-b from-transparent via-black to-black"

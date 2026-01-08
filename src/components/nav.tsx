@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { Menu, X } from "lucide-react"; // Optionnel : installe lucide-react ou utilise des SVG
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_ITEMS = [
@@ -21,7 +21,6 @@ export default function Nav() {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
             <div className="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
 
-                {/* Bouton Hamburger - Visible uniquement sur mobile */}
                 <button
                     onClick={toggleMenu}
                     className="md:hidden text-white p-2 focus:outline-none"
@@ -30,7 +29,6 @@ export default function Nav() {
                     {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
 
-                {/* Menu Desktop */}
                 <ul className="hidden md:flex justify-center flex-1 gap-12 lg:gap-24 text-sm font-bold text-violet-500 uppercase tracking-widest">
                     {NAV_ITEMS.map((item, index) => (
                         <li key={index} className="hover:text-violet-400 transition-colors">
@@ -41,7 +39,6 @@ export default function Nav() {
                     ))}
                 </ul>
 
-                {/* Bouton Langue (Desktop & Mobile align) */}
                 <div className="flex items-center">
                     <button
                         onClick={toggleLanguage}
@@ -52,7 +49,6 @@ export default function Nav() {
                 </div>
             </div>
 
-            {/* Menu Mobile (AnimatePresence pour l'animation de sortie) */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div

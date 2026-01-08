@@ -24,7 +24,6 @@ export default function AnimatedTitle() {
     const containerRef = useRef<HTMLDivElement>(null);
     const svgRef = useRef<SVGSVGElement>(null);
 
-    // ... (Votre logique letters mapping reste la même)
     const letters = [
         // -- Mot 1 --
         { id: 0, d: RAW_PATH_DATA[0], x: -440, y: -60 },

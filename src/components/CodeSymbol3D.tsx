@@ -14,7 +14,7 @@ function SymbolModel() {
 
     useFrame((state, delta) => {
         if (groupRef.current) {
-            // Rotation simple - consomme très peu
+            // Rotation simple
             groupRef.current.rotation.y += delta * 0.5;
         }
     });
@@ -61,7 +61,6 @@ function SymbolModel() {
             });
     }, [viewport]);
 
-    // IMPORTANT: Utilise un chemin local pour éviter les requêtes réseau lentes
     const fontUrl = "/Portfolio/fonts/helvetiker_bold.typeface.json";
 
     return (
@@ -72,11 +71,10 @@ function SymbolModel() {
                         font={fontUrl}
                         size={1}
                         height={0.1}
-                        curveSegments={4} // Optimisation majeure : moins de polygones
-                        bevelEnabled={false} // Optimisation : pas de calculs de bordures
+                        curveSegments={4}
+                        bevelEnabled={false}
                     >
                         {"</>"}
-                        {/* Matériau standard : beaucoup plus léger que PhysicalMaterial */}
                         <meshStandardMaterial
                             color="#8b5cf6"
                             metalness={0.6}
@@ -95,14 +93,13 @@ export default function CodeSymbol3D() {
         <div className="fixed inset-0 z-0 pointer-events-none">
             <Canvas
                 camera={{ position: [0, 0, 12], fov: 45 }}
-                // gl: optimisation des performances navigateur
                 gl={{
                     antialias: false,
                     alpha: true,
                     powerPreference: "high-performance",
-                    precision: "lowp" // Réduit la précision des calculs pour économiser la batterie
+                    precision: "lowp"
                 }}
-                dpr={[1, 1.5]} // Limite la résolution sur les écrans 4K/Retina pour soulager le GPU
+                dpr={[1, 1.5]}
             >
                 <ambientLight intensity={0.8} />
                 <pointLight position={[10, 10, 10]} intensity={1.5} />
