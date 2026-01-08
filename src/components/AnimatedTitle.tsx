@@ -52,7 +52,7 @@ export default function AnimatedTitle() {
                 gsap.set(path, { strokeDasharray: length, strokeDashoffset: length, fillOpacity: 0 });
             });
 
-            gsap.set(svgRef.current, { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" });
+            gsap.set(svgRef.current, { autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)" });
 
             const tl = gsap.timeline({
                 scrollTrigger: {
