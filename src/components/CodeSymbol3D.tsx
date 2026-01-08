@@ -35,7 +35,7 @@ function SymbolModel() {
             scrollTrigger: {
                 trigger: "body",
                 start: "top top",
-                end: "2500px top",
+                end: "1500px top",
                 scrub: 1,
             }
         });
