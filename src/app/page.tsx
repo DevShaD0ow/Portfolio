@@ -29,7 +29,7 @@ export default function Home() {
 
     const ctx = gsap.context(() => {
       gsap.to(contentRef.current, {
-        autoAlpha: 1,
+        opacity: 1,
         duration: 1,
         delay: 0.5,
         ease: "power2.out",
