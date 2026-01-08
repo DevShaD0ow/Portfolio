@@ -7,7 +7,6 @@ import ProjectCard from "@/components/ProjectCard";
 import Nav from "@/components/nav";
 import SkillBar from "@/components/SkillBar";
 import ContactSection from "@/components/contact";
-import CodeSymbol3D from "@/components/CodeSymbol3D";
 import AnimatedTitle from "@/components/AnimatedTitle";
 
 import { skillsData } from "@/data/skillsData";
@@ -30,7 +29,7 @@ export default function Home() {
     const ctx = gsap.context(() => {
       // Animation d'apparition du contenu principal
       gsap.to(contentRef.current, {
-        autoAlpha: 1,
+        opacity: 1,
         duration: 1,
         delay: 0.5,
         ease: "power2.out",
@@ -48,20 +47,17 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black font-sans text-neutral-200 overflow-x-hidden selection:bg-violet-500/30 selection:text-violet-200">
 
-      {/* 1. SCÈNE 3D (Arrière-plan fixe, z-0) */}
-      <CodeSymbol3D />
-
       <Nav />
 
-      {/* 2. SECTION TITRE SVG (Premier plan, z-10) */}
+      {/* 1. SECTION TITRE SVG (L'animation du nom) */}
       <section id="accueil" className="relative z-10">
         <AnimatedTitle />
       </section>
 
-      {/* 3. LE CONTENU (z-20) */}
+      {/* 2. LE CONTENU */}
       <div
         ref={contentRef}
-        className="relative z-20 px-6 md:px-12 lg:px-24 pb-24 -mt-20 opacity-0 invisible bg-gradient-to-b from-transparent via-black to-black"
+        className="relative z-20 px-6 md:px-12 lg:px-24 pb-24 -mt-20 opacity-0"
       >
         {/* --- SECTION PARCOURS --- */}
         <section id="parcours" className="mb-32 max-w-4xl mx-auto scroll-mt-24 pt-20">
@@ -91,7 +87,6 @@ export default function Home() {
             </span>
           </h2>
 
-          {/* Filtres de catégories */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             {categories.map((catId) => (
               <button
@@ -145,7 +140,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- SECTION CONTACT --- */}
         <ContactSection />
       </div>
     </main>
