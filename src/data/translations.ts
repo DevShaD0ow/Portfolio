@@ -50,6 +50,12 @@ interface TranslationStructure {
     languageButton: {
         switchTo: string;
     };
+    hero: {
+        available: string;
+        jobTitle: string;
+        fullstack: string;
+        jobDesc: string;
+    };
 }
 
 // =====================================
@@ -153,7 +159,14 @@ const fr: TranslationStructure = {
             period: "Août 2025 - Avril 2026",
             description: "Programme de double diplôme en Baccalauréat en Développement de Jeux Vidéo. Formation approfondie en game design, moteurs de jeu (Unity, Unreal), programmation gameplay, et production de jeux vidéo professionnels.",
         },
+
     ],
+    hero: {
+        available: "Disponible pour travailler",
+        jobTitle: "Développeur",
+        fullstack: "Full Stack",
+        jobDesc: "Conception d'interfaces innovantes & architectures robustes.",
+    },
 
     projects: [
         {
@@ -259,6 +272,12 @@ const en: TranslationStructure = {
             description: "Dual degree program for a Bachelor's in Video Game Development. In-depth training in game design, game engines (Unity, Unreal), gameplay programming, and professional video game production.",
         },
     ],
+    hero: {
+        available: "Available for work",
+        jobTitle: "Developer",
+        fullstack: "Full Stack",
+        jobDesc: "Designing innovative interfaces & robust architectures.",
+    },
 
     projects: [
         {

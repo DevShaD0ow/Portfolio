@@ -3,6 +3,8 @@ import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 gsap.registerPlugin(ScrollTrigger);
 const RAW_PATH_DATA = [
@@ -25,6 +27,10 @@ export default function AnimatedTitle() {
     const containerRef = useRef<HTMLDivElement>(null);
     const svgRef = useRef<SVGSVGElement>(null);
     const [isFinished, setIsFinished] = useState(false);
+
+    // Récupération de la langue et des traductions
+    const { isEnglish } = useLanguage();
+    const t = translations[isEnglish ? "en" : "fr"];
 
     const letters = RAW_PATH_DATA.map((d, i) => {
         const positions = [
@@ -82,21 +88,23 @@ export default function AnimatedTitle() {
                 transition={{ duration: 1 }}
                 className="relative flex-shrink-0"
             >
+                {/* Badge Disponibilité */}
                 <div className="absolute -top-2 -right-2 z-20 bg-black/80 border border-emerald-500/50 px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
                     <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                    <span className="text-[10px] text-emerald-500 font-bold uppercase tracking-widest whitespace-nowrap">Available for work</span>
+                    <span className="text-[10px] text-emerald-500 font-bold uppercase tracking-widest whitespace-nowrap">
+                        {isEnglish ? "Available for work" : "Disponible"}
+                    </span>
                 </div>
-
-                <div className="w-56 h-56 md:w-80 md:h-80 relative z-10 overflow-hidden rounded-full border-2 border-white/10 shadow-2xl group">
+                <div className="w-56 h-56 md:w-80 md:h-80 relative z-10 rounded-full border-2 border-white/10 shadow-2xl group">
                     <img
                         src="/Portfolio/assets/images/ui/photo.webp"
                         alt="Alexis Tirant"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full object-cover rounded-full transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60" />
-                </div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/40 to-transparent opacity-60" />
 
-                <div className="absolute -inset-4 border border-dashed border-violet-500 rounded-full animate-[spin_30s_linear_infinite] -z-10 w-[350px] h-[350px]" />
+                    <div className="absolute -inset-4 border border-dashed border-violet-500 rounded-full animate-[spin_30s_linear_infinite] -z-10" />
+                </div>
             </motion.div>
 
             <div className="flex flex-col items-start relative z-10">
@@ -128,11 +136,13 @@ export default function AnimatedTitle() {
                     <div className="flex items-center gap-4">
                         <div className="h-[2px] w-12 bg-violet-500" />
                         <h2 className="text-xl md:text-3xl font-light tracking-[0.2em] text-white/90 uppercase">
-                            Développeur <span className="text-violet-500 font-black">Full Stack</span>
+                            {isEnglish ? "Full Stack" : "Développeur"} <span className="text-violet-500 font-black">{isEnglish ? "Developer" : "Full Stack"}</span>
                         </h2>
                     </div>
                     <p className="text-gray-500 text-sm md:text-base font-mono tracking-tight max-w-[400px]">
-                        Conception d'interfaces innovantes & architectures robustes.
+                        {isEnglish
+                            ? "Innovative interface design & robust architectures."
+                            : "Conception d'interfaces innovantes & architectures robustes."}
                     </p>
                 </motion.div>
             </div>

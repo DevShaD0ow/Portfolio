@@ -60,8 +60,8 @@ export default function Home() {
       >
         {/* --- SECTION PARCOURS --- */}
         <section id="parcours" className="mb-32 max-w-4xl mx-auto scroll-mt-24 pt-20">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-600">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 pt-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-600 ">
               {t.titles.parcours}
             </span>
           </h2>
