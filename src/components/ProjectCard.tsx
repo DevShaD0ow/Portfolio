@@ -10,9 +10,10 @@ interface ProjectCardProps {
     image: string;
     video: string;
     slug: string;
+    onClick: () => void;
 }
 
-export default function ProjectCard({ title, description, tags, image, video, slug }: ProjectCardProps) {
+export default function ProjectCard({ title, description, tags, image, video, slug, onClick }: ProjectCardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -42,7 +43,13 @@ export default function ProjectCard({ title, description, tags, image, video, sl
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="h-full"
         >
-            <Link href={`/project/${slug}`} className="block group h-full">
+            <div
+                className="block group h-full cursor-pointer"
+                onClick={(e) => {
+                    e.preventDefault(); // Empêche la navigation si on veut juste le popup
+                    onClick();
+                }}
+            >
                 <div
                     className="relative h-full flex flex-col bg-zinc-900 border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-violet-500 hover:shadow-[0_0_30px_-5px_rgba(124,58,237,0.5)]"
                     onMouseEnter={handleMouseEnter}
@@ -95,7 +102,7 @@ export default function ProjectCard({ title, description, tags, image, video, sl
                         </div>
                     </div>
                 </div>
-            </Link>
+            </div>
         </motion.div>
     );
 }

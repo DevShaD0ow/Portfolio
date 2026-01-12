@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
+import { motion, AnimatePresence } from "framer-motion"; // Ajout de AnimatePresence 🔄
 
 import TimelineItem from "@/components/TimelineItem";
 import ProjectCard from "@/components/ProjectCard";
@@ -12,6 +13,8 @@ import AnimatedTitle from "@/components/AnimatedTitle";
 import { skillsData } from "@/data/skillsData";
 import { translations, Category, projectsMedia } from "@/data/translations";
 import { useLanguage } from "@/context/LanguageContext";
+import { X, Github, ExternalLink } from "lucide-react"; // Icônes utiles 🛠️
+import PopUP from "@/components/popUP";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
@@ -19,6 +22,9 @@ export default function Home() {
   const { isEnglish } = useLanguage();
   const currentLang = isEnglish ? "en" : "fr";
   const t = translations[currentLang];
+
+  // État pour gérer le projet sélectionné (le popup)
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   useEffect(() => {
     if ("scrollRestoration" in history) {
@@ -45,15 +51,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black font-sans text-neutral-200 overflow-x-hidden selection:bg-violet-500/30 selection:text-violet-200">
-
       <Nav />
 
-      {/* 2. SECTION TITRE SVG */}
       <section id="accueil" className="relative z-10">
         <AnimatedTitle />
       </section>
 
-      {/* 3. LE CONTENU */}
       <div
         ref={contentRef}
         className="relative z-20 px-6 md:px-12 lg:px-24 pb-24 -mt-20 opacity-0 invisible bg-gradient-to-b from-transparent via-black to-black"
@@ -69,10 +72,7 @@ export default function Home() {
             {t.timeline.map((item, index) => (
               <TimelineItem
                 key={index}
-                title={item.title}
-                institution={item.institution}
-                period={item.period}
-                description={item.description}
+                {...item} // Utilisation du spread pour passer title, institution, etc.
               />
             ))}
           </div>
@@ -86,7 +86,6 @@ export default function Home() {
             </span>
           </h2>
 
-          {/* Filtres de catégories */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             {categories.map((catId) => (
               <button
@@ -125,25 +124,26 @@ export default function Home() {
             {t.projects.map((projectText, index) => {
               const media = projectsMedia[index];
               if (!media) return null;
+
               return (
                 <ProjectCard
                   key={index}
                   title={projectText.title}
                   description={projectText.description}
-                  tags={projectText.tags}
+                  tags={media.tags}
                   image={media.image}
                   video={media.video}
-                  slug={media.slug}
-                />
+                  onClick={() => setSelectedProject({ ...projectText, ...media })} slug={""} />
               );
             })}
           </div>
         </section>
 
-        {/* --- SECTION CONTACT --- */}
         <ContactSection />
-
       </div>
+
+      {/* --- LE POPUP (MODAL) --- */}
+      <PopUP selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
     </main>
   );
 }
