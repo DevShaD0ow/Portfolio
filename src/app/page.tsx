@@ -7,7 +7,6 @@ import ProjectCard from "@/components/ProjectCard";
 import Nav from "@/components/nav";
 import SkillBar from "@/components/SkillBar";
 import ContactSection from "@/components/contact";
-import CodeSymbol3D from "@/components/CodeSymbol3D";
 import AnimatedTitle from "@/components/AnimatedTitle";
 
 import { skillsData } from "@/data/skillsData";
@@ -46,9 +45,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black font-sans text-neutral-200 overflow-x-hidden selection:bg-violet-500/30 selection:text-violet-200">
-
-      {/* 1. SCÈNE 3D */}
-      <CodeSymbol3D />
 
       <Nav />
 

@@ -1,7 +1,8 @@
 "use client";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 const RAW_PATH_DATA = [
@@ -23,79 +24,118 @@ const RAW_PATH_DATA = [
 export default function AnimatedTitle() {
     const containerRef = useRef<HTMLDivElement>(null);
     const svgRef = useRef<SVGSVGElement>(null);
+    const [isFinished, setIsFinished] = useState(false);
 
-    const letters = [
-        // -- Mot 1 --
-        { id: 0, d: RAW_PATH_DATA[0], x: -440, y: -60 },
-        { id: 1, d: RAW_PATH_DATA[1], x: -670, y: 155 },
-        { id: 2, d: RAW_PATH_DATA[2], x: -80, y: 0 },
-        { id: 3, d: RAW_PATH_DATA[3], x: -480, y: 165 },
-        { id: 4, d: RAW_PATH_DATA[4], x: -300, y: 0 },
-        { id: 5, d: RAW_PATH_DATA[5], x: 140, y: -40 },
-        // -- Mot 2 --
-        { id: 6, d: RAW_PATH_DATA[6], x: -650, y: 300 },
-        { id: 7, d: RAW_PATH_DATA[7], x: -380, y: 220 },
-        { id: 8, d: RAW_PATH_DATA[8], x: -500, y: 240 },
-        { id: 9, d: RAW_PATH_DATA[9], x: -100, y: 240 },
-        { id: 10, d: RAW_PATH_DATA[10], x: -140, y: 270 },
-        { id: 11, d: RAW_PATH_DATA[11], x: 160, y: 270 },
-    ];
+    const letters = RAW_PATH_DATA.map((d, i) => {
+        const positions = [
+            { x: -440, y: -60 }, { x: -670, y: 155 }, { x: -80, y: 0 },
+            { x: -480, y: 165 }, { x: -300, y: 0 }, { x: 140, y: -40 },
+            { x: -650, y: 300 }, { x: -380, y: 220 }, { x: -500, y: 240 },
+            { x: -100, y: 240 }, { x: -140, y: 270 }, { x: 160, y: 270 },
+        ];
+        return { id: i, d, x: positions[i]?.x || 0, y: positions[i]?.y || 0 };
+    });
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const blackPaths = gsap.utils.toArray<SVGPathElement>("#black-layer path");
             const redPaths = gsap.utils.toArray<SVGPathElement>("#red-layer path");
-            const combinedPaths = [...blackPaths, ...redPaths];
 
-            combinedPaths.forEach((path) => {
+            [...blackPaths, ...redPaths].forEach((path) => {
                 const length = path.getTotalLength();
                 gsap.set(path, { strokeDasharray: length, strokeDashoffset: length, fillOpacity: 0 });
             });
-
-            gsap.set(svgRef.current, { autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)" });
 
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top top",
-                    end: "+=2000",
+                    end: "+=1500",
                     pin: true,
                     scrub: 1,
                 }
             });
 
-            tl.to(blackPaths, { strokeDashoffset: 0, ease: "power2.inOut", duration: 2, stagger: 0.05 }, 0);
-            tl.to(redPaths, { strokeDashoffset: 0, ease: "power2.inOut", duration: 2, stagger: 0.05 }, 0.1);
-            tl.to(blackPaths, { fillOpacity: 0.8, duration: 1, ease: "power1.in", stagger: 0.05 }, 1.5);
-            tl.to(redPaths, { fillOpacity: 1, duration: 1, ease: "power1.in", stagger: 0.05 }, 1.6);
-            tl.to({}, { duration: 0.5 });
-            tl.to(svgRef.current, { y: -200, scale: 0.9, opacity: 0, filter: "blur(10px)", duration: 1.5, ease: "power2.in" });
+            tl.to(blackPaths, { strokeDashoffset: 0, duration: 2, stagger: 0.05 }, 0)
+                .to(redPaths, { strokeDashoffset: 0, duration: 2, stagger: 0.05 }, 0.1)
+                .to(blackPaths, { fillOpacity: 0.8, duration: 1 }, 1.5)
+                .to(redPaths, { fillOpacity: 1, duration: 1 }, 1.6)
+                .add(() => setIsFinished(true), ">")
+                .to({}, { duration: 1.5 });
 
         }, containerRef);
         return () => ctx.revert();
     }, []);
 
     return (
-        <div ref={containerRef} className="w-screen h-screen bg-transparent overflow-hidden flex flex-col justify-center items-center relative z-10">
-            <svg
-                ref={svgRef}
-                viewBox="0 -50 1100 1000"
-                className="w-full h-full opacity-0"
-                preserveAspectRatio="xMidYMid meet"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ overflow: "visible", maxHeight: "85vh" }}
+        <div ref={containerRef} className="w-screen min-h-screen flex flex-col md:flex-row justify-center items-center gap-8 md:gap-20 px-6 relative z-10 bg-[#030303] overflow-hidden">
+
+            <div className="absolute inset-0 z-0 opacity-20"
+                style={{ backgroundImage: `linear-gradient(#1e1b4b 1px, transparent 1px), linear-gradient(90deg, #1e1b4b 1px, transparent 1px)`, backgroundSize: '40px 40px' }}
+            />
+
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-900/10 blur-[120px] rounded-full -z-10" />
+
+            <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1 }}
+                className="relative flex-shrink-0"
             >
-                <g id="black-layer" stroke="#000000" fill="#000000" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    {letters.map((item, i) => (
-                        item.d ? <path key={`black-${i}`} d={item.d} transform={`translate(${item.x + 4}, ${item.y + 4})`} /> : null
-                    ))}
-                </g>
-                <g id="red-layer" stroke="#780ab8ff" fill="#780ab8ff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    {letters.map((item, i) => (
-                        item.d ? <path key={`red-${i}`} d={item.d} transform={`translate(${item.x}, ${item.y})`} /> : null
-                    ))}
-                </g>
-            </svg>
+                <div className="absolute -top-2 -right-2 z-20 bg-black/80 border border-emerald-500/50 px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
+                    <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                    <span className="text-[10px] text-emerald-500 font-bold uppercase tracking-widest whitespace-nowrap">Available for work</span>
+                </div>
+
+                <div className="w-56 h-56 md:w-80 md:h-80 relative z-10 overflow-hidden rounded-full border-2 border-white/10 shadow-2xl group">
+                    <img
+                        src="/Portfolio/assets/images/ui/photo.webp"
+                        alt="Alexis Tirant"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60" />
+                </div>
+
+                <div className="absolute -inset-4 border border-dashed border-violet-500/40 rounded-full animate-[spin_30s_linear_infinite] -z-10 w-[350px] h-[350px]" />
+            </motion.div>
+
+            <div className="flex flex-col items-start relative z-10">
+                <svg
+                    ref={svgRef}
+                    viewBox="0 250 1100 350"
+                    className="w-full max-w-[320px] md:max-w-[500px] overflow-visible drop-shadow-[0_0_15px_rgba(120,10,184,0.3)]"
+                    preserveAspectRatio="xMinYMid meet"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g id="black-layer" stroke="#000000" fill="#000000" strokeWidth="1">
+                        {letters.map((item, i) => (
+                            <path key={`black-${i}`} d={item.d} transform={`translate(${item.x + 4}, ${item.y + 4})`} />
+                        ))}
+                    </g>
+                    <g id="red-layer" stroke="#780ab8ff" fill="#780ab8ff" strokeWidth="1">
+                        {letters.map((item, i) => (
+                            <path key={`red-${i}`} d={item.d} transform={`translate(${item.x}, ${item.y})`} />
+                        ))}
+                    </g>
+                </svg>
+
+                <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={isFinished ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8 }}
+                    className="mt-6 ml-2 space-y-2"
+                >
+                    <div className="flex items-center gap-4">
+                        <div className="h-[2px] w-12 bg-violet-500" />
+                        <h2 className="text-xl md:text-3xl font-light tracking-[0.2em] text-white/90 uppercase">
+                            Développeur <span className="text-violet-500 font-black">Full Stack</span>
+                        </h2>
+                    </div>
+                    <p className="text-gray-500 text-sm md:text-base font-mono tracking-tight max-w-[400px]">
+                        Conception d'interfaces innovantes & architectures robustes.
+                    </p>
+                </motion.div>
+            </div>
         </div>
     );
 }
