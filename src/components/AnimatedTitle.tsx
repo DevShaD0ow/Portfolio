@@ -96,7 +96,7 @@ export default function AnimatedTitle() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60" />
                 </div>
 
-                <div className="absolute -inset-4 border border-dashed border-violet-500/40 rounded-full animate-[spin_30s_linear_infinite] -z-10 w-[350px] h-[350px]" />
+                <div className="absolute -inset-4 border border-dashed border-violet-500 rounded-full animate-[spin_30s_linear_infinite] -z-10 w-[350px] h-[350px]" />
             </motion.div>
 
             <div className="flex flex-col items-start relative z-10">
