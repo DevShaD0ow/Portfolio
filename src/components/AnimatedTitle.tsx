@@ -114,6 +114,7 @@ export default function AnimatedTitle() {
                     className="w-full max-w-[320px] md:max-w-[500px] overflow-visible drop-shadow-[0_0_15px_rgba(120,10,184,0.3)]"
                     preserveAspectRatio="xMinYMid meet"
                     xmlns="http://www.w3.org/2000/svg"
+                    style={{ overflow: "visible", maxHeight: "85vh" }}
                 >
                     <g id="black-layer" stroke="#000000" fill="#000000" strokeWidth="1">
                         {letters.map((item, i) => (

@@ -46,7 +46,7 @@ export default function ProjectCard({ title, description, tags, image, video, sl
             <div
                 className="block group h-full cursor-pointer"
                 onClick={(e) => {
-                    e.preventDefault(); // Empêche la navigation si on veut juste le popup
+                    e.preventDefault();
                     onClick();
                 }}
             >

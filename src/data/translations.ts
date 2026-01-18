@@ -90,7 +90,7 @@ export const projectsMedia: ProjectMedia[] = [
 // =====================================
 
 const fr: TranslationStructure = {
-    titles: { parcours: "Mon Parcours", skills: "Mes Compétences", projects: "Mes Projets" },
+    titles: { parcours: "A propos de moi", skills: "Mes Compétences", projects: "Mes Projets" },
     filters: { all: "Tout voir", game: "Jeux Vidéo", web: "Web & Front", dev: "DevOps & Outils" },
     hero: {
         available: "Disponible pour travailler",
@@ -124,7 +124,7 @@ const fr: TranslationStructure = {
 // =====================================
 
 const en: TranslationStructure = {
-    titles: { parcours: "My Journey", skills: "My Skills", projects: "My Projects" },
+    titles: { parcours: "About me", skills: "My Skills", projects: "My Projects" },
     filters: { all: "View All", game: "Game Dev", web: "Web & Front", dev: "DevOps & Tools" },
     hero: {
         available: "Available for work",
