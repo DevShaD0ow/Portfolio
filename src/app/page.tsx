@@ -15,6 +15,7 @@ import { skillsData } from "@/data/skillsData";
 import { translations, Category, projectsMedia } from "@/data/translations";
 import { useLanguage } from "@/context/LanguageContext";
 import PopUP from "@/components/popUP";
+import Hero from "@/components/hero";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,11 +71,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black font-sans text-neutral-200 overflow-x-hidden selection:bg-violet-500/30 selection:text-violet-200">
       <Nav />
-
-      <section id="accueil" className="relative z-10">
-        <AnimatedTitle />
-      </section>
-
+      <div id="accueil">
+        <Hero />
+      </div>
       <div ref={contentRef} className="relative z-20 px-6 md:px-12 lg:px-24 pb-24 pt-32 opacity-0 invisible">
 
         {/* --- SECTION PARCOURS --- */}

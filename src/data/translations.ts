@@ -18,7 +18,7 @@ interface TranslationStructure {
     titles: { parcours: string; skills: string; projects: string };
     filters: { all: string; game: string; web: string; dev: string };
     timeline: Array<{ title: string; institution: string; period: string; description: string }>;
-    projects: Array<{ title: string; description: string }>; // Uniquement le texte traduit
+    projects: Array<{ title: string; description: string }>;
     nav: { home: string; journey: string; skills: string; projects: string };
     languageButton: { switchTo: string };
     hero: { available: string; jobTitle: string; fullstack: string; jobDesc: string };
@@ -82,6 +82,12 @@ export const projectsMedia: ProjectMedia[] = [
         image: "/Portfolio/assets/images/projects/td/preview.webp",
         github: "https://github.com/Fan-tome14/TowerDefense",
         tags: ["Unreal", "C++", "Jeux"]
+    },
+    {
+        video: "/Portfolio/assets/images/projects/vaxe/vaxe.webm",
+        image: "/Portfolio/assets/images/projects/vaxe/preview.webp",
+        github: "https://vaxeinfinity.myshopify.com?password='laskeb'",
+        tags: ["Web", "React", "TypeScript", "Freelance"]
     }
 ];
 
@@ -114,6 +120,7 @@ const fr: TranslationStructure = {
         { title: "Among Us 3D", description: "Gestion de la réplication multijoueur et transfert de données entre niveaux." },
         { title: "PacMan", description: "Copie fidèle du jeu original produite sous Unreal Engine." },
         { title: "Tower Defense", description: "Système de vagues d'ennemis et placement de tourelles défensives." },
+        { title: "Vaxe", description: "Micro-entreprise : Développement de sites web complets et solutions digitales sur mesure. Password: laskeb" },
     ],
     nav: { home: "Accueil", journey: "Parcours", skills: "Compétences", projects: "Projets" },
     languageButton: { switchTo: "🇬🇧 English" },
@@ -148,6 +155,7 @@ const en: TranslationStructure = {
         { title: "Among Us 3D", description: "Multiplayer replication management and data transfer between levels." },
         { title: "PacMan", description: "Faithful clone of the original game produced in Unreal Engine." },
         { title: "Tower Defense", description: "Enemy wave system and defensive turret placement." },
+        { title: "Vaxe", description: "Web Agency: Development of complete websites and custom digital solutions. Password: laskeb" },
     ],
     nav: { home: "Home", journey: "Journey", skills: "Skills", projects: "Projects" },
     languageButton: { switchTo: "🇫🇷 Français" },

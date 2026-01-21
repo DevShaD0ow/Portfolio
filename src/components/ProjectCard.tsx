@@ -70,7 +70,7 @@ export default function ProjectCard({ title, description, tags, image, video, sl
                             preload="none"
                             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}
                         />
-                        <div className="absolute inset-0 bg-violet-900/0 group-hover:bg-violet-900/20 transition-colors duration-500 pointer-events-none" />
+                        <div className="absolute inset-0 transition-colors duration-500 pointer-events-none" />
                     </div>
 
                     <div className="p-6 flex-1 flex flex-col">
