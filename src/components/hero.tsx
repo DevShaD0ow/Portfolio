@@ -31,11 +31,22 @@ export default function Hero() {
         },
     };
 
+    // Variant pour les éléments standards (Opacité 100%)
     const itemVariants = {
         hidden: { y: 20, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1,
+            transition: { type: "spring" as const, stiffness: 100 },
+        },
+    };
+
+    // NOUVEAU : Variant spécifique pour la description (Opacité 60%)
+    const descriptionVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 0.6, // On s'arrête à 0.6 ici
             transition: { type: "spring" as const, stiffness: 100 },
         },
     };
@@ -95,8 +106,11 @@ export default function Hero() {
                         {isEnglish ? "Welcome to My Portfolio" : "Bienvenue dans mon Portfolio"}
                     </motion.p>
 
-                    {/* 4. Description */}
-                    <motion.p variants={itemVariants} className="text-lg font-semibold tracking-wider opacity-60 mt-2 max-w-lg break-words leading-relaxed">
+                    {/* 4. Description - UTILISATION DE descriptionVariants ICI */}
+                    <motion.p
+                        variants={descriptionVariants} // <--- Changement ici
+                        className="text-lg font-semibold tracking-wider mt-2 max-w-lg break-words leading-relaxed"
+                    >
                         {isEnglish ? "Hi i'm " : "Salut je suis "}
                         <span className="font-bold opacity-100 text-violet-500">ShaDow</span>
                         {isEnglish ? " - a Full Stack Developer." : " - un Développeur Full Stack."}
