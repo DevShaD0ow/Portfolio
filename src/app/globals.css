@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #000000;
   --foreground: #171717;
 }
 
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -45,7 +45,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -59,10 +59,6 @@ body {
   color: var(--foreground);
 }
 
-@font-face {
-  font-family: 'Helvetiker';
-  src: url('/Public/fonts/helvetiker_bold.typeface.json') format('truetype');
-}
 
 * {
   -ms-overflow-style: none;

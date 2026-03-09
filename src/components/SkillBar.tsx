@@ -1,44 +1,51 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-interface SkillBarProps {
+interface SkillIconProps {
     name: string;
-    percentage: number;
+    slug: string; // Le nom exact pour Simple Icons (ex: "unrealengine")
+    color: string;
 }
 
-export default function SkillBar({ name, percentage }: SkillBarProps) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
+export default function SkillIcon({ name, slug, color }: SkillIconProps) {
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="w-full bg-neutral-900/30 px-5 py-4 rounded-xl border border-neutral-800 backdrop-blur-sm hover:border-violet-500/30 transition-all duration-500"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative flex flex-col items-center justify-center p-4 rounded-2xl bg-neutral-900/40 border border-neutral-800 hover:border-violet-500/50 transition-all duration-300 aspect-square w-24 md:w-32 group cursor-default overflow-hidden"
         >
-            <div className="flex justify-between mb-2 items-end">
-                <span className="text-base font-medium text-neutral-200">{name}</span>
-                <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-sm font-bold text-neutral-400"
-                >
-                    {percentage}%
-                </motion.span>
-            </div>
-
-            <div className="w-full bg-neutral-800 rounded-full h-2 overflow-hidden">
-                <motion.div
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: `${percentage}%` } : { width: 0 }}
-                    transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                    className="bg-gradient-to-r from-violet-500 to-fuchsia-600 h-full rounded-full shadow-[0_0_10px_rgba(139,92,246,0.5)]"
+            {/* Logo via Simple Icons CDN */}
+            <div className="relative z-10 w-10 h-10 md:w-12 md:h-12 transition-all duration-500 flex items-center justify-center">
+                <img
+                    src={`https://cdn.simpleicons.org/${slug}/${isHovered ? color.replace('#', '') : '666'}`}
+                    alt={name}
+                    className="w-full h-full object-contain transition-all duration-300"
+                    style={{
+                        filter: isHovered ? `drop-shadow(0 0 10px ${color}66)` : "none"
+                    }}
                 />
             </div>
+
+            {/* Label */}
+            <motion.span
+                initial={{ opacity: 0.4 }}
+                animate={isHovered ? { opacity: 1, y: -2 } : { opacity: 0.4, y: 0 }}
+                className="absolute bottom-3 text-[9px] md:text-[11px] font-bold uppercase tracking-wider text-white text-center px-2"
+            >
+                {name}
+            </motion.span>
+
+            {/* Glow de fond au hover */}
+            <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500"
+                style={{ backgroundColor: color }}
+            />
         </motion.div>
     );
 }

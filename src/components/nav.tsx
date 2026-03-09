@@ -18,9 +18,14 @@ export default function Nav() {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
-            <div className="max-w-12xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/5 overflow-hidden">
+            {/* --- LUEUR VIOLETTE --- */}
+            <div
+                className="absolute -top-10 -left-10 w-40 h-40 bg-violet-600/20 blur-[60px] pointer-events-none rounded-full"
+                aria-hidden="true"
+            />
 
+            <div className="max-w-12xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center relative z-10">
                 <button
                     onClick={toggleMenu}
                     className="md:hidden text-white p-2 focus:outline-none"
@@ -28,7 +33,11 @@ export default function Nav() {
                 >
                     {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
-                <h1 className="text-xl font-bold text-white opacity-50">ShaD<span className="text-violet-500">O</span>w</h1>
+
+                <h1 className="text-xl font-bold text-white opacity-50">
+                    ShaD<span className="text-violet-500">O</span>w
+                </h1>
+
                 <ul className="hidden md:flex justify-center flex-1 gap-12 lg:gap-24 text-sm font-bold text-violet-500 uppercase tracking-widest">
                     {NAV_ITEMS.map((item, index) => (
                         <li key={index} className="hover:text-violet-400 transition-colors">

@@ -48,15 +48,15 @@ export default function ContactSection() {
     ];
 
     return (
-        <section id="contact" className="mb-16 max-w-4xl mx-auto scroll-mt-24 pt-20">
+        <section id="contact" className="mb-16 max-w-4xl mx-auto scroll-mt-24 pt-20 px-6">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.4 }}
             >
                 <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-600 inline-block pt-8">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-600 inline-block">
                         {contactTexts.title}
                     </span>
                 </h2>
@@ -70,14 +70,26 @@ export default function ContactSection() {
                                 href={contact.href}
                                 target={contact.href.startsWith("http") ? "_blank" : undefined}
                                 rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined}
+
+                                // Animation d'entrée
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.2 }}
-                                whileHover={{ scale: 1.03, y: -5 }}
-                                className="group relative bg-neutral-900/50 border border-neutral-800 rounded-2xl p-6 hover:border-violet-500/50 transition-all duration-300 overflow-hidden"
+                                transition={{ duration: 0.3, delay: index * 0.1 }}
+
+                                // HOVER NERVEUX (Correction de la lenteur)
+                                whileHover={{
+                                    scale: 1.02,
+                                    y: -4,
+                                    transition: { duration: 0.1, ease: "easeOut" }
+                                }}
+                                whileTap={{ scale: 0.98 }}
+
+                                // Suppression de transition-all pour éviter les conflits avec Framer Motion
+                                className="group relative bg-neutral-900/50 border border-neutral-800 rounded-2xl p-6 hover:border-violet-500/50 transition-colors duration-200 overflow-hidden"
                             >
-                                <div className={`absolute inset-0 bg-gradient-to-br ${contact.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                                {/* Lueur de fond (accélérée à 200ms) */}
+                                <div className={`absolute inset-0 bg-gradient-to-br ${contact.color} opacity-0 group-hover:opacity-10 transition-opacity duration-200`} />
 
                                 <div className="relative flex items-center gap-4">
                                     <div className={`p-3 rounded-xl bg-gradient-to-br ${contact.color} shadow-lg`}>
@@ -86,13 +98,13 @@ export default function ContactSection() {
 
                                     <div className="flex-1">
                                         <p className="text-sm text-neutral-400 mb-1">{contact.label}</p>
-                                        <p className="text-white font-medium group-hover:text-violet-400 transition-colors">
+                                        <p className="text-white font-medium group-hover:text-violet-400 transition-colors duration-200">
                                             {contact.value}
                                         </p>
                                     </div>
 
                                     <svg
-                                        className="w-5 h-5 text-neutral-600 group-hover:text-violet-400 group-hover:translate-x-1 transition-all"
+                                        className="w-5 h-5 text-neutral-600 group-hover:text-violet-400 group-hover:translate-x-1 transition-all duration-200"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
@@ -109,7 +121,7 @@ export default function ContactSection() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                     className="mt-12 text-center"
                 >
                     <p className="text-neutral-400 text-lg max-w-2xl mx-auto leading-relaxed">

@@ -1,12 +1,22 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 export default function Hero() {
     const { isEnglish } = useLanguage();
     const [index, setIndex] = useState(0);
+    const containerRef = useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"]
+    });
+
+    const textY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+    const opacityHero = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+    const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
     const specialties = [
         { fr: "Shadow", en: "Shadow" },
@@ -20,123 +30,100 @@ export default function Hero() {
         return () => clearInterval(timer);
     }, [specialties.length]);
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3,
-            },
-        },
-    };
-
-    // Variant pour les éléments standards (Opacité 100%)
-    const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: { type: "spring" as const, stiffness: 100 },
-        },
-    };
-
-    // NOUVEAU : Variant spécifique pour la description (Opacité 60%)
-    const descriptionVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 0.6, // On s'arrête à 0.6 ici
-            transition: { type: "spring" as const, stiffness: 100 },
-        },
-    };
-
     return (
-        <div className="relative flex items-center justify-center w-screen h-screen bg-gradient-to-br from-black via-black to-gray-900 text-white overflow-hidden">
+        <section
+            ref={containerRef}
+            className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+        >
+            {/* --- ANIMATED GRADIENT BACKGROUND --- */}
+            <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
+                {/* Sphère 1 : Violette */}
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        x: [0, 100, 0],
+                        y: [0, 50, 0],
+                    }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-violet-600/20 blur-[120px] rounded-full"
+                />
 
+                {/* Sphère 2 : Fuchsia/Indigo */}
+                <motion.div
+                    animate={{
+                        scale: [1, 1.3, 1],
+                        x: [0, -100, 0],
+                        y: [0, -50, 0],
+                    }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-fuchsia-600/15 blur-[100px] rounded-full"
+                />
+
+                {/* Sphère 3 : Centre (pour la profondeur) */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_90%)] z-[1]" />
+            </motion.div>
+
+            {/* CONTENU PRINCIPAL */}
             <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className="flex flex-col md:flex-row items-center justify-center gap-8 px-4 z-10"
+                style={{ y: textY, opacity: opacityHero }}
+                className="relative z-10 text-center space-y-8 px-4"
             >
                 <motion.div
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
-                    className="relative"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
                 >
-                    <motion.div
-                        animate={{ boxShadow: ["0 0 30px rgba(139,92,246,0.3)", "0 0 60px rgba(139,92,246,0.6)", "0 0 30px rgba(139,92,246,0.3)"] }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                        className="rounded-full"
-                    >
-                        <img
-                            src="/Portfolio/assets/images/ui/pp.webp"
-                            alt="Alexis Tirant"
-                            className="w-40 h-40 md:w-60 md:h-60 rounded-full border-2 border-violet-500 object-cover"
-                        />
-                    </motion.div>
+                    <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase text-white leading-none">
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.5, ease: "circOut" }}
+                                className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40"
+                            >
+                                {isEnglish ? specialties[index].en : specialties[index].fr}
+                            </motion.span>
+                        </AnimatePresence>
+                    </h1>
+
+                    <motion.p className="text-lg md:text-xl font-medium tracking-[0.3em] uppercase text-violet-500 mt-4">
+                        {isEnglish ? "Full Stack Developer" : "Développeur Full Stack"}
+                    </motion.p>
                 </motion.div>
 
-                <motion.div variants={itemVariants} className="flex flex-col items-center md:items-start justify-center text-center md:text-left">
-                    {/* 2. Titre animé */}
-                    <motion.div variants={itemVariants} className="flex items-center justify-center md:justify-start gap-2 text-3xl font-semibold tracking-wider h-12 w-full">
-                        <span className="whitespace-nowrap">
-                            {isEnglish ? "I'm" : "Je suis"}
-                        </span>
+                <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: 0.5, duration: 1, ease: "circOut" }}
+                    className="h-px w-24 bg-gradient-to-r from-transparent via-violet-500 to-transparent mx-auto"
+                />
 
-                        <div className="relative overflow-hidden h-full flex items-center w-[200px] md:w-[300px]">
-                            <AnimatePresence mode="wait">
-                                <motion.span
-                                    key={index}
-                                    initial={{ y: 40, opacity: 0 }}
-                                    animate={{ y: 0, opacity: 1 }}
-                                    exit={{ y: -40, opacity: 0 }}
-                                    transition={{ duration: 0.5, ease: "circOut" }}
-                                    className="absolute text-violet-500 whitespace-nowrap font-bold"
-                                >
-                                    {isEnglish ? specialties[index].en : specialties[index].fr}
-                                </motion.span>
-                            </AnimatePresence>
-                        </div>
-                    </motion.div>
-
-                    {/* 3. Sous-titre */}
-                    <motion.p variants={itemVariants} className="text-2xl font-semibold tracking-wider mt-2">
-                        {isEnglish ? "Welcome to My Portfolio" : "Bienvenue dans mon Portfolio"}
-                    </motion.p>
-
-                    {/* 4. Description - UTILISATION DE descriptionVariants ICI */}
-                    <motion.p
-                        variants={descriptionVariants} // <--- Changement ici
-                        className="text-lg font-semibold tracking-wider mt-2 max-w-lg break-words leading-relaxed"
-                    >
-                        {isEnglish ? "Hi i'm " : "Salut je suis "}
-                        <span className="font-bold opacity-100 text-violet-500">ShaDow</span>
-                        {isEnglish ? " - a Full Stack Developer." : " - un Développeur Full Stack."}
-
-                        <br className="my-2 block" />
-
-                        {isEnglish
-                            ? "I challenge myself to bring ideas to life. Scroll down to see more about me."
-                            : "J'aime me défier pour donner vie aux idées. Faites défiler pour en connaitre plus sur moi."}
-                    </motion.p>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 1 }}
+                    className="max-w-md mx-auto text-neutral-400 text-sm md:text-base font-light leading-relaxed"
+                >
+                    {isEnglish
+                        ? "Crafting immersive digital experiences through code and design."
+                        : "Créer des expériences numériques immersives à travers le code et le design."}
                 </motion.div>
             </motion.div>
 
+            {/* INDICATEUR SCROLL */}
             <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+                style={{ opacity: opacityHero }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30"
             >
                 <motion.div
                     animate={{ y: [0, 10, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                 >
-                    <ChevronDown size={32} className="text-violet-500 opacity-80" />
+                    <ChevronDown size={32} />
                 </motion.div>
             </motion.div>
-        </div>
+        </section>
     );
 }
