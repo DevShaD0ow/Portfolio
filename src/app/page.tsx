@@ -10,7 +10,7 @@ import Nav from "@/components/nav";
 import ContactSection from "@/components/contact";
 import PopUP from "@/components/popUP";
 import SkillIcon from "@/components/SkillIcon";
-import Hero from "@/components/Hero";
+import Hero from "@/components/hero";
 
 import { skillsData } from "@/data/skillsData";
 import { translations, projectsMedia } from "@/data/translations";
