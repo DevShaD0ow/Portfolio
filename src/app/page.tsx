@@ -9,13 +9,12 @@ import ProjectCard from "@/components/ProjectCard";
 import Nav from "@/components/nav";
 import ContactSection from "@/components/contact";
 import PopUP from "@/components/popUP";
-import Hero from "@/components/hero";
 import SkillIcon from "@/components/SkillIcon";
+import Hero from "@/components/Hero";
 
 import { skillsData } from "@/data/skillsData";
 import { translations, projectsMedia } from "@/data/translations";
 import { useLanguage } from "@/context/LanguageContext";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -55,7 +54,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-black font-sans text-neutral-200 overflow-x-hidden selection:bg-violet-500/30 selection:text-violet-200">
+    <main className="min-h-screen font-sans text-neutral-200 overflow-x-hidden">
       <Nav />
       <div id="accueil" className='z-20'>
         <Hero />

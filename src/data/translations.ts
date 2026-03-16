@@ -1,5 +1,3 @@
-// src/data/translations.ts
-
 export type Lang = "fr" | "en";
 export type Category = "all" | "game" | "web" | "dev";
 
@@ -21,7 +19,8 @@ interface TranslationStructure {
     projects: Array<{ title: string; description: string }>;
     nav: { home: string; journey: string; skills: string; projects: string };
     languageButton: { switchTo: string };
-    hero: { available: string; jobTitle: string; fullstack: string; jobDesc: string };
+    // J'ai retiré 'available' et 'fullstack' ici
+    hero: { jobTitle: string; jobDesc: string };
 }
 
 // =====================================
@@ -99,10 +98,8 @@ const fr: TranslationStructure = {
     titles: { parcours: "A propos de moi", skills: "Mes Compétences", projects: "Mes Projets" },
     filters: { all: "Tout voir", game: "Jeux Vidéo", web: "Web & Front", dev: "DevOps & Outils" },
     hero: {
-        available: "Disponible pour travailler",
         jobTitle: "Développeur",
-        fullstack: "Full Stack",
-        jobDesc: "Conception d'interfaces innovantes & architectures robustes.",
+        jobDesc: "Etudiant en cycle ingénieur à l'ESIEA spécialisé en développement logiciel.",
     },
     timeline: [
         { title: "BUT Informatique", institution: "IUT d'Orsay", period: "Sept 2023 - Présent", description: "Formation en informatique avec spécialisation en développement et réseaux." },
@@ -134,10 +131,8 @@ const en: TranslationStructure = {
     titles: { parcours: "About me", skills: "My Skills", projects: "My Projects" },
     filters: { all: "View All", game: "Game Dev", web: "Web & Front", dev: "DevOps & Tools" },
     hero: {
-        available: "Available for work",
         jobTitle: "Developer",
-        fullstack: "Full Stack",
-        jobDesc: "Designing innovative interfaces & robust architectures.",
+        jobDesc: "Engineering student at ESIEA specializing in software development.",
     },
     timeline: [
         { title: "Associate Degree in CS", institution: "IUT of Orsay", period: "Sept 2023 - Present", description: "Computer science training with a specialization in development and networks." },
