@@ -42,7 +42,7 @@ export default function ContactSection() {
             icon: FileText,
             label: "CV",
             value: contactTexts.download,
-            href: "./assets/cv_alexis_tirant.pdf",
+            href: "/Portfolio/assets/cv_alexis_tirant.pdf",
             color: "from-violet-400 to-fuchsia-600"
         }
     ];
