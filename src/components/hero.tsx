@@ -14,7 +14,6 @@ export default function Hero() {
         <div className="relative w-full h-[100dvh] flex flex-col justify-center items-center bg-[#030303] overflow-hidden">
 
             {/* --- CONTENEUR PRINCIPAL RESPONSIVE --- */}
-            {/* On utilise flex-col par défaut (mobile) pour que le texte soit SOUS le graffiti */}
             <div className="relative z-20 flex flex-col items-center justify-center gap-8 min-[970px]:block min-[970px]:w-full min-[970px]:h-full">
 
                 {/* --- 1. LE GRAFFITI --- */}
@@ -33,10 +32,8 @@ export default function Hero() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                    // Mobile: suit le flux sous le graffiti | Desktop: fixé en bas à gauche
                     className="relative min-[970px]:absolute min-[970px]:bottom-8 min-[970px]:left-16 flex flex-col gap-4 w-fit px-4 min-[970px]:px-0"
                 >
-                    {/* Les icônes */}
                     <div className="flex gap-3 justify-center min-[970px]:justify-start">
                         <a href="https://www.linkedin.com/in/alexis-tirant-386409293/" target="_blank" className="p-3 border border-white/20 rounded-full hover:bg-white/10 transition-all text-white backdrop-blur-md bg-black/20">
                             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>

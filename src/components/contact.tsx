@@ -28,7 +28,7 @@ export default function ContactSection() {
             icon: Linkedin,
             label: "LinkedIn",
             value: "/AlexisTirant",
-            href: "https://linkedin.com/in/alexis-tirant",
+            href: "https://www.linkedin.com/in/alexis-tirant-386409293/",
             color: "from-blue-500 to-blue-600"
         },
         {
@@ -42,7 +42,7 @@ export default function ContactSection() {
             icon: FileText,
             label: "CV",
             value: contactTexts.download,
-            href: "/Portfolio/assets/cv_alexis_tirant.pdf",
+            href: "/Portfolio/assets/CV_Alexis_Tirant.pdf",
             color: "from-violet-400 to-fuchsia-600"
         }
     ];
